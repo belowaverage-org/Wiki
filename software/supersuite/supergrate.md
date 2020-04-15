@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T04:17:24.842Z
+date: 2020-04-15T05:01:48.220Z
 tags: 
 ---
 
@@ -69,7 +69,7 @@ After running the steps above, Super Grate should run without a hitch.
 4. Select the User(s) you would like to back up.
 5. Press "Start".
 
-![backing-up-a-user-profile.png](/software/backing-up-a-user-profile.png)
+![backing-up-a-user-profile.png](/assets/software/supersuite/supergrate/backing-up-a-user-profile.png)
 
 ## Restoring a User Profile
 
@@ -80,7 +80,7 @@ After running the steps above, Super Grate should run without a hitch.
 3. Select the Users you would like to restore to the "Destination Computer".
 4. Press "Start".
 
-![restoring-a-user-profile.png](/software/restoring-a-user-profile.png)
+![restoring-a-user-profile.png](/assets/software/supersuite/supergrate/restoring-a-user-profile.png)
 
 ## Full Migration
 
@@ -221,7 +221,7 @@ Below is an example of the SuperGrate.xml file:
 
 ## How Super Grate performs a Migration
 
-![migration-flowchart.svg](/software/migration-flowchart.svg)
+![migration-flowchart.svg](/assets/software/supersuite/supergrate/migration-flowchart.svg)
 
 # Known Issues
 
