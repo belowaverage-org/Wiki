@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T04:12:23.485Z
+date: 2020-04-15T04:13:18.350Z
 tags: 
 ---
 
@@ -42,11 +42,11 @@ You can also set permissions on the folders to lock down what Super Grate users 
 
 ## 1.2.0.0 to 1.3.0.0 Upgrade Guide
 
-#### Upgrading SuperGrate.xml.
+#### Upgrading [SuperGrate.xml](#supergratexml).
 
 1. Open the new Super Grate after replacing the old executable.
 2. Navigate to "File", then "Settings..." or press the "F12" on your keyboard.
-3. Press "Save to Disk" to add the new settings to your SuperGrate.xml
+3. Press "Save to Disk" to add the new settings to your [SuperGrate.xml](#supergratexml)
 
 #### Upgrading the User Store.
 
