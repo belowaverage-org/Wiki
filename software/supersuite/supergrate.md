@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T03:56:21.294Z
+date: 2020-04-15T03:59:50.581Z
 tags: 
 ---
 
@@ -134,6 +134,38 @@ Below are some notes about logging:
     4. Press "Save to Disk" then press "Close"
 
 # Further Reading
+
+## Backup Store
+
+The backup <b>store</b><i> or just "store" when using Super Grate</i> is a directory on a share drive or local drive that "stores" the user profiles after they have been backed-up. Weather you performed a [full migration](#full-migration) or just a simple [profile backup](#backing-up-a-user-profile), the data transferred is stored here.
+
+The file structure of the store is as follows:
+
+* **Base Folder** (Specified in the [[SuperGrate.xml]] or Settings Menu)
+    * **User Profile Folder** (Named a generic GUID, Can be any name)
+        * **data**: A single file containing the backed-up profile.
+        * **destination**: A file containing the name of the destination computer where the profile last was exported too.
+        * **exportedby**: A file containing the name of the user who last exported the stored user profile.
+        * **exportedon**: A file containing the date of when the profile was last exported in [windows file time](https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tofiletime?view=netframework-4.8)
+        * **importedby**: A file containing the name of the user who imported the user profile.
+        * **importedon**: A file containing the date of when the profile was imported in windows file time.
+        * **ntaccount**: A file containing the name of the user profile that was imported.
+        * **sid**: A file containing the [SID](https://en.wikipedia.org/wiki/Security_Identifier) of the user profile that was imported.
+        * **source**: A file containing the name of the source computer the profile originated from.
+
+An example of the above may look like this below:
+
+* **C:\Program Files\Super Suite\Super Grate\STORE** (Folder)
+    * **bf31d643-27a7-4e5d-a4e5-277a4c5cc9d0** (Folder)
+        * **data** (File | RAW Data)
+        * **destination** (File | "DOMAIN\BA-PC02")
+        * **exportedby** (File | "DOMAIN\Dylan.Bickerstaff")
+        * **exportedon** (File | "132312220838407695")
+        * **importedby** (File | "DOMAIN\Dylan.Bickerstaff")
+        * **importedon** (File | "132312220838407695")
+        * **ntaccount** (File | "DOMAIN\Administrator")
+        * **sid** (File | "S-1-5-21-3623811015-3361044348-30300820-1013")
+        * **source** (File | "DOMAIN\BA-PC01")
 
 ## Portable Version
 
