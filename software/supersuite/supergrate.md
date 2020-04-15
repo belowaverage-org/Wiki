@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T03:59:50.581Z
+date: 2020-04-15T04:01:24.506Z
 tags: 
 ---
 
@@ -137,11 +137,11 @@ Below are some notes about logging:
 
 ## Backup Store
 
-The backup <b>store</b><i> or just "store" when using Super Grate</i> is a directory on a share drive or local drive that "stores" the user profiles after they have been backed-up. Weather you performed a [full migration](#full-migration) or just a simple [profile backup](#backing-up-a-user-profile), the data transferred is stored here.
+The backup **store** *or just "store" when using Super Grate* is a directory on a share drive or local drive that "stores" the user profiles after they have been backed-up. Weather you performed a [full migration](#full-migration) or just a simple [profile backup](#backing-up-a-user-profile), the data transferred is stored here.
 
 The file structure of the store is as follows:
 
-* **Base Folder** (Specified in the [[SuperGrate.xml]] or Settings Menu)
+* **Base Folder** (Specified in the [SuperGrate.xml](#supergratexml) or Settings Menu)
     * **User Profile Folder** (Named a generic GUID, Can be any name)
         * **data**: A single file containing the backed-up profile.
         * **destination**: A file containing the name of the destination computer where the profile last was exported too.
