@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T02:57:49.478Z
+date: 2020-04-15T02:58:04.809Z
 tags: 
 ---
 
@@ -66,6 +66,10 @@ Super Grate will download any necessary dependencies when they are needed.
 A portable version of Super Grate allows the operator to back up profiles to a USB thumb drive or USB external HDD easier, and quicker. It also helps in scenarios where the computer you are trying to back up has no disk space available for scratch space.
 
 ## SuperGrate.xml
+
+The **SuperGrate.xml** is a file that is automatically generated if it doesn't exist in the "current working directory". This file contains the preferences from the "Settings" menu.
+
+Below is an example of the SuperGrate.xml file:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
