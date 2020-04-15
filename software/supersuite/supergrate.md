@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T04:01:24.506Z
+date: 2020-04-15T04:06:21.518Z
 tags: 
 ---
 
@@ -225,7 +225,14 @@ There are options in the **SuperGrate.xml** and settings menu that can change th
 
 # Known Issues
 
-
+* Sleep Mode
+    * Super Grate may fail if the remote PC or executing PC falls asleep.
+* WMI
+    * Super Grate may fail if WMI is corrupt or disabled on the remote PC.
+    * To fix: `winmgmt /resetrepository`
+* Remote Registry
+    * Super Grate may fail if the Remote Registry service is stopped or disabled on the remote PC.
+    
 
 
 
