@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T19:55:25.747Z
+date: 2020-04-15T20:03:24.453Z
 tags: 
 ---
 
@@ -20,13 +20,13 @@ tags:
 ![filetree.bmp](/assets/software/supersuite/superscripteroni/filetree.bmp)
 
 ### [SuperScripteroni.ps1](https://github.com/belowaverage-org/SuperScripteroni/blob/master/SuperScripteroni.ps1)
-<ol>
-  <li>Group policies apply.</li>
-  <li>Scheduled task starts SuperScripteroni.ps1.</li>
-  <li>SuperScripteroni.ps1 searches the "Deploy" directory and sub-directories as shown above for any *.ps1 files.</li>
-  <li>SuperScripteroni.ps1 runs each *.ps1 file found in the directories they are found in. (<a href="https://en.wikipedia.org/wiki/Working_directory">Working Directory</a>)</li>
-  <li>SuperScripteroni.ps1 writes the PowerShell output to an event in the Applications event log.</li>
-</ol>
+
+  1. Group policies apply.
+  2. Scheduled task starts SuperScripteroni.ps1.
+  3. SuperScripteroni.ps1 searches the "Deploy" directory and sub-directories as shown above for any *.ps1 files.
+  4. SuperScripteroni.ps1 runs each *.ps1 file found in the directories they are found in. ([Working Directory](https://en.wikipedia.org/wiki/Working_directory))
+  5. SuperScripteroni.ps1 writes the PowerShell output to an event in the Applications event log.
+    
 <p>Because of the way the SuperScripteroni.ps1 script works, each deployment script will need to perform the necessary checks to see if the application that is to be deployed already exists to prevent duplicate installs. See <a href="https://github.com/belowaverage-org/SuperScripteroni/blob/master/ChromeInstall.ps1">ChromeInstall.ps1</a> for an example.</p>
 <h2>How do I set up the Group Policy for Super Scripteroni?</h2>
 <h3>Adding the Super Scripteroni Base Script to a new GPO.</h3>
