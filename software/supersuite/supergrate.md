@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T02:58:04.809Z
+date: 2020-04-15T02:59:27.706Z
 tags: 
 ---
 
@@ -52,6 +52,20 @@ tags:
 ![restoring-a-user-profile.png](/software/restoring-a-user-profile.png)
 
 # Development
+
+## Debugging Super Grate
+
+While using Super Grate, you might encounter errors. You may post any errors you get to [here](https://github.com/belowaverage-org/SuperGrate/issues).
+
+Below are some notes about logging:
+
+* To display Verbose logs in the output console, double press anywhere in the "black" log area.
+* To save all logs including Verbose logs to a file, press "CTRL + S" at the main screen.
+* To automatically save log files to disk whenever Super Grate is used:
+    1. Select "Settings".
+    2. Double click "DumpLogHereOnExit".
+    3. Enter ".\Logs" & Press "Apply"
+    4. Press "Save to Disk" then press "Close"
 
 # Further Reading
 
