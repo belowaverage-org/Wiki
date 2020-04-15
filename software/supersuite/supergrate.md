@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T03:05:35.806Z
+date: 2020-04-15T03:48:58.220Z
 tags: 
 ---
 
@@ -66,6 +66,21 @@ You can also set permissions on the folders to lock down what Super Grate users 
 ![restoring-a-user-profile.png](/software/restoring-a-user-profile.png)
 
 # Development
+
+## Compiling Super Grate
+
+**Compiling Super Grate** is easy to do; firstly, you need to download and install a copy of [Microsoft's Visual Studio (VS)](https://visualstudio.microsoft.com/vs/). -- *The community edition will do* -- Once done, clone this repository using VS' "Get Started" page. Lastly, open the solution and press the green "Start / Play" button. This will compile and start Super Grate.
+
+To make a release build of Super Grate & create a NSIS installer, do the following:
+
+1. Select "Batch Build" from the "Build" tab in the top menu bar.
+2. Check "Release" & "Release_64" then press "Rebuild".
+3. Right Click the Solution in the Solution Explorer, and select "Open in Explorer".
+4. In explorer, navigate to the "SuperGrateInstaller" folder.
+5. Run the "precompile.ps1" file in Power Shell (You may need to [set the ExecutionPolicy to Bypass mode](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6))
+6. Download and install [NSIS](https://nsis.sourceforge.io).
+7. Right click and select "Compile" on the "installer.nsi" file.
+8. A file labled "SuperGrateInstaller.exe" should now exist in the "bin" folder.
 
 ## Debugging Super Grate
 
