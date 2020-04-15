@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:13:51.430Z
+date: 2020-04-15T20:13:58.909Z
 tags: 
 ---
 
@@ -53,6 +53,7 @@ In the new GPO you just created in the [first step](#adding-the-super-scripteron
 
 <img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/gc.png">
 <img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/gc1.png">
+
 <h3>Removing a deployment from Super Scripteroni.</h3>
   <p>When removing a deployment from a GPO you must remove the files policy for the deployment you are trying to remove and add a folder policy to remove the deployment to prevent the SuperScripteroni script from invoking the deployed script next time GPO is updated. For example:</p>
   <img width="500" src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/deletedeployment.png">
