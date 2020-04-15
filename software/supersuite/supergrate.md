@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T04:10:56.535Z
+date: 2020-04-15T04:12:23.485Z
 tags: 
 ---
 
@@ -86,7 +86,7 @@ After running the steps above, Super Grate should run without a hitch.
 
 Super Grate supports configuration over **CLI** (Command Line Interface) *switches*. This means you can create custom shortcuts and launch Super Grate with specific settings.
 
-Note: *CLI Switches override **SuperGrate.xml** settings.*
+Note: *CLI Switches override [SuperGrate.xml](#supergratexml) settings.*
 
 To use a CLI switch, do the following:
 
@@ -100,7 +100,7 @@ for example:
 
 `C:\>SuperGrate.exe -HideBuiltInAccounts:"false"`
 
-For a list of settings, see: **SuperGrate.xml**
+For a list of settings, see: [SuperGrate.xml](#supergratexml)
 
 # Development
 
