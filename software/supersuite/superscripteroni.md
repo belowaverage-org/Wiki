@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:26:35.805Z
+date: 2020-04-15T20:32:30.996Z
 tags: 
 ---
 
@@ -10,7 +10,7 @@ tags:
 
 ---
 
-### Super Scripteroni is a PowerShell script used to deploy software to domain joined computers via GPO. This script is meant to bypass the use of the built in software deployment GPO (Computer Configuration / Software Settings / Software installation). Super Scripteroni runs in the background via a scheduled task after Group Policies have applied. (Or whenever you configure it to run)
+> Super Scripteroni is a PowerShell script used to deploy software to domain joined computers via GPO. This script is meant to bypass the use of the built in software deployment GPO (Computer Configuration / Software Settings / Software installation). Super Scripteroni runs in the background via a scheduled task after Group Policies have applied. (Or whenever you configure it to run)
 
 # How does Super Scripteroni Work?
 
