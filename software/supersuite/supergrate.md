@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T03:51:40.323Z
+date: 2020-04-15T03:53:20.373Z
 tags: 
 ---
 
@@ -64,6 +64,26 @@ You can also set permissions on the folders to lock down what Super Grate users 
 4. Press "Start".
 
 ![restoring-a-user-profile.png](/software/restoring-a-user-profile.png)
+
+## Command Line Switches
+
+Super Grate supports configuration over **CLI** (Command Line Interface) *switches*. This means you can create custom shortcuts and launch Super Grate with specific settings.
+
+Note: *CLI Switches override **SuperGrate.xml** settings.*
+
+To use a CLI switch, do the following:
+
+`C:\>SuperGrate.exe -NameOfSetting:Value`
+
+or:
+
+`C:\>SuperGrate.exe -NameOfSetting:"Value"`
+
+for example:
+
+`C:\>SuperGrate.exe -HideBuiltInAccounts:"false"`
+
+For a list of settings, see: **SuperGrate.xml**
 
 # Development
 
