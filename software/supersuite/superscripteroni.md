@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:13:00.401Z
+date: 2020-04-15T20:13:51.430Z
 tags: 
 ---
 
@@ -46,11 +46,11 @@ In the new GPO you just created in the [first step](#adding-the-super-scripteron
 
 ![scheduleedit.png](/assets/software/supersuite/superscripteroni/scheduleedit.png)
 
-<h3>Adding a deployment to Super Scripteroni.</h3>
-<ol>
-  <li>In the SuperScripteroni GPO, under Computer Configuration / Preferences / Windows Settings / Files, copy and paste the contents of <a href="https://github.com/belowaverage-org/SuperScripteroni/blob/master/StandardDeploymentGPO.xml">StandardDeploymentGPO.xml</a> into the Group Policy Management Editor.</li>
-  <li>After pasted, edit the file item to copy the contents of a deployment from a server to the client computer under the Deploy folder where your SuperScripteroni instance is located.</li>
-</ol>
+## Adding a deployment to Super Scripteroni.
+
+1. In the SuperScripteroni GPO, under Computer Configuration / Preferences / Windows Settings / Files, copy and paste the contents of [StandardDeploymentGPO.xml](https://github.com/belowaverage-org/SuperScripteroni/blob/master/StandardDeploymentGPO.xml) into the Group Policy Management Editor.
+2. After pasted, edit the file item to copy the contents of a deployment from a server to the client computer under the Deploy folder where your SuperScripteroni instance is located.
+
 <img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/gc.png">
 <img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/gc1.png">
 <h3>Removing a deployment from Super Scripteroni.</h3>
