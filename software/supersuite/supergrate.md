@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T04:16:52.567Z
+date: 2020-04-15T04:17:23.548Z
 tags: 
 ---
 
@@ -87,7 +87,7 @@ After running the steps above, Super Grate should run without a hitch.
 A **Full Migration** is a Super Grate sequence where both the "Source Computer" and "Destination Computer" are occupied.
 When the backup / migration is started, Super Grate will back up the user profiles selected from the "Source Computer" to the store, then connect to the "Destination Computer" and apply the user profiles selected from the "Source Computer".
 
-There are options in the **SuperGrate.xml** and settings menu that can change the behavior presented above.
+There are options in the [SuperGrate.xml](#supergratexml) and settings menu that can change the behavior presented above.
 
 ## Command Line Switches
 
