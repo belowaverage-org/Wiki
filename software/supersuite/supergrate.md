@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T04:15:55.193Z
+date: 2020-04-15T04:16:52.567Z
 tags: 
 ---
 
@@ -81,6 +81,13 @@ After running the steps above, Super Grate should run without a hitch.
 4. Press "Start".
 
 ![restoring-a-user-profile.png](/software/restoring-a-user-profile.png)
+
+## Full Migration
+
+A **Full Migration** is a Super Grate sequence where both the "Source Computer" and "Destination Computer" are occupied.
+When the backup / migration is started, Super Grate will back up the user profiles selected from the "Source Computer" to the store, then connect to the "Destination Computer" and apply the user profiles selected from the "Source Computer".
+
+There are options in the **SuperGrate.xml** and settings menu that can change the behavior presented above.
 
 ## Command Line Switches
 
@@ -211,13 +218,6 @@ Below is an example of the SuperGrate.xml file:
   <ULStoreColumns>0,1,5,6,4</ULStoreColumns>
 </SuperGrate>
 ```
-
-## Full Migration
-
-A **Full Migration** is a Super Grate sequence where both the "Source Computer" and "Destination Computer" are occupied.
-When the backup / migration is started, Super Grate will back up the user profiles selected from the "Source Computer" to the store, then connect to the "Destination Computer" and apply the user profiles selected from the "Source Computer".
-
-There are options in the **SuperGrate.xml** and settings menu that can change the behavior presented above.
 
 ## How Super Grate performs a Migration
 
