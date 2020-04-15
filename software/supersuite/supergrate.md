@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T02:37:53.991Z
+date: 2020-04-15T02:42:10.706Z
 tags: 
 ---
 
@@ -21,7 +21,7 @@ tags:
 
 # Using Super Grate
 
-## Backing up a user profile
+## Backing up a User Profile
 **Backing up a user profile** using Super Grate is "Super Easy".
 
 1. Enter the computer's host-name in the "Source Computer" text box.
@@ -30,7 +30,16 @@ tags:
 4. Select the User(s) you would like to back up.
 5. Press "Start".
 
-<img src="https://raw.githubusercontent.com/krisdb2009/documentation/master/supergrate/Annotation%202019-12-29%20110927.png">
+![annotation_2019-12-29_110927.png](/software/annotation_2019-12-29_110927.png)
+
+## Restoring a User Profile
+
+**Restoring a User Profile** is just as easy as Backing up a User Profile.
+
+1. Enter a Computer's Host-name in the "Destination Computer" text box.
+2. Press "List Store" to display a list of Profiles available in the Backup Store.
+3. Select the Users you would like to restore to the "Destination Computer".
+4. Press "Start".
 
 # Development
 
