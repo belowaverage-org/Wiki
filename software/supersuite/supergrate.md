@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T04:14:35.512Z
+date: 2020-04-15T04:15:55.193Z
 tags: 
 ---
 
@@ -23,7 +23,7 @@ tags:
 1. Simply download from one of the following sources:
     * [below average](https://belowaverage.org/software/supergrate/download/)
     * [GitHub](https://github.com/belowaverage-org/SuperGrate/releases)
-2. Run the installer, or run the portable version.
+2. Run the installer, or run the [portable version](#portable-version).
 3. Done!
 
 ## Unified Store Setup
