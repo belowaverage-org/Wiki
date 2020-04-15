@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T02:42:10.706Z
+date: 2020-04-15T02:46:47.068Z
 tags: 
 ---
 
@@ -30,7 +30,7 @@ tags:
 4. Select the User(s) you would like to back up.
 5. Press "Start".
 
-![annotation_2019-12-29_110927.png](/software/annotation_2019-12-29_110927.png)
+![backing-up-a-user-profile.png](/software/backing-up-a-user-profile.png)
 
 ## Restoring a User Profile
 
@@ -40,6 +40,8 @@ tags:
 2. Press "List Store" to display a list of Profiles available in the Backup Store.
 3. Select the Users you would like to restore to the "Destination Computer".
 4. Press "Start".
+
+![restoring-a-user-profile.png](/software/restoring-a-user-profile.png)
 
 # Development
 
