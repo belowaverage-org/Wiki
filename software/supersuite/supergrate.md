@@ -2,10 +2,13 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T02:24:34.379Z
+date: 2020-04-15T02:27:45.279Z
 tags: 
 ---
 
+# Super Grate
+
+## Backing up a user profile
 <b>Backing up a user profile</b> using Super Grate is "Super Easy".
 
 1. Enter the computer's host-name in the "Source Computer" text box.
