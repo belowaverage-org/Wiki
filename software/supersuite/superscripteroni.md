@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:14:46.236Z
+date: 2020-04-15T20:17:14.287Z
 tags: 
 ---
 
@@ -54,12 +54,17 @@ In the new GPO you just created in the [first step](#adding-the-super-scripteron
 ![gc.png](/assets/software/supersuite/superscripteroni/gc.png)
 ![gc1.png](/assets/software/supersuite/superscripteroni/gc1.png)
 
-<h3>Removing a deployment from Super Scripteroni.</h3>
-  <p>When removing a deployment from a GPO you must remove the files policy for the deployment you are trying to remove and add a folder policy to remove the deployment to prevent the SuperScripteroni script from invoking the deployed script next time GPO is updated. For example:</p>
-  <img width="500" src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/deletedeployment.png">
-<h3>Targeting a deployment from Super Scripteroni.</h3>
-<p>Targeting a deployment from Super Scripteroni requires two additional items to be in place (2 file items and 1 folder item). The <a href="https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFilesGPO1.xml">first file item</a> will be set up the same as the items described in <a href="https://github.com/belowaverage-org/SuperScripteroni#adding-a-deployment-to-super-scripteroni">Adding a deployment to Super Scripteroni.</a> The <a href="https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFilesGPO2.xml">second file item</a> will be a copy of the first item but set up in "Update" mode with "Apply once" disabled. The third <a href="https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFoldersGPO.xml">item (folder item)</a> will point to the targeted package on the local C: drive with the action set to "Delete" with the item level targeting set opposite to the first two items. For example:</p>
-<h4>File Item 1</h4>
+## Removing a deployment from Super Scripteroni.
+
+When removing a deployment from a GPO you must remove the files policy for the deployment you are trying to remove and add a folder policy to remove the deployment to prevent the SuperScripteroni script from invoking the deployed script next time GPO is updated. For example:
+
+![deletedeployment.png](/assets/software/supersuite/superscripteroni/deletedeployment.png)
+
+## Targeting a deployment from Super Scripteroni.
+
+Targeting a deployment from Super Scripteroni requires two additional items to be in place (2 file items and 1 folder item). The [first file item](https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFilesGPO1.xml) will be set up the same as the items described in [Adding a deployment to Super Scripteroni.](https://github.com/belowaverage-org/SuperScripteroni#adding-a-deployment-to-super-scripteroni) The [second file item](https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFilesGPO2.xml) will be a copy of the first item but set up in "Update" mode with "Apply once" disabled. The third [item (folder item)](https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFoldersGPO.xml) will point to the targeted package on the local C: drive with the action set to "Delete" with the item level targeting set opposite to the first two items. For example:
+
+### File Item 1
 <img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/targeting1.png">
 <h4>File Item 2</h4>
 <img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/targeting2.png">
