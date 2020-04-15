@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T04:09:35.750Z
+date: 2020-04-15T04:10:56.535Z
 tags: 
 ---
 
@@ -38,7 +38,7 @@ Super Grate fully supports **unification** of its various components, for exampl
 Super Grate supports all of this by simply supporting [UNC](https://en.wikipedia.org/wiki/Path_(computing)#Universal_Naming_Convention) paths.
 
 Try placing SuperGrate.exe on a shared folder and configuring its settings and paths to also point at a shared folder.
-You can also set permissions on the folders to lock down what Super Grate users can do. (for instance: write protecting the **SuperGrate.xml**)
+You can also set permissions on the folders to lock down what Super Grate users can do. (for instance: write protecting the [SuperGrate.xml](#supergratexml))
 
 ## 1.2.0.0 to 1.3.0.0 Upgrade Guide
 
