@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T03:48:58.220Z
+date: 2020-04-15T03:50:14.798Z
 tags: 
 ---
 
@@ -142,6 +142,10 @@ Below is an example of the SuperGrate.xml file:
   <ULStoreColumns>0,1,5,6,4</ULStoreColumns>
 </SuperGrate>
 ```
+
+## How Super Grate performs a Migration
+
+![migration-flowchart.svg](/software/migration-flowchart.svg)
 
 # Known Issues
 
