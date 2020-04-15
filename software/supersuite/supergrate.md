@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T03:50:14.798Z
+date: 2020-04-15T03:51:40.323Z
 tags: 
 ---
 
@@ -142,6 +142,13 @@ Below is an example of the SuperGrate.xml file:
   <ULStoreColumns>0,1,5,6,4</ULStoreColumns>
 </SuperGrate>
 ```
+
+## Full Migration
+
+A **Full Migration** is a Super Grate sequence where both the "Source Computer" and "Destination Computer" are occupied.
+When the backup / migration is started, Super Grate will back up the user profiles selected from the "Source Computer" to the store, then connect to the "Destination Computer" and apply the user profiles selected from the "Source Computer".
+
+There are options in the **SuperGrate.xml** and settings menu that can change the behavior presented above.
 
 ## How Super Grate performs a Migration
 
