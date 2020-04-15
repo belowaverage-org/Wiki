@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:23:47.397Z
+date: 2020-04-15T20:24:02.207Z
 tags: 
 ---
 
@@ -96,5 +96,6 @@ If you change your deployment script (\*.ps1) or change the files associated wit
 # How do I create a package for Super Scripteroni?
 To create a deployment, all that is needed is a script in a folder named however you like under the "Deploy" folder on a share and a file item in GPO (or more if using targeting). Here is an example for a deployment of LAPS:
 
-<a href="https://github.com/belowaverage-org/SuperScripteroni/blob/master/LapsInstallExample.ps1">install.ps1</a>
+[install.ps1](https://github.com/belowaverage-org/SuperScripteroni/blob/master/LapsInstallExample.ps1)
+
 <img src="https://github.com/belowaverage-org/SuperScripteroni/blob/master/images/LapsEg.png">
