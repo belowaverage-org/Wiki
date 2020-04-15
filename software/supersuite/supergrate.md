@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T02:53:00.389Z
+date: 2020-04-15T02:56:35.030Z
 tags: 
 ---
 
@@ -52,6 +52,18 @@ tags:
 ![restoring-a-user-profile.png](/software/restoring-a-user-profile.png)
 
 # Development
+
+# Further Reading
+
+## Portable Version
+
+Super Grate supports being **"Portable"** meaning that Super Grate can be run in a stand-alone environment, like off of a USB thumb drive, or external HDD drive.
+
+All you need to do is download the Super Grate installer, and de-select all components in the installer except "Super Grate", then in the next slide select the location where SuperGrate.exe will be copied. From there, you can move SuperGrate.exe to wherever you want and run it normally.
+
+Super Grate will download any necessary dependencies when they are needed.
+
+A portable version of Super Grate allows the operator to back up profiles to a USB thumb drive or USB external HDD easier, and quicker. It also helps in scenarios where the computer you are trying to back up has no disk space available for scratch space.
 
 # Known Issues
 
