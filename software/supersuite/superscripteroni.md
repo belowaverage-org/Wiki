@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:24:02.207Z
+date: 2020-04-15T20:24:32.836Z
 tags: 
 ---
 
@@ -98,4 +98,4 @@ To create a deployment, all that is needed is a script in a folder named however
 
 [install.ps1](https://github.com/belowaverage-org/SuperScripteroni/blob/master/LapsInstallExample.ps1)
 
-<img src="https://github.com/belowaverage-org/SuperScripteroni/blob/master/images/LapsEg.png">
+![lapseg.png](/assets/software/supersuite/superscripteroni/lapseg.png)
