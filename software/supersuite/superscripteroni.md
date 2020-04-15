@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:18:27.845Z
+date: 2020-04-15T20:19:32.702Z
 tags: 
 ---
 
@@ -66,16 +66,16 @@ Targeting a deployment from Super Scripteroni requires two additional items to b
 
 ### File Item 1
 
-<img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/targeting1.png">
+![targeting1.png](/assets/software/supersuite/superscripteroni/targeting1.png)
 
 ### File Item 2
 
-<img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/targeting2.png">
+![targeting2.png](/assets/software/supersuite/superscripteroni/targeting2.png)
 
 ### Folder Item
 
-<img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/targeting3.png">
-<img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/targeting4.png">
+![targeting3.png](/assets/software/supersuite/superscripteroni/targeting3.png)
+![targeting4.png](/assets/software/supersuite/superscripteroni/targeting4.png)
 
 <p>When targeting, the reason there needs to be two file items and 1 folder item set up the way they are is to allow computers to move in and out of the targeting scope and update their deployments accordingly. The first file item initially adds and allows for updates of a deployment, file item 2 allows a computer object to re-obtain a deployment if it were to be deleted by the folder item GPO, and the folder item inverts the targeting to remove a deployment if it falls out of the targeting scope defined in the first two file items.</p>
 <h3>Securing Super Scripteroni.</h3>
