@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:22:47.756Z
+date: 2020-04-15T20:23:47.397Z
 tags: 
 ---
 
@@ -91,8 +91,10 @@ Since both the scheduled task for Super Scripteroni and the GPO Client service r
 
 If you change your deployment script (\*.ps1) or change the files associated with the deployment, you must open the file item in group policy and navigate to the "Common" tab where you will uncheck "apply once and do not re-apply", press "Apply", then re-check "apply once and do not re-apply" and then press "Apply" once more. This will change the GUID on the file item and cause the GPO Service on the client computers to force re-download the files specified in the file item.
 
-<img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/gc1.png">
-<h1>How do I create a package for Super Scripteroni?</h1>
-<p>To create a deployment, all that is needed is a script in a folder named however you like under the "Deploy" folder on a share and a file item in GPO (or more if using targeting). Here is an example for a deployment of LAPS:</p>
+![gc1.png](/assets/software/supersuite/superscripteroni/gc1.png)
+
+# How do I create a package for Super Scripteroni?
+To create a deployment, all that is needed is a script in a folder named however you like under the "Deploy" folder on a share and a file item in GPO (or more if using targeting). Here is an example for a deployment of LAPS:
+
 <a href="https://github.com/belowaverage-org/SuperScripteroni/blob/master/LapsInstallExample.ps1">install.ps1</a>
 <img src="https://github.com/belowaverage-org/SuperScripteroni/blob/master/images/LapsEg.png">
