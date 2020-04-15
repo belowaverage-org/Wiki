@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T04:14:15.583Z
+date: 2020-04-15T04:14:35.512Z
 tags: 
 ---
 
@@ -50,7 +50,7 @@ You can also set permissions on the folders to lock down what Super Grate users 
 
 #### Upgrading the [Backup Store](#backup-store).
 
-1. Download the following PowerShell script from here: <a href="https://github.com/belowaverage-org/SuperGrate/blob/master/SuperGrateTools/store_upgrade_1.2.0.0_1.3.0.0.ps1">store_upgrade_1.2.0.0_1.3.0.0.ps1</a>.
+1. Download the following PowerShell script from here: [store_upgrade_1.2.0.0_1.3.0.0.ps1](https://github.com/belowaverage-org/SuperGrate/blob/master/SuperGrateTools/store_upgrade_1.2.0.0_1.3.0.0.ps1).
 2. Copy the script to your SuperGrate directory where the STORE folder is located. (Do not copy into the STORE folder).
 3. Execute the .ps1 script, there should be no errors.
 
