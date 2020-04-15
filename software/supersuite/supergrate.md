@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T02:56:35.030Z
+date: 2020-04-15T02:57:49.478Z
 tags: 
 ---
 
@@ -64,6 +64,37 @@ All you need to do is download the Super Grate installer, and de-select all comp
 Super Grate will download any necessary dependencies when they are needed.
 
 A portable version of Super Grate allows the operator to back up profiles to a USB thumb drive or USB external HDD easier, and quicker. It also helps in scenarios where the computer you are trying to back up has no disk space available for scratch space.
+
+## SuperGrate.xml
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<SuperGrate>
+  <!--The UNC or Direct path to the USMT directory. (E.g: .\USMT\X64)-->
+  <USMTPathX64>.\USMT\X64</USMTPathX64>
+  <USMTPathX86>.\USMT\X86</USMTPathX86>
+  <!--Local path on source computer where Super Grate will run USMT from. (E.g: C:\SuperGrate)-->
+  <SuperGratePayloadPath>C:\SuperGrate</SuperGratePayloadPath>
+  <!--The UNC or Direct path to the USMT Migration Store (E.g: \\ba-share\s$ or .\STORE)-->
+  <MigrationStorePath>.\STORE</MigrationStorePath>
+  <!--ScanState.exe & LoadState.exe CLI Parameters. See: https://docs.microsoft.com/en-us/windows/deployment/usmt/usmt-command-line-syntax -->
+  <ScanStateParameters>/config:Config_SettingsOnly.xml /i:MigUser.xml /c /r:3 /o</ScanStateParameters>
+  <LoadStateParameters>/config:Config_SettingsOnly.xml /i:MigUser.xml /c /r:3 /lac /lae</LoadStateParameters>
+  <!--Delete the user from the migration store after a restore? (store to destination)-->
+  <AutoDeleteFromStore>false</AutoDeleteFromStore>
+  <!--Delete the user from the source computer after a backup? (source to store)-->
+  <AutoDeleteFromSource>false</AutoDeleteFromSource>
+  <!--Prevent NT AUTHORITY & NT SERVICE accounts from being listed?-->
+  <HideBuiltInAccounts>true</HideBuiltInAccounts>
+  <!--Prevent unknown accounts from being listed?-->
+  <HideUnknownSIDs>false</HideUnknownSIDs>
+  <!--Write log to disk on exit. (Leave blank to disable) (E.g: \\ba-share\s$\Logs or .\Logs)-->
+  <DumpLogHereOnExit></DumpLogHereOnExit>
+  <!--List of columns to display for the Source or Store users.-->
+  <ULSourceColumns>0,3,9</ULSourceColumns>
+  <ULStoreColumns>0,1,5,6,4</ULStoreColumns>
+</SuperGrate>
+```
 
 # Known Issues
 
