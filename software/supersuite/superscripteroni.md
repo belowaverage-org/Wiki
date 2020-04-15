@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:32:30.996Z
+date: 2020-04-15T20:34:25.006Z
 tags: 
 ---
 
