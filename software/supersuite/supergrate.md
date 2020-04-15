@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T04:13:18.350Z
+date: 2020-04-15T04:14:15.583Z
 tags: 
 ---
 
@@ -48,7 +48,7 @@ You can also set permissions on the folders to lock down what Super Grate users 
 2. Navigate to "File", then "Settings..." or press the "F12" on your keyboard.
 3. Press "Save to Disk" to add the new settings to your [SuperGrate.xml](#supergratexml)
 
-#### Upgrading the User Store.
+#### Upgrading the [Backup Store](#backup-store).
 
 1. Download the following PowerShell script from here: <a href="https://github.com/belowaverage-org/SuperGrate/blob/master/SuperGrateTools/store_upgrade_1.2.0.0_1.3.0.0.ps1">store_upgrade_1.2.0.0_1.3.0.0.ps1</a>.
 2. Copy the script to your SuperGrate directory where the STORE folder is located. (Do not copy into the STORE folder).
