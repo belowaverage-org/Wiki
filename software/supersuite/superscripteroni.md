@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:09:36.929Z
+date: 2020-04-15T20:11:40.482Z
 tags: 
 ---
 
@@ -14,13 +14,13 @@ tags:
 
 ### Super Scripteroni is a PowerShell script used to deploy software to domain joined computers via GPO. This script is meant to bypass the use of the built in software deployment GPO (Computer Configuration / Software Settings / Software installation). Super Scripteroni runs in the background via a scheduled task after Group Policies have applied. (Or whenever you configure it to run)
 
-## How does Super Scripteroni Work?
+# How does Super Scripteroni Work?
 
-### Super Scripteroni Folder Tree
+## Super Scripteroni Folder Tree
 
 ![filetree.bmp](/assets/software/supersuite/superscripteroni/filetree.bmp)
 
-### [SuperScripteroni.ps1](https://github.com/belowaverage-org/SuperScripteroni/blob/master/SuperScripteroni.ps1)
+## [SuperScripteroni.ps1](https://github.com/belowaverage-org/SuperScripteroni/blob/master/SuperScripteroni.ps1)
 
 1. Group policies apply.
 2. Scheduled task starts SuperScripteroni.ps1.
@@ -30,9 +30,9 @@ tags:
     
 Because of the way the SuperScripteroni.ps1 script works, each deployment script will need to perform the necessary checks to see if the application that is to be deployed already exists to prevent duplicate installs. See [ChromeInstall.ps1](https://github.com/belowaverage-org/SuperScripteroni/blob/master/ChromeInstall.ps1) for an example.
 
-## How do I set up the Group Policy for Super Scripteroni?
+# How do I set up the Group Policy for Super Scripteroni?
 
-### Adding the Super Scripteroni Base Script to a new GPO.
+## Adding the Super Scripteroni Base Script to a new GPO.
 
 1. In a GPO of your choice, under Computer Configuration / Preferences / Windows Settings / Files, copy and paste the contents of [ScriptCopy.xml](https://github.com/belowaverage-org/SuperScripteroni/blob/master/ScriptCopy.xml) into the Group Policy Management Editor.
 2. After pasted, edit the item to point where you want your SuperScripteroni instance to be installed.
@@ -40,7 +40,7 @@ Because of the way the SuperScripteroni.ps1 script works, each deployment script
 ![ss2.png](/assets/software/supersuite/superscripteroni/ss2.png)
 ![ss1.png](/assets/software/supersuite/superscripteroni/ss1.png)
 
-### Adding the Super Scripteroni Scheduled Task to the new GPO.
+## Adding the Super Scripteroni Scheduled Task to the new GPO.
 
 In the new GPO you just created in the [first step](), under Computer Configuration / Preferences / Control Panel Settings / Scheduled Tasks, copy and paste the contents of [ScheduledTaskGPO.xml](https://github.com/belowaverage-org/SuperScripteroni/blob/master/ScheduledTaskGPO.xml) into a text editor and edit the highlighted section shown in the picture below to point to where the SuperScripteroni.ps1 script is located, then copy the XML and paste into the GPO editor.
 
