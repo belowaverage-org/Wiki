@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T03:53:20.373Z
+date: 2020-04-15T03:56:21.294Z
 tags: 
 ---
 
@@ -40,6 +40,23 @@ Super Grate supports all of this by simply supporting [UNC](https://en.wikipedia
 Try placing SuperGrate.exe on a shared folder and configuring its settings and paths to also point at a shared folder.
 You can also set permissions on the folders to lock down what Super Grate users can do. (for instance: write protecting the **SuperGrate.xml**)
 
+## 1.2.0.0 to 1.3.0.0 Upgrade Guide
+
+#### Upgrading SuperGrate.xml.
+
+1. Open the new Super Grate after replacing the old executable.
+2. Navigate to "File", then "Settings..." or press the "F12" on your keyboard.
+3. Press "Save to Disk" to add the new settings to your SuperGrate.xml
+
+#### Upgrading the User Store.
+
+1. Download the following PowerShell script from here: <a href="https://github.com/belowaverage-org/SuperGrate/blob/master/SuperGrateTools/store_upgrade_1.2.0.0_1.3.0.0.ps1">store_upgrade_1.2.0.0_1.3.0.0.ps1</a>.
+2. Copy the script to your SuperGrate directory where the STORE folder is located. (Do not copy into the STORE folder).
+3. Execute the .ps1 script, there should be no errors.
+
+#### Conclusion
+
+After running the steps above, Super Grate should run without a hitch.
 
 # Using Super Grate
 
