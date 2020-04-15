@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:11:40.482Z
+date: 2020-04-15T20:12:12.150Z
 tags: 
 ---
 
@@ -42,7 +42,7 @@ Because of the way the SuperScripteroni.ps1 script works, each deployment script
 
 ## Adding the Super Scripteroni Scheduled Task to the new GPO.
 
-In the new GPO you just created in the [first step](), under Computer Configuration / Preferences / Control Panel Settings / Scheduled Tasks, copy and paste the contents of [ScheduledTaskGPO.xml](https://github.com/belowaverage-org/SuperScripteroni/blob/master/ScheduledTaskGPO.xml) into a text editor and edit the highlighted section shown in the picture below to point to where the SuperScripteroni.ps1 script is located, then copy the XML and paste into the GPO editor.
+In the new GPO you just created in the [first step](#adding-the-super-scripteroni-base-script-to-a-new-gpo), under Computer Configuration / Preferences / Control Panel Settings / Scheduled Tasks, copy and paste the contents of [ScheduledTaskGPO.xml](https://github.com/belowaverage-org/SuperScripteroni/blob/master/ScheduledTaskGPO.xml) into a text editor and edit the highlighted section shown in the picture below to point to where the SuperScripteroni.ps1 script is located, then copy the XML and paste into the GPO editor.
 
 <img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/ScheduleEdit.png">
 <h3>Adding a deployment to Super Scripteroni.</h3>
