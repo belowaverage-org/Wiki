@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:19:32.702Z
+date: 2020-04-15T20:20:25.423Z
 tags: 
 ---
 
@@ -77,10 +77,14 @@ Targeting a deployment from Super Scripteroni requires two additional items to b
 ![targeting3.png](/assets/software/supersuite/superscripteroni/targeting3.png)
 ![targeting4.png](/assets/software/supersuite/superscripteroni/targeting4.png)
 
-<p>When targeting, the reason there needs to be two file items and 1 folder item set up the way they are is to allow computers to move in and out of the targeting scope and update their deployments accordingly. The first file item initially adds and allows for updates of a deployment, file item 2 allows a computer object to re-obtain a deployment if it were to be deleted by the folder item GPO, and the folder item inverts the targeting to remove a deployment if it falls out of the targeting scope defined in the first two file items.</p>
-<h3>Securing Super Scripteroni.</h3>
-<p>Super Scripteroni runs as system (unless you edit the scheduled task otherwise); therefore, any scripts that are placed in the Deploy folder will run as system. To prevent normal users from creating their own scripts and placing them in the Deploy folder an additional policy needs to be enabled under: Computer Configuration / Policies / Windows Settings / Security Settings / File System</p>
-<img src="https://raw.githubusercontent.com/belowaverage-org/SuperScripteroni/master/images/gposecurity.png">
+When targeting, the reason there needs to be two file items and 1 folder item set up the way they are is to allow computers to move in and out of the targeting scope and update their deployments accordingly. The first file item initially adds and allows for updates of a deployment, file item 2 allows a computer object to re-obtain a deployment if it were to be deleted by the folder item GPO, and the folder item inverts the targeting to remove a deployment if it falls out of the targeting scope defined in the first two file items.
+
+## Securing Super Scripteroni.
+
+Super Scripteroni runs as system (unless you edit the scheduled task otherwise); therefore, any scripts that are placed in the Deploy folder will run as system. To prevent normal users from creating their own scripts and placing them in the Deploy folder an additional policy needs to be enabled under: Computer Configuration / Policies / Windows Settings / Security Settings / File System
+
+![gposecurity.png](/assets/software/supersuite/superscripteroni/gposecurity.png)
+
 <p>Since both the scheduled task for Super Scripteroni and the GPO Client service run as system, the GPO needs to allow full control to system (already set by default when adding this folder) and deny normal users access to the folder (remove from the list).</p>
 <h3>Updating a deployment for Super Scripteroni.</h3>
 <p>If you change your deployment script (*.ps1) or change the files associated with the deployment, you must open the file item in group policy and navigate to the "Common" tab where you will uncheck "apply once and do not re-apply", press "Apply", then re-check "apply once and do not re-apply" and then press "Apply" once more. This will change the GUID on the file item and cause the GPO Service on the client computers to force re-download the files specified in the file item.</p>
