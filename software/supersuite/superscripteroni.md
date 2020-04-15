@@ -2,13 +2,11 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:24:32.836Z
+date: 2020-04-15T20:26:35.805Z
 tags: 
 ---
 
-<p align="center">
-  <img height="150" src="/assets/software/supersuite/superscripteroni/superscripteroni.png">
-</p>
+<img align="center" height="150" src="/assets/software/supersuite/superscripteroni/superscripteroni.png">
 
 ---
 
