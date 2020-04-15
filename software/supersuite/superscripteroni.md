@@ -2,7 +2,7 @@
 title: Super Scripteroni
 description: 
 published: true
-date: 2020-04-15T20:20:30.659Z
+date: 2020-04-15T20:21:55.100Z
 tags: 
 ---
 
@@ -62,7 +62,7 @@ When removing a deployment from a GPO you must remove the files policy for the d
 
 ## Targeting a deployment from Super Scripteroni.
 
-Targeting a deployment from Super Scripteroni requires two additional items to be in place (2 file items and 1 folder item). The [first file item](https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFilesGPO1.xml) will be set up the same as the items described in [Adding a deployment to Super Scripteroni.](https://github.com/belowaverage-org/SuperScripteroni#adding-a-deployment-to-super-scripteroni) The [second file item](https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFilesGPO2.xml) will be a copy of the first item but set up in "Update" mode with "Apply once" disabled. The third [item (folder item)](https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFoldersGPO.xml) will point to the targeted package on the local C: drive with the action set to "Delete" with the item level targeting set opposite to the first two items. For example:
+Targeting a deployment from Super Scripteroni requires two additional items to be in place (2 file items and 1 folder item). The [first file item](https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFilesGPO1.xml) will be set up the same as the items described in [Adding a deployment to Super Scripteroni.](#adding-a-deployment-to-super-scripteroni) The [second file item](https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFilesGPO2.xml) will be a copy of the first item but set up in "Update" mode with "Apply once" disabled. The third [item (folder item)](https://github.com/belowaverage-org/SuperScripteroni/blob/master/TargetedDeploymentFoldersGPO.xml) will point to the targeted package on the local C: drive with the action set to "Delete" with the item level targeting set opposite to the first two items. For example:
 
 ### File Item 1
 
