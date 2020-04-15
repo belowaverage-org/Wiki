@@ -2,7 +2,7 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T03:01:55.093Z
+date: 2020-04-15T03:03:58.787Z
 tags: 
 ---
 
@@ -25,6 +25,20 @@ tags:
     * [GitHub](https://github.com/belowaverage-org/SuperGrate/releases)
 2. Run the installer, or run the portable version.
 3. Done!
+
+## Unified Store Setup
+
+Super Grate fully supports **unification** of its various components, for example:
+
+* Unified Backup Store
+* Unified Configuration
+* Unified USMT Configuration
+* Unified Logging
+
+Super Grate supports all of this by simply supporting [UNC](https://en.wikipedia.org/wiki/Path_(computing)#Universal_Naming_Convention) paths.
+
+Try placing SuperGrate.exe on a shared folder and configuring its settings and paths to also point at a shared folder.
+You can also set permissions on the folders to lock down what Super Grate users can do. (for instance: write protecting the **SuperGrate.xml**)
 
 
 # Using Super Grate
