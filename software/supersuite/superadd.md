@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-16T17:23:47.795Z
+date: 2020-04-16T17:24:51.158Z
 tags: 
 ---
 
@@ -10,7 +10,7 @@ tags:
 
 # About
 
-
+![superaddimage.png](/assets/software/supersuite/superadd/superaddimage.png)
 
 Super ADD is a MDT (Microsoft Deployment Toolkit) extension that displays a GUI (Graphical User Interface) to a user running a LTI (Lite Touch Installation) that allows them to select / generate a computer name and description for Active Directory.
 
