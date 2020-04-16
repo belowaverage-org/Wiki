@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-16T17:51:45.678Z
+date: 2020-04-16T17:53:37.294Z
 tags: 
 ---
 
@@ -36,7 +36,7 @@ JoinWorkgroup=WORKGROUP
 ![ini.jpg](/assets/software/supersuite/superadd/ini.jpg)
 
 3. "Update" the deployment share / rebuild the WinPE image.
-4. Insert the [XML from below](#superaddxml) to your desired task sequnce's ts.xml file.
+4. Insert the [ts.xml from below](#tsxml) to your desired task sequnce's ts.xml file.
 5. Copy SuperADD.exe to you deployment share in a folder at the root named "SuperADD". For example:
 
 `%DeploymentShare%\SuperADD\SuperADD.exe`
