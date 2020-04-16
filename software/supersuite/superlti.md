@@ -2,7 +2,7 @@
 title: Super LTI
 description: 
 published: true
-date: 2020-04-16T18:26:07.323Z
+date: 2020-04-16T18:27:51.804Z
 tags: 
 ---
 
@@ -46,3 +46,8 @@ Because MDT (Microsoft Deployment Toolkit) sucks when working with powershell. A
 
 ![2.png](/assets/software/supersuite/superlti/2.png)
 
+5. Test the package as a whole by running the `SuperLTI.exe`. *Make sure both the SuperLTI.exe and SuperLTI.zip files are in the same working directory.*
+
+*Demonstration:*
+
+![superlti.gif](/assets/software/supersuite/superlti/superlti.gif)
