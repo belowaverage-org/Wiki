@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-16T17:24:51.158Z
+date: 2020-04-16T17:25:49.101Z
 tags: 
 ---
 
@@ -19,6 +19,8 @@ Super ADD also creates the computer accounts as soon as the user selects "Save" 
 # Installation
 
 # Command Line
+
+![help.png](/assets/software/supersuite/superadd/help.png)
 
 # Resources
 
