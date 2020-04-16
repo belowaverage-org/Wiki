@@ -2,7 +2,7 @@
 title: Super LTI
 description: 
 published: true
-date: 2020-04-16T18:18:16.095Z
+date: 2020-04-16T18:26:07.323Z
 tags: 
 ---
 
@@ -27,4 +27,22 @@ Super LTI is a one click install wrapper powered by PowerShell.
 ## Why?
 
 Because MDT (Microsoft Deployment Toolkit) sucks when working with powershell. And random scripts all over the Deployment Share's software folder can begin to get messy. This makes it hard to determine what PowerShell files need to be run and if they need elevation or not.
+
+# Creating a SuperLTI package.
+
+1. Download [SuperLTI.exe](https://github.com/belowaverage-org/SuperLTI/releases)
+2. Create a PS1 file named `SuperLTI.ps1`
+3. Create a script that does a thing like so:
+
+*Example:*
+
+![1.png](/assets/software/supersuite/superlti/1.png)
+
+*Tip: Use the "Write-Progress" function as shown above to display a progress indicator in the SuperLTI window.*
+
+4. Test the script then copy the files in your package into a ZIP file named `SuperLTI.zip`
+
+*Example:*
+
+![2.png](/assets/software/supersuite/superlti/2.png)
 
