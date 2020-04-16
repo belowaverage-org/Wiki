@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-16T17:43:43.823Z
+date: 2020-04-16T17:45:55.835Z
 tags: 
 ---
 
@@ -39,9 +39,7 @@ JoinWorkgroup=WORKGROUP
 4. Insert the [XML from below](#superaddxml) to your desired task sequnce's ts.xml file.
 5. Copy SuperADD.exe to you deployment share in a folder at the root named "SuperADD". For example:
 
-`
-%DeploymentShare%\SuperADD\SuperADD.exe
-`
+`%DeploymentShare%\SuperADD\SuperADD.exe`
 
 6. Configure the SuperADD.xml to your liking. If the SuperADD.xml does not exist, run SuperADD.exe once to generate it.
 
@@ -52,8 +50,12 @@ JoinWorkgroup=WORKGROUP
 
 ## Join domain at very end of LTI
 
-### First Steps
+1. Download this [file](https://github.com/belowaverage-org/SuperADD/blob/master/Scripts/Start-Join.ps1).
+2. Place this file (**Start-Join.ps1**) in the SuperADD directory located on your deployment share.
 
+`%DeploymentShare%\SuperADD\Start-Join.ps1`
+
+3. 
 
 # Command Line
 
