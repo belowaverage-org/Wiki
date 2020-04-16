@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-16T17:30:23.375Z
+date: 2020-04-16T17:41:37.659Z
 tags: 
 ---
 
@@ -17,6 +17,40 @@ Super ADD is a MDT (Microsoft Deployment Toolkit) extension that displays a GUI 
 Super ADD also creates the computer accounts as soon as the user selects "Save" to prevent computer objects from being over-written from parallel instances of LTI.
 
 # Installation
+
+## Standard Installation
+
+1. Include .NET Framework in WinPE image.
+
+![net.jpg](/assets/software/supersuite/superadd/net.jpg)
+
+2. Add the following rules to CustomSettings.ini
+
+```ini
+SkipDomainMembership=YES
+SkipComputerName=YES
+JoinDomain=ad.contoso.com
+JoinWorkgroup=WORKGROUP
+```
+
+![ini.jpg](/assets/software/supersuite/superadd/ini.jpg)
+
+3. "Update" the deployment share / rebuild the WinPE image.
+4. Insert the [XML from below](#superaddxml) to your desired task sequnce's ts.xml file.
+5. Copy SuperADD.exe to you deployment share in a folder at the root named "SuperADD". For example:
+
+`
+%DeploymentShare%\SuperADD\SuperADD.exe
+`
+
+6. Configure the SuperADD.xml to your liking. If the SuperADD.xml does not exist, run SuperADD.exe once to generate it.
+
+***Optional:***
+
+*7. Proceed to "Join domain at very end of LTI" if you wish to have LTI join the PC to the domain after LTI finishes.*
+
+
+## Join domain at very end of LTI
 
 # Command Line
 
