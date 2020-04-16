@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-16T17:45:55.835Z
+date: 2020-04-16T17:48:55.878Z
 tags: 
 ---
 
@@ -55,7 +55,42 @@ JoinWorkgroup=WORKGROUP
 
 `%DeploymentShare%\SuperADD\Start-Join.ps1`
 
-3. 
+3. Paste the following XML into the ts.xml of your choosing after the SuperADD sequnce group.
+
+```xml
+<group expand="true" name="SuperADD - Delay Domain Join" description="This group will decide weather or not to delay a domain join based on SuperADD's outcome." disable="false" continueOnError="false">
+  <action />
+  <condition></condition>
+  <step type="SMS_TaskSequence_SetVariableAction" name="Set DelayJoinDomain" description="" disable="false" continueOnError="false" successCodeList="0 3010">
+    <defaultVarList>
+      <variable name="VariableName" property="VariableName">DelayJoinDomain</variable>
+      <variable name="VariableValue" property="VariableValue">%JoinDomain%</variable>
+    </defaultVarList>
+    <action>cscript.exe "%SCRIPTROOT%\ZTISetVariable.wsf"</action>
+  </step>
+  <step type="SMS_TaskSequence_SetVariableAction" name="Clear JoinDomain" description="" disable="false" continueOnError="false" successCodeList="0 3010">
+    <defaultVarList>
+      <variable name="VariableName" property="VariableName">JoinDomain</variable>
+      <variable name="VariableValue" property="VariableValue"></variable>
+    </defaultVarList>
+    <action>cscript.exe "%SCRIPTROOT%\ZTISetVariable.wsf"</action>
+  </step>
+</group>
+```
+
+4. Paste the following XML into the ts.xml of your choosing as the last step in the task sequence.
+
+```xml
+<step type="BDD_RunPowerShellAction" name="SuperADD - Start Join &amp; Reboot" description="This item will wait for MDT to exit, start another process that clears all NET connections, joins the PC to the domain and re-boots the PC." disable="false" continueOnError="false" successCodeList="0 3010">
+  <defaultVarList>
+    <variable name="ScriptName" property="ScriptName">%DeployDrive%\SuperADD\Start-Join.ps1</variable>
+    <variable name="Parameters" property="Parameters">-DomainName "%DelayJoinDomain%" -ComputerName "%OSDComputerName%" -UserName "%DomainAdmin%" -Password "%DomainAdminPassword%"</variable>
+    <variable name="PackageID" property="PackageID"></variable>
+  </defaultVarList>
+  <action>cscript.exe "%SCRIPTROOT%\ZTIPowerShell.wsf</action>
+  <condition></condition>
+</step>
+```
 
 # Command Line
 
