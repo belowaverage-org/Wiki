@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-17T01:15:27.327Z
+date: 2020-04-17T01:16:03.692Z
 tags: 
 ---
 
@@ -21,8 +21,8 @@ Super ADD also creates the computer accounts as soon as the user selects "Save" 
 ## Standard Installation
 
 1. Include .NET Framework in WinPE image.
-\
-![net.jpg](/assets/software/supersuite/superadd/net.jpg)
+
+ ![net.jpg](/assets/software/supersuite/superadd/net.jpg)
 
 2. Add the following rules to CustomSettings.ini
 
