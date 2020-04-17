@@ -2,7 +2,7 @@
 title: Super LTI
 description: 
 published: true
-date: 2020-04-16T18:27:51.804Z
+date: 2020-04-17T01:48:17.244Z
 tags: 
 ---
 
@@ -30,9 +30,9 @@ Because MDT (Microsoft Deployment Toolkit) sucks when working with powershell. A
 
 # Creating a SuperLTI package.
 
-1. Download [SuperLTI.exe](https://github.com/belowaverage-org/SuperLTI/releases)
-2. Create a PS1 file named `SuperLTI.ps1`
-3. Create a script that does a thing like so:
+1\. Download [SuperLTI.exe](https://github.com/belowaverage-org/SuperLTI/releases)
+2\. Create a PS1 file named `SuperLTI.ps1`
+3\. Create a script that does a thing like so:
 
 *Example:*
 
@@ -40,13 +40,13 @@ Because MDT (Microsoft Deployment Toolkit) sucks when working with powershell. A
 
 *Tip: Use the "Write-Progress" function as shown above to display a progress indicator in the SuperLTI window.*
 
-4. Test the script then copy the files in your package into a ZIP file named `SuperLTI.zip`
+4\. Test the script then copy the files in your package into a ZIP file named `SuperLTI.zip`
 
 *Example:*
 
 ![2.png](/assets/software/supersuite/superlti/2.png)
 
-5. Test the package as a whole by running the `SuperLTI.exe`. *Make sure both the SuperLTI.exe and SuperLTI.zip files are in the same working directory.*
+5\. Test the package as a whole by running the `SuperLTI.exe`. *Make sure both the SuperLTI.exe and SuperLTI.zip files are in the same working directory.*
 
 *Demonstration:*
 
