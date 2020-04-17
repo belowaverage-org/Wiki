@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-17T01:26:18.155Z
+date: 2020-04-17T01:38:23.704Z
 tags: 
 ---
 
@@ -18,10 +18,9 @@ tags:
 
 # Installation
 
-## Standard Installation
+## Standard Installation  
 
 1. Include .NET Framework in WinPE image.
-
     > ![net.jpg](/assets/software/supersuite/superadd/net.jpg)
     
 2. Add the following rules to CustomSettings.ini
