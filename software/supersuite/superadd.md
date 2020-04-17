@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-17T01:41:48.859Z
+date: 2020-04-17T01:43:57.744Z
 tags: 
 ---
 
@@ -33,7 +33,7 @@ JoinWorkgroup=WORKGROUP
 3. "Update" the deployment share / rebuild the WinPE image.
 4. Insert the [ts.xml from below](#tsxml) to your desired task sequnce's ts.xml file.
 5. Copy SuperADD.exe to you deployment share in a folder at the root named "SuperADD". For example:
-`%DeploymentShare%\SuperADD\SuperADD.exe`
+> `%DeploymentShare%\SuperADD\SuperADD.exe`
 6. Configure the SuperADD.xml to your liking. If the SuperADD.xml does not exist, run SuperADD.exe once to generate it.
 
 ***Optional:***
@@ -45,9 +45,7 @@ JoinWorkgroup=WORKGROUP
 
 1. Download this [file](https://github.com/belowaverage-org/SuperADD/blob/master/Scripts/Start-Join.ps1).
 2. Place this file (**Start-Join.ps1**) in the SuperADD directory located on your deployment share.
-
-`%DeploymentShare%\SuperADD\Start-Join.ps1`
-
+>`%DeploymentShare%\SuperADD\Start-Join.ps1`
 3. Paste the following XML into the ts.xml of your choosing after the SuperADD sequnce group.
 
 ```xml
