@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-17T01:16:51.694Z
+date: 2020-04-17T01:21:18.947Z
 tags: 
 ---
 
@@ -12,18 +12,16 @@ tags:
 
 ![superaddimage.png](/assets/software/supersuite/superadd/superaddimage.png)
 
-Super ADD is a MDT (Microsoft Deployment Toolkit) extension that displays a GUI (Graphical User Interface) to a user running a LTI (Lite Touch Installation) that allows them to select / generate a computer name and description for Active Directory.
-
-Super ADD also creates the computer accounts as soon as the user selects "Save" to prevent computer objects from being over-written from parallel instances of LTI.
+> Super ADD is a MDT (Microsoft Deployment Toolkit) extension that displays a GUI (Graphical User Interface) to a user running a LTI (Lite Touch Installation) that allows them to select / generate a computer name and description for Active Directory.
+> 
+> Super ADD also creates the computer accounts as soon as the user selects "Save" to prevent computer objects from being over-written from parallel instances of LTI.
 
 # Installation
 
 ## Standard Installation
 
 1. Include .NET Framework in WinPE image.
-
-![net.jpg](/assets/software/supersuite/superadd/net.jpg)
-
+> ![net.jpg](/assets/software/supersuite/superadd/net.jpg)
 2. Add the following rules to CustomSettings.ini
 
 ```ini
