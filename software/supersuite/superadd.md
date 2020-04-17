@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-17T01:45:56.929Z
+date: 2020-04-17T01:46:22.304Z
 tags: 
 ---
 
@@ -45,7 +45,7 @@ JoinWorkgroup=WORKGROUP
 
 ***Optional:***
 
-7\. *Proceed to "Join domain at very end of LTI" if you wish to have LTI join the PC to the domain after LTI finishes.*
+*7\. Proceed to "Join domain at very end of LTI" if you wish to have LTI join the PC to the domain after LTI finishes.*
 
 
 ## Join domain at very end of LTI
