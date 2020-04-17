@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-17T01:24:17.374Z
+date: 2020-04-17T01:25:03.117Z
 tags: 
 ---
 
@@ -21,7 +21,7 @@ tags:
 ## Standard Installation
 
 1. Include .NET Framework in WinPE image.
-    ![net.jpg](/assets/software/supersuite/superadd/net.jpg)
+    > ![net.jpg](/assets/software/supersuite/superadd/net.jpg)
 2. Add the following rules to CustomSettings.ini
 ```ini
 SkipDomainMembership=YES
