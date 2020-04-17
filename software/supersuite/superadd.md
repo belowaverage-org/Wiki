@@ -2,7 +2,7 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-17T01:38:35.959Z
+date: 2020-04-17T01:41:48.859Z
 tags: 
 ---
 
@@ -20,19 +20,16 @@ tags:
 
 ## Standard Installation  
 
-1. Include .NET Framework in WinPE image.  
-![net.jpg](/assets/software/supersuite/superadd/net.jpg)   
+1. Include .NET Framework in WinPE image.<br>
+![net.jpg](/assets/software/supersuite/superadd/net.jpg)<br><br>
 2. Add the following rules to CustomSettings.ini
-
 ```ini
 SkipDomainMembership=YES
 SkipComputerName=YES
 JoinDomain=ad.contoso.com
 JoinWorkgroup=WORKGROUP
 ```
-
 ![ini.jpg](/assets/software/supersuite/superadd/ini.jpg)
-
 3. "Update" the deployment share / rebuild the WinPE image.
 4. Insert the [ts.xml from below](#tsxml) to your desired task sequnce's ts.xml file.
 5. Copy SuperADD.exe to you deployment share in a folder at the root named "SuperADD". For example:
