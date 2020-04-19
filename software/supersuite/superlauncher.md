@@ -2,7 +2,7 @@
 title: Super Launcher
 description: 
 published: true
-date: 2020-04-19T00:40:22.102Z
+date: 2020-04-19T00:41:12.750Z
 tags: 
 ---
 
@@ -111,7 +111,7 @@ Below is an example exported Scheduled Task. Import this into Scheduled Tasks an
 4. Browse to `#.#.#.#`.
 5. Copy the `user.config` to a safe place.
 
-> To restore the shorcuts, instead of doing step 5, paste a previously backed up `user.config` here by over-writing the previous file.
+> To restore the shorcuts, instead of doing step 5, paste a previously backed up `user.config` here by over-writing the current file.
 
 ## Known limitations
 
