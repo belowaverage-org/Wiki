@@ -2,7 +2,7 @@
 title: Super Launcher
 description: 
 published: true
-date: 2020-04-19T00:41:54.140Z
+date: 2020-04-19T00:45:08.942Z
 tags: 
 ---
 
@@ -111,7 +111,11 @@ Below is an example exported Scheduled Task. Import this into Scheduled Tasks an
 
 > To restore the shorcuts, instead of doing step 5, paste a previously backed up `user.config` here by over-writing the current file.
 
+## File management as another user
+
+A quirky tip to managing / accessing shared or local folders via an admin account can be accomplished by right clicking the Super Launcher tray icon, and selecting "Add shortcut...". Instead of adding a shortcut, you can do all your file management from this dialog as whatever user is currently running Super Launcher.
+There are plans to add a real file browser to Super Launcher for this exact reason, so stay tuned for that.
+
 ## Known limitations
 
 * Super Launcher saves the shortcuts in the user's AppData folder. This means when running Super Launcher in a portable environment (for example: from a USB thumb drive), Super Launcher will not save the shortcuts in that environment. *See: [backing up shortcuts](#backing-up-shortcuts), for a guide on backing up the shortcuts.*
-* 
