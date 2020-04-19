@@ -2,7 +2,7 @@
 title: Super Launcher
 description: 
 published: true
-date: 2020-04-19T00:29:08.544Z
+date: 2020-04-19T00:40:22.102Z
 tags: 
 ---
 
@@ -56,6 +56,9 @@ tags:
 
 ### As another user
 
+Below is an example exported Scheduled Task. Import this into Scheduled Tasks and modify to your desire. This is where the magic happens: `runas /savecred /user:domain\username "cmd /c start C:\SuperLauncher"`
+
+
 
 ```xml
 <?xml version="1.0" encoding="UTF-16"?>
@@ -102,6 +105,13 @@ tags:
 
 ## Backing up shortcuts
 
+1. Open Run dialog by pressing `Windows Key + R`.
+2. In the dialog box, input `%appdata%\..\Local\Dylan_Bickerstaff` and then press `Enter`.
+3. Browse to `.\SuperLauncher.exe_Url_[Random Letters and Numbers]`.
+4. Browse to `#.#.#.#`.
+5. Copy the `user.config` to a safe place.
+
+> To restore the shorcuts, instead of doing step 5, paste a previously backed up `user.config` here by over-writing the previous file.
 
 ## Known limitations
 
