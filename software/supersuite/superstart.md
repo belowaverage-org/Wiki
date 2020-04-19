@@ -2,7 +2,7 @@
 title: Super Start
 description: 
 published: true
-date: 2020-04-19T03:36:28.985Z
+date: 2020-04-19T03:38:16.359Z
 tags: 
 ---
 
@@ -49,7 +49,7 @@ Below are the recommendations for setup via GPO (Group Policy). You can follow t
 
 > Set the following settings under the `User Configuration` section in the GPO object.
 
-GPO Settings to Enable:
+**GPO Settings to Enable:**
 
 * Policies
     * Administrative Templates
