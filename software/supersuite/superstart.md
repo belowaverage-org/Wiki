@@ -2,7 +2,7 @@
 title: Super Start
 description: 
 published: true
-date: 2020-04-19T03:24:55.515Z
+date: 2020-04-19T03:36:28.985Z
 tags: 
 ---
 
@@ -51,9 +51,26 @@ Below are the recommendations for setup via GPO (Group Policy). You can follow t
 
 GPO Settings to Enable:
 
-* Administrative Templates
-    * System
-        * **Custom User Interface**: Enabled: `C:\PathToSuperStart\SuperStart.exe`
+* Policies
+    * Administrative Templates
+        * System
+            * **Custom User Interface**: Enabled: `C:\PathToSuperStart\SuperStart.exe`
+            * Crl+Alt+Del
+                * **Remove Change Password**: Enabled
+                * **Remove Lock Computer**: Enabled
+                * **Remove Task Manager**: Enabled
+                * **Remove Logoff**: Enabled
+* Preferences
+    * Windows Settings
+        * Files
+            * **SuperStart.exe**
+                * Source file(s): `\\SOMESERVER\PathToSuperStart\SuperStart.exe`
+                * Destination File: `C:\PathToSuperStart\SuperStart.exe`
+            * **SuperStart.xml**
+                * Source file(s): `\\SOMESERVER\PathToSuperStart\SuperStart.xml`
+                * Destination File: `C:\PathToSuperStart\SuperStart.xml`
+
+> **Please note**: When using GPO to copy files, the `Action` field can be misleading. Using the action type `Update` does not update the files copied if they changed on the file share. Using the `Replace` option may not be ideal either since every time GPO applies updates, the files will be re-downloaded from the file share. Using the action type `Update` on `SuperStart.exe` and using action type `Replace` on the `SuperStart.xml` may be a better approch for your environment.
 
 # Known Limitations
 
