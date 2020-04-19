@@ -2,7 +2,7 @@
 title: Super Start
 description: 
 published: true
-date: 2020-04-19T03:16:19.327Z
+date: 2020-04-19T03:24:55.515Z
 tags: 
 ---
 
@@ -15,6 +15,7 @@ A standard setup with Super Start can be as simple as adding the executable to t
 > To begin setting up Super Start, first you must run the program; doing so will generate a `SuperStart.xml` file. To exit Super Start with defaults applied, exit the CMD window that says "Start Process", press anywhere on the splash screen, and enter the pin `1234`.
 
 ## SuperStart.xml
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <SuperStart>
@@ -44,10 +45,15 @@ A standard setup with Super Start can be as simple as adding the executable to t
 ```
 ## Group Policy
 
-## Hiding Explorer Example
+Below are the recommendations for setup via GPO (Group Policy). You can follow these however you would like.
 
+> Set the following settings under the `User Configuration` section in the GPO object.
 
-### Re-Launch via PowerShell
+GPO Settings to Enable:
+
+* Administrative Templates
+    * System
+        * **Custom User Interface**: Enabled: `C:\PathToSuperStart\SuperStart.exe`
 
 # Known Limitations
 
