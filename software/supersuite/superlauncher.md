@@ -2,7 +2,7 @@
 title: Super Launcher
 description: 
 published: true
-date: 2020-04-19T00:45:08.942Z
+date: 2020-04-19T00:47:42.437Z
 tags: 
 ---
 
