@@ -2,7 +2,7 @@
 title: Super Launcher
 description: 
 published: true
-date: 2020-04-19T00:41:12.750Z
+date: 2020-04-19T00:41:54.140Z
 tags: 
 ---
 
@@ -57,8 +57,6 @@ tags:
 ### As another user
 
 Below is an example exported Scheduled Task. Import this into Scheduled Tasks and modify to your desire. This is where the magic happens: `runas /savecred /user:domain\username "cmd /c start C:\SuperLauncher"`
-
-
 
 ```xml
 <?xml version="1.0" encoding="UTF-16"?>
