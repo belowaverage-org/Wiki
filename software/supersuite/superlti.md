@@ -2,7 +2,7 @@
 title: Super LTI
 description: 
 published: true
-date: 2020-04-17T01:48:17.244Z
+date: 2020-06-03T00:01:28.975Z
 tags: 
 ---
 
@@ -51,3 +51,22 @@ Because MDT (Microsoft Deployment Toolkit) sucks when working with powershell. A
 *Demonstration:*
 
 ![superlti.gif](/assets/software/supersuite/superlti/superlti.gif)
+
+# Command Line Parameters
+
+SuperLTI.exe is able to pass command line parameters to the SuperLTI.ps1 PowerShell script. Below is an example on how to pass the parameters.
+
+SuperLTI.ps1:
+
+```powershell
+Write-Progress -Activity "Demo" -PercentComplete 50 -Status $Hello
+Start-Sleep -Seconds 3
+```
+
+Command Line:
+
+```
+C:\> SuperLTI.exe Hello World
+```
+
+![helloworld.png](/assets/software/supersuite/superlti/helloworld.png)
