@@ -2,44 +2,44 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-12T04:17:21.556Z
+date: 2020-06-12T04:17:59.462Z
 tags: 
 editor: markdown
 ---
 
 # GPO Policies / Registry Settings
 
-### Internal Probe
+## Internal Probe
 **Group Policy Setting:** Immediate Access
 **Registry Item:** InternalProbe (REG_SZ)
 **Value Type:** HTTPS URL
 **Default Value:** NULL
 
-### Vpn Profile List
+## Vpn Profile List
 **Group Policy Setting:** Immediate Access
 **Registry Item:** VpnProfileList (REG_MULTI_SZ)
 **Value Type:** Windows VPN Profile Names
 **Default Value:** NULL
 
-### Probe Timeout
+## Probe Timeout
 **Group Policy Setting:** Probe Timeout
 **Registry Item:** ProbeTimeoutS (REG_DWORD)
 **Value Type:** Seconds
 **Default Value:** 10
 
-### Network Event Cooldown
+## Network Event Cooldown
 **Group Policy Setting:** Network Event Cooldown Timer
 **Registry Item:** NetEventCooldownS (REG_DWORD)
 **Value Type:** Seconds
 **Default Value:** 3
 
-### Health Check Interval
+## Health Check Interval
 **Group Policy Setting:** Health Check Interval
 **Registry Item:** HealthCheckIntervalS (REG_DWORD)
 **Value Type:** Seconds
 **Default Value:** 300
 
-### VPN Server Ping Timeout
+## VPN Server Ping Timeout
 **Group Policy Setting:** VPN Server Ping Timeout
 **Registry Item:** VpnServerPingTimeoutMS (REG_DWORD)
 **Value Type:** Milliseconds
