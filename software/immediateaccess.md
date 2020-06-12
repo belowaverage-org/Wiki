@@ -2,12 +2,14 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-12T04:17:59.462Z
+date: 2020-06-12T04:19:13.610Z
 tags: 
 editor: markdown
 ---
 
 # GPO Policies / Registry Settings
+
+Registry Key: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Below Average\Immediate Access`
 
 ## Internal Probe
 **Group Policy Setting:** Immediate Access
