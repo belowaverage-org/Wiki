@@ -2,10 +2,15 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-12T04:22:10.716Z
+date: 2020-06-12T04:24:13.205Z
 tags: 
 editor: markdown
 ---
+
+# Introduction
+**Immediate Access** is a replacement for Microsoft's Direct Access "Always On VPN" technology. This service behaves in the same manner as Microsoft's Direct Access, but instead of connecting via IPHTTPS or Teredo, the service will start a VPN connection of your choice. (Must be a Windows VPN profile: IPSec, SSTP, L2TP, PPTP...)
+
+This service -- *along with starting a VPN connection* -- will automatically close the VPN connection if the computer is on the corporate network.
 
 # GPO Policies / Registry Settings
 
