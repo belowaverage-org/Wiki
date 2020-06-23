@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-12T04:27:42.142Z
+date: 2020-06-23T22:28:19.261Z
 tags: 
 editor: markdown
 ---
@@ -47,6 +47,12 @@ This service -- *along with starting a VPN connection* -- will automatically clo
 * **Registry Item:** HealthCheckIntervalS (REG_DWORD)
 * **Value Type:** Seconds
 * **Default Value:** 300
+
+## VPN Server Connect Attempts
+* **Group Policy Setting:** VPN Server Connect Attempts
+* **Registry Item:** VpnServerPingTimeoutMS (REG_DWORD)
+* **Value Type:** Milliseconds
+* **Default Value:** 1500
 
 ## VPN Server Ping Timeout
 * **Group Policy Setting:** VPN Server Ping Timeout
