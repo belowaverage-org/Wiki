@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-23T22:32:43.770Z
+date: 2020-06-23T22:33:29.726Z
 tags: 
 editor: markdown
 ---
@@ -65,6 +65,9 @@ The **Health Check Interval** is a time in seconds that the Immediate Access ser
 * **Default Value:** 300
 
 ## VPN Server Connect Attempts
+
+This settings changes the ammount of attempts Immediate Access will make to connect to a VPN profile.
+
 * **Group Policy Setting:** VPN Server Connect Attempts
 * **Registry Item:** VpnServerConnectAttempts (REG_DWORD)
 * **Value Type:** Count
