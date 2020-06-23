@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-23T22:28:36.764Z
+date: 2020-06-23T22:30:13.548Z
 tags: 
 editor: markdown
 ---
@@ -19,6 +19,9 @@ This service -- *along with starting a VPN connection* -- will automatically clo
 * Registry Key: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Below Average\Immediate Access`
 
 ## Internal Probe
+
+the HTTPS enabled URL that the Immediate Access VPN service will use to determine if the comptuer is currently connected to the corporate network. The probe must only be accessible within the corporate network and have a valid certificate.
+
 * **Group Policy Setting:** Immediate Access
 * **Registry Item:** InternalProbe (REG_SZ)
 * **Value Type:** HTTPS URL
