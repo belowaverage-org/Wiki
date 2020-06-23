@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-23T22:30:59.454Z
+date: 2020-06-23T22:32:43.770Z
 tags: 
 editor: markdown
 ---
@@ -37,18 +37,28 @@ The **Vpn Profile List** is a list of VPN profiles that Immediate Access VPN ser
 * **Default Value:** NULL
 
 ## Probe Timeout
+
+The **Probe Timeout** is a time in seconds that the Immediate Access service will timeout when trying to reach the internal probe.
+
 * **Group Policy Setting:** Probe Timeout
 * **Registry Item:** ProbeTimeoutS (REG_DWORD)
 * **Value Type:** Seconds
 * **Default Value:** 10
 
 ## Network Event Cooldown
+
+After a network event, Immediate Access will start testing the network to see if the Internal Probe is available.
+This option will create a delay between when Immediate Access will start the probe test, and the last network change event.
+
 * **Group Policy Setting:** Network Event Cooldown Timer
 * **Registry Item:** NetEventCooldownS (REG_DWORD)
 * **Value Type:** Seconds
 * **Default Value:** 3
 
 ## Health Check Interval
+
+The **Health Check Interval** is a time in seconds that the Immediate Access service will test for the Internal Probe on an interval.
+
 * **Group Policy Setting:** Health Check Interval
 * **Registry Item:** HealthCheckIntervalS (REG_DWORD)
 * **Value Type:** Seconds
