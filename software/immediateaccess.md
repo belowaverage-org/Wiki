@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-23T22:33:29.726Z
+date: 2020-06-23T22:33:59.392Z
 tags: 
 editor: markdown
 ---
@@ -74,6 +74,9 @@ This settings changes the ammount of attempts Immediate Access will make to conn
 * **Default Value:** 3
 
 ## VPN Server Ping Timeout
+
+This setting represents a timeout in milliseconds for when Immediate Access pings a VPN server.
+
 * **Group Policy Setting:** VPN Server Ping Timeout
 * **Registry Item:** VpnServerPingTimeoutMS (REG_DWORD)
 * **Value Type:** Milliseconds
