@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-23T22:30:13.548Z
+date: 2020-06-23T22:30:59.454Z
 tags: 
 editor: markdown
 ---
@@ -20,7 +20,7 @@ This service -- *along with starting a VPN connection* -- will automatically clo
 
 ## Internal Probe
 
-the HTTPS enabled URL that the Immediate Access VPN service will use to determine if the comptuer is currently connected to the corporate network. The probe must only be accessible within the corporate network and have a valid certificate.
+The **Internal Probe** is the HTTPS enabled URL that the Immediate Access VPN service will use to determine if the comptuer is currently connected to the corporate network. The probe must only be accessible within the corporate network and have a valid certificate.
 
 * **Group Policy Setting:** Immediate Access
 * **Registry Item:** InternalProbe (REG_SZ)
@@ -28,6 +28,9 @@ the HTTPS enabled URL that the Immediate Access VPN service will use to determin
 * **Default Value:** NULL
 
 ## Vpn Profile List
+
+The **Vpn Profile List** is a list of VPN profiles that Immediate Access VPN service will dial when the Internal Probe is not available. Seperate each entry by a return. (Enter in order of most priority to least priority)
+
 * **Group Policy Setting:** Immediate Access
 * **Registry Item:** VpnProfileList (REG_MULTI_SZ)
 * **Value Type:** Windows VPN Profile Names
