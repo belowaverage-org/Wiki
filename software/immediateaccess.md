@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-24T03:44:50.366Z
+date: 2020-06-24T03:44:56.514Z
 tags: 
 editor: markdown
 ---
@@ -44,7 +44,6 @@ https://docs.microsoft.com/en-us/iis/install/installing-iis-85/installing-iis-85
 Once the web server is installed, make sure you create an HTTPS binding with a valid certificate:
 
 https://docs.microsoft.com/en-us/iis/manage/configuring-security/how-to-set-up-ssl-on-iis
-
 
 ## Install GPO Templates
 
