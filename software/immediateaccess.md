@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-24T03:24:59.673Z
+date: 2020-06-24T03:44:50.366Z
 tags: 
 editor: markdown
 ---
@@ -34,6 +34,17 @@ If you wish to push this installer via GPO, create a GPO policy and add the MSI 
 https://support.microsoft.com/en-us/help/816102/
 
 ## Setting up the Internal Probe
+
+The internal probe is a vital part of how Immediate Access works. The internal probe is simply a web server that is available only from the internal network, and has a valid HTTPS certificate.
+
+Here is an article on how to set up a web server using Windows:
+
+https://docs.microsoft.com/en-us/iis/install/installing-iis-85/installing-iis-85-on-windows-server-2012-r2
+
+Once the web server is installed, make sure you create an HTTPS binding with a valid certificate:
+
+https://docs.microsoft.com/en-us/iis/manage/configuring-security/how-to-set-up-ssl-on-iis
+
 
 ## Install GPO Templates
 
