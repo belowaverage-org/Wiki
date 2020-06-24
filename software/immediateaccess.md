@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-24T03:49:55.056Z
+date: 2020-06-24T03:52:27.406Z
 tags: 
 editor: markdown
 ---
