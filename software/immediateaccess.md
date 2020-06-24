@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-24T03:08:30.778Z
+date: 2020-06-24T03:11:03.945Z
 tags: 
 editor: markdown
 ---
@@ -19,6 +19,11 @@ This service -- *along with starting a VPN connection* -- will automatically clo
 https://github.com/belowaverage-org/ImmediateAccess/releases
 
 ## Install Service
+
+Simply run the MSI install file, and the service should immediately start.
+If you wish to push this installer via GPO, create a GPO policy and add the MSI to the software installation section of GPO. You can find more information on how to do that here:
+
+https://support.microsoft.com/en-us/help/816102/
 
 ## Install GPO Templates
 
