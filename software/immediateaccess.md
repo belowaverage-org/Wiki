@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-24T03:21:19.876Z
+date: 2020-06-24T03:24:49.458Z
 tags: 
 editor: markdown
 ---
@@ -16,6 +16,10 @@ This service -- *along with starting a VPN connection* -- will automatically clo
 
 In a nutshell, this service will check if the current computer is on the corporate network by attempting to reach an internal only "probe". The probe is a web server that responds via HTTPS with any content (a blank page is best). The HTTPS site needs to present a trusted certificate to the client, or the Immediate Access service will not except the probe attempt. If the probe attempt is successfull, the Immediate Access service will sleep until the next "network change event" (aka: an IP address changes) or until the [Health Check Interval](#health-check-interval) lapses.
 
+After an event or the Health Check Interval lapses, the Immediate Access service will re-check for a probe connection.
+
+If the Immediate Access service cannot reach the probe, the service will connect to the GPO specified VPN profiles. If Immediate Access can once again reach the probe, the service will disconnect the GPO specified VPN profiles.
+
 # Setup
 
 ## Download
@@ -28,6 +32,8 @@ Simply run the MSI install file, and the service should immediately start.
 If you wish to push this installer via GPO, create a GPO policy and add the MSI to the software installation section of GPO. You can find more information on how to do that here:
 
 https://support.microsoft.com/en-us/help/816102/
+
+## Setting up the internal probe.
 
 ## Install GPO Templates
 
