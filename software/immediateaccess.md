@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-24T03:24:49.458Z
+date: 2020-06-24T03:24:59.673Z
 tags: 
 editor: markdown
 ---
@@ -33,7 +33,7 @@ If you wish to push this installer via GPO, create a GPO policy and add the MSI 
 
 https://support.microsoft.com/en-us/help/816102/
 
-## Setting up the internal probe.
+## Setting up the Internal Probe
 
 ## Install GPO Templates
 
