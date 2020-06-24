@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-24T03:08:17.973Z
+date: 2020-06-24T03:08:30.778Z
 tags: 
 editor: markdown
 ---
@@ -26,13 +26,13 @@ By default, when installing via the MSI file, GPO templates are installed on the
 
 If you wish to install these templates on the domain wide policy store copy the following files from:
 
-`C:\Windows\PolicyDefinitions\ImmediateAccess.admx`
-`C:\Windows\PolicyDefinitions\en-US\ImmediateAccess.adml`
+* `C:\Windows\PolicyDefinitions\ImmediateAccess.admx`
+* `C:\Windows\PolicyDefinitions\en-US\ImmediateAccess.adml`
 
 
 to:
 
-`\\contoso-dc1\SYSVOL\ad.contoso.com\Policies\PolicyDefinitions\*`
+* `\\contoso-dc1\SYSVOL\ad.contoso.com\Policies\PolicyDefinitions\*`
 
 # GPO Policies / Registry Settings
 
