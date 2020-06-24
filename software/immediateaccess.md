@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-23T22:33:59.392Z
+date: 2020-06-24T03:08:17.973Z
 tags: 
 editor: markdown
 ---
@@ -11,6 +11,28 @@ editor: markdown
 **Immediate Access** is a replacement for Microsoft's Direct Access "Always On VPN" technology. This service behaves in the same manner as Microsoft's Direct Access, but instead of connecting via IPHTTPS or Teredo, the service will start a VPN connection of your choice. (Must be a Windows VPN profile: IPSec, SSTP, L2TP, PPTP...)
 
 This service -- *along with starting a VPN connection* -- will automatically close the VPN connection if the computer is on the corporate network.
+
+# Setup
+
+## Download
+
+https://github.com/belowaverage-org/ImmediateAccess/releases
+
+## Install Service
+
+## Install GPO Templates
+
+By default, when installing via the MSI file, GPO templates are installed on the local template store located at `C:\Windows\PolicyDefinitions`.
+
+If you wish to install these templates on the domain wide policy store copy the following files from:
+
+`C:\Windows\PolicyDefinitions\ImmediateAccess.admx`
+`C:\Windows\PolicyDefinitions\en-US\ImmediateAccess.adml`
+
+
+to:
+
+`\\contoso-dc1\SYSVOL\ad.contoso.com\Policies\PolicyDefinitions\*`
 
 # GPO Policies / Registry Settings
 
