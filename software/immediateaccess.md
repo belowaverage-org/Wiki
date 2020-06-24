@@ -2,7 +2,7 @@
 title: Immediate Access
 description: Always on VPN Service
 published: true
-date: 2020-06-24T03:44:56.514Z
+date: 2020-06-24T03:45:03.467Z
 tags: 
 editor: markdown
 ---
@@ -53,7 +53,6 @@ If you wish to install these templates on the domain wide policy store copy the 
 
 * `C:\Windows\PolicyDefinitions\ImmediateAccess.admx`
 * `C:\Windows\PolicyDefinitions\en-US\ImmediateAccess.adml`
-
 
 to:
 
