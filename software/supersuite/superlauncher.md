@@ -2,12 +2,11 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2020-07-01T03:17:06.994Z
+date: 2020-07-01T03:17:18.197Z
 tags: 
 editor: markdown
 ---
 
-# About
 <p align="center">
 	<img src="/assets/software/supersuite/superlauncher/logo.svg" width="75">
 </p>
