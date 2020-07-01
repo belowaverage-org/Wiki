@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2020-07-01T03:15:37.696Z
+date: 2020-07-01T03:17:06.994Z
 tags: 
 editor: markdown
 ---
@@ -13,7 +13,9 @@ editor: markdown
 </p>
 <h2 align="center">Super Launcher</h2>
 
-![suplaunch.png](/assets/software/supersuite/superlauncher/suplaunch.png)
+<p align="center">
+	<img src="/assets/software/supersuite/superlauncher/superlaunchermain.png">
+</p>
 
 > Super Launcher is an admin launcher that persists in the system tray that can launch programs quickly; optionally, with administrator rights, as another user, or both.
 
