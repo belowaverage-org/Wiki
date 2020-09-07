@@ -2,9 +2,18 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-08-30T19:40:53.398Z
+date: 2020-09-07T04:25:48.741Z
 tags: 
 editor: markdown
 ---
 
-# Documentation comming soon.
+<p align="center">
+	<img width="100" src="/assets/software/supersuite/superupdate/logo.svg"/>
+</p>
+<h2 align="center">Super Update</h2>
+
+> Super Update is an online update tool tailored to fit the needs of any software project. Super Update can be branded and extended using PowerShell.
+
+<p align="center">
+	<img width="100" src="/assets/software/supersuite/superupdate/mainpage.png"/>
+</p>
