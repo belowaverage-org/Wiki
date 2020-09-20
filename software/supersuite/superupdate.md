@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-20T01:09:07.295Z
+date: 2020-09-20T20:08:03.371Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -21,7 +21,9 @@ dateCreated: 2020-08-30T19:40:53.398Z
 
 # How does it work?
 
+Below is the general flow of how Super Update performs an update. This chart does not account for every little condition and XML setting. These will be described elsewhere in the documentation.
 
+![flowchart.svg](/assets/software/supersuite/superupdate/flowchart.svg)
 
 # How to begin.
 
