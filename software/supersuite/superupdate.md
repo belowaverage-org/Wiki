@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-21T01:05:50.351Z
+date: 2020-09-21T01:27:10.139Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -37,7 +37,7 @@ Below is the general flow of how Super Update performs an update. This chart doe
 
 To begin, fist download the latest SuperUpdate executable from https://github.com/belowaverage-org/SuperUpdate/releases
 
-## Determine your integration strategy
+## Integration methods
 
 > Each one of these strategies should have an example documented.
 
@@ -49,9 +49,9 @@ There are many different ways to utilize Super Update with your project:
 
 * __Click Once__: If you want to check for an update each time your application is launched, what you can do is utilize the "AutoRun" setting node. Once the XML is set up in this fashion, simply use Super Update as the entrypoint to your application. When the user wants to open your program, they will really be opening Super Update, once Super Update launches, it will auto-run the latest update script, the PowerShell script will then perform the update (or not if there is no update) and then launch your program.
 
-## Determine how to host the update repository
+## Hosting methods for updates
 
-After you determine how you are going to integrate Super Update into your application, you next need to determine how you are going to host the XML document(s), your application binaries, and the PowerShell scripts that perform the update.
+This section goes over the different methods of hosting the XML document(s), your application binaries, and the PowerShell scripts that perform the update.
 
 Super Update can retreive the XML using a few different methods:
 
@@ -61,16 +61,24 @@ Super Update can retreive the XML using a few different methods:
 
 * __Local__: The XML can also be available to Super Update locally if you have another proprietary way of getting the updated XMLs deployed to your users.
 
-## Determine how to pass the XML path to Super Update
+## Passing the XML URI to Super Update
 
-The last thing that needs to be addressed before continuing further is the method you choose to tell Super Update where the XML lives.
+This section goes over the different methods of passing the XML URI to Super Update when it is launched.
 
 > The embedded method needs an automated powershell solution.
 
 There are currently two methods to "passing" the XML path off to Super Update.
 
-* __CLI Argument__: The CLI argument always takes precedence, simply pass the XML URI to Super Update when launching either from inside your application, a shortcut, or from the command line for testing / debugging.
+* __CLI Argument__: The CLI argument always takes precedence, simply pass the XML URI to Super Update when launching either from inside your application, a shortcut, or from the command line for testing / debugging. (You can even drag and drop an XML file on-top of the Super Update binary to launch it using the XML)
 
-* __Embedded__: 
+* __Embedded__: If no XML is passed via a CLI argument, Super Update will read its own binary to see if there is a blank line and then the XML URI (in UTF8) at the end. This method works great when trying to use Super Update as a "Click Once" installer. Or any "initial" installation of your project / application.
 
+## PowerShell techniques
 
+What makes Super Update so powerful is the fact that the update scripts themselves are simply PowerShell scripts. Super Update is very flexible on how you build your scripts and reference them in the XML.
+
+Below are the two methods Super Update supports for referencing your PowerShell scripts:
+
+* __Individual Scripts__: With this method, each "Update node" in the XML references a different PowerShell script. This allows you to write simple scripts that just work.
+
+* __A Single Script__: With this method, each "Update node" in the XML references the same PowerShell script. The script will look at the data passed by Super Update and perform the update using its own logic.
