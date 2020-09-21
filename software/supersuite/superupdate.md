@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-21T23:47:15.404Z
+date: 2020-09-21T23:51:00.053Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -119,6 +119,10 @@ Below are the two methods Super Update supports for referencing your PowerShell 
 The XML schema file is publicly located on the internet here: 
 `https://raw.githubusercontent.com/belowaverage-org/SuperUpdate/master/SuperUpdate/UpdateSchema.xsd`
 
+### Settings Node
 
+#### Redirect
+
+This 
     
     
