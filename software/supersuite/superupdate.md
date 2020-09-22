@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-22T00:01:35.421Z
+date: 2020-09-22T00:03:22.361Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
