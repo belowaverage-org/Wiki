@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-22T00:08:05.749Z
+date: 2020-09-22T01:04:40.846Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -114,7 +114,7 @@ Below are the two methods Super Update supports for referencing your PowerShell 
 </SuperUpdate>
 ```
 
-## XML Schema
+## XML Schema Location
 
 The XML schema file is publicly located on the internet here: 
 `https://raw.githubusercontent.com/belowaverage-org/SuperUpdate/master/SuperUpdate/UpdateSchema.xsd`
@@ -142,4 +142,50 @@ This setting accepts the following formats and values:
 ### WindowIcon, WindowIconLarge, WindowIconLargeAnimated
 
 These settings provide themeing for the Super Update window. Each of these settings only accepts a URI to an icon file, except for "WindowIconLargeAnimated" which accepts PNG, JPG, or GIF.
+
+### MessageNoUpdate
+
+This settings specifies the text that is displayed to the user when there is no update available.
+
+### RequireElevation
+
+If the value of this setting is true, Super Update will ensure that it is running in an elevated state as an administrator. If Super Update is not "elevated", Super Update will request elevation from the OS and re-launch in an elevated state (using the same CLI parameters that started the original process).
+
+### AutoRun
+
+If the value of this setting is true, and the process of discovering updates has finished, Super Update will start the installation (or re-installation) the latest update automatically.
+
+## XML Updates Node
+
+This section outlines what each element and attribute (Element: Attribute) mean and do under the "Updates" node.
+
+### Update
+
+This element defines a software update version. See below how it is configured.
+
+### Update: Version
+
+This attribute can take any text value. This value is displayed to the user in the "Version" column in the Super Update interface. It is purely visual, and does not affect any internal logic.
+
+### Update: DateTime
+
+This attribute specifies the date and time the software version was released. This value only accepts a date and time in this format: [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601).
+
+This value is displayed to the user in the "Release Date" column in the Super Update interface. it is purely visual, and does not affect any internal logic.
+
+### Update: Channel
+
+This attribute specifies which "software branch" or "development channel" this update belongs to, for example you might specify "Beta", "Alpha", "PreRelease", "Release","LTS" or more...
+This value is displayed to the user in the Update Selection menu and groups updates together based on the value of their "Channel"
+
+This value also affects how Super Update chooses the next available update. If Super Update determines that the current software version or "Update" is in a particular branch, Super Update will only pick the latest update in that "Channel". This is done to keep normal "Release" users in the "Release" branch, and beta testers in the "Beta" channel, or whatever Channel names are specified.
+
+### Update: ReleaseInfoURL
+
+This attribute specifies a URI to a website containing the release info on the particular update.
+
+This value is displayed to the user in the "Release Notes" column in the Super Update interface. it is purely visual, and does not affect any internal logic.
+
+### Update: ScriptURL
+
 
