@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-21T23:51:00.053Z
+date: 2020-09-22T00:00:52.019Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -119,10 +119,22 @@ Below are the two methods Super Update supports for referencing your PowerShell 
 The XML schema file is publicly located on the internet here: 
 `https://raw.githubusercontent.com/belowaverage-org/SuperUpdate/master/SuperUpdate/UpdateSchema.xsd`
 
-### Settings Node
+## XML Settings Node
 
-#### Redirect
+This section outlines what each setting does under the "Settings" node in the XML.
 
-This 
+### Redirect
+
+This settings will tell Super Update to read the specified file (URI) for more settings and updates.
+
+*This setting only accepts URI values.*
     
-    
+### WindowSize
+
+This setting tells Super Update what to make the main window size.
+
+This setting takes the following formats and values:
+
+* "*width***x***height*" in pixels, for example: "500x500"
+* "Expanded" which tells translates to: "800x500"
+* "Contracted" which is default.
