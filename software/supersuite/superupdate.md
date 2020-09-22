@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-22T00:03:22.361Z
+date: 2020-09-22T00:08:05.749Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -133,8 +133,13 @@ This settings will tell Super Update to read the specified file (URI) for more s
 
 This setting tells Super Update what to make the main window size.
 
-This setting takes the following formats and values:
+This setting accepts the following formats and values:
 
-* "*width***x***height*" in pixels, for example: "500x500"
-* "Expanded" which tells translates to: "800x500"
-* "Contracted" which is default.
+* "*width***x***height*" in pixels, for example: "**500x500**"
+* "**Expanded**" which tells translates to: "800x500"
+* "**Contracted**" which is default.
+
+### WindowIcon, WindowIconLarge, WindowIconLargeAnimated
+
+These settings provide themeing for the Super Update window. Each of these settings only accepts a URI to an icon file, except for "WindowIconLargeAnimated" which accepts PNG, JPG, or GIF.
+
