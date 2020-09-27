@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-27T19:29:10.002Z
+date: 2020-09-27T21:38:59.655Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -230,6 +230,12 @@ This attribute specifies a URI to a website containing the release info on the p
 This value is displayed to the user in the "Release Notes" column in the Super Update interface. it is purely visual, and does not affect any internal logic.
 
 ### Update: ScriptURL
+
+This attribute specifies the PowerShell script that is run when this release is selected, and the "Install" button is pushed.
+
+### Update: ScriptArguments
+
+This attribute specifies the arguments that are passed to the PowerShell script specified in the above attribute "ScriptURL".
 
 # PowerShell
 
