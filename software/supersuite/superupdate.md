@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-27T18:52:09.919Z
+date: 2020-09-27T18:52:17.629Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -263,6 +263,11 @@ Inside this variable are a few methods and properties listed below:
 * **Returns**: Boolean
 
 ### RelaunchWhenDone
+
+* ` {get; set;} `
+* **Returns**: Boolean
+
+### Elevated
 
 * ` {get; set;} `
 * **Returns**: Boolean
