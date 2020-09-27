@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-27T18:56:56.280Z
+date: 2020-09-27T19:05:09.606Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -233,71 +233,117 @@ This value is displayed to the user in the "Release Notes" column in the Super U
 When the installation script is ran from SuperUpdate, there is a hook that is injected into the script that you can access to perform actions in SuperUpdate, or access update information.
 
 The hook is located in the global variable: ` $SuperUpdate `.
+Here is the source for the hook: [Classes/PSRunspace.cs](https://github.com/belowaverage-org/SuperUpdate/blob/master/SuperUpdate/Classes/PSRunspace.cs)
 Inside this variable are a few methods and properties listed below:
 
 ## Properties
 
 ### WindowState
 
+Get / set the window state of the main window.
+
 * ` {get; set;} `
 * **Returns**: [System.Windows.Forms.FormWindowState](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.formwindowstate)
 
 ### WindowText
+
+Get / set the title of the main window.
 
 * ` {get; set;} `
 * **Returns**: String
 
 ### WindowVisible
 
+Gets / sets the visibility status of the main window. Setting this false will hide the main window.
+
 * ` {get; set;} `
 * **Returns**: Boolean
 
 ### WindowExpanded
+
+Gets / sets the expansion status of the main window. True means that the main window is expanded.
 
 * ` {get; set;} `
 * **Returns**: Boolean
 
 ### CloseWindowWhenDone
 
+Get / set this variable to specify whether or not to close SuperUpdate once the PowerShell script finishes.
+
 * ` {get; set;} `
 * **Returns**: Boolean
 
 ### RelaunchWhenDone
+
+Get / set this variable to specify whether or not to re-launch SuperUpdate once the PowerShell script finishes.
 
 * ` {get; set;} `
 * **Returns**: Boolean
 
 ### Elevated
 
+Gets / sets the elevation status of SuperUpdate. Setting this true will immediatly elevate the process.
+
 * ` {get; set;} `
 * **Returns**: Boolean
 
 ### SuperUpdateArguments
+
+Gets / sets the SuperUpdateArguments that were passed to SuperUpdate on launch.
 
 * ` {get; set;} `
 * **Returns**: String[]
 
 ### ScriptArguments
 
+Gets the arguments passed to the PowerShell script via the update XML node.
+
 * ` {get;} `
 * **Returns**: String[]
 
 ### CurrentVersion
+
+Gets the currently detected version of the software to be updated.
 
 * ` {get;} `
 * **Returns**: [System.Xml.XmlNode](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlnode)
 
 ### LatestVersion
 
+Gets the latest possible version of the software to be updated.
+
 * ` {get;} `
 * **Returns**: [System.Xml.XmlNode](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlnode)
 
 ### SelectedVersion
+
+Gets the selected update version that the user selected on the updates screen.
 
 * ` {get;} `
 * **Returns**: [System.Xml.XmlNode](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlnode)
 
 ### LogItems
 
+Gets a list of log items in current log.
+
 * ` {get;} `
-* **Returns**: [Logger.LogItems](https://github.com/belowaverage-org/SuperUpdate/blob/b3e7e64a8a67eeb4cb10b2b4a5b232d109124a46/SuperUpdate/Classes/Logger.cs#L218-L247)
+* **Returns**: [System.Collections.Generic.List](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1)<[Logger.LogItems](https://github.com/belowaverage-org/SuperUpdate/blob/b3e7e64a8a67eeb4cb10b2b4a5b232d109124a46/SuperUpdate/Classes/Logger.cs#L218-L247)>
+
+### SuperUpdateVersion
+
+Gets the SuperUpdate program version.
+
+* ` {get;} `
+* **Returns**: [System.Version](https://docs.microsoft.com/en-us/dotnet/api/system.version)
+
+## Methods
+
+## Relaunch
+
+This method re-launches the program with the SuperUpdateArguments.
+
+* `void ReLaunch()`
+* **Parameters**
+	* None
+* **Returns**
+	* Void
