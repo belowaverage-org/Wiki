@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-27T17:58:59.299Z
+date: 2020-09-27T18:30:48.478Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -65,13 +65,19 @@ Super Update can retreive the XML using a few different methods:
 
 This section goes over the different methods of passing the XML URI to Super Update when it is launched.
 
-> The embedded method needs an automated powershell solution.
-
 There are currently two methods to "passing" the XML path off to Super Update.
 
 * __CLI Argument__: The CLI argument always takes precedence, simply pass the XML URI to Super Update when launching either from inside your application, a shortcut, or from the command line for testing / debugging. (You can even drag and drop an XML file on-top of the Super Update binary to launch it using the XML)
 
 * __Embedded__: If no XML is passed via a CLI argument, Super Update will read its own binary to see if there is a blank line and then the XML URI (in UTF8) at the end. This method works great when trying to use Super Update as a "Click Once" installer. Or any "initial" installation of your project / application.
+
+### How to build an embedded EXE
+
+To build one of these "Embedded EXE" files, download SuperUpdate.exe from above, and run this PowerShell command. Make sure you replace the URL below with your URL for your project's "Update XML", and make sure to keep the `` `n`n `` at the begining of the URL: 
+
+```PowerShell
+"`n`nhttp://contsoso.com/update.xml" | Out-File -Append -NoNewline -Encoding utf8 -FilePath ".\SuperUpdate.exe"
+```
 
 ## PowerShell techniques
 
