@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-27T18:33:31.191Z
+date: 2020-09-27T18:52:09.919Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -228,4 +228,46 @@ This value is displayed to the user in the "Release Notes" column in the Super U
 
 ### Update: ScriptURL
 
+# PowerShell
 
+When the installation script is ran from SuperUpdate, there is a hook that is injected into the script that you can access to perform actions in SuperUpdate, or access update information.
+
+The hook is located in the global variable: ` $SuperUpdate `.
+Inside this variable are a few methods and properties listed below:
+
+## Properties
+
+### WindowState
+
+* ` {get; set;} `
+* **Returns**: [System.Windows.Forms.FormWindowState](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.formwindowstate)
+
+### WindowText
+
+* ` {get; set;} `
+* **Returns**: String
+
+### WindowVisible
+
+* ` {get; set;} `
+* **Returns**: Boolean
+
+### WindowExpanded
+
+* ` {get; set;} `
+* **Returns**: Boolean
+
+### CloseWindowWhenDone
+
+* ` {get; set;} `
+* **Returns**: Boolean
+
+### RelaunchWhenDone
+
+* ` {get; set;} `
+* **Returns**: Boolean
+
+### Elevated
+
+* ` {get; set;} `
+* **Returns**: Boolean
