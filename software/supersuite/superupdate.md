@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-27T19:05:09.606Z
+date: 2020-09-27T19:05:34.998Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -338,7 +338,7 @@ Gets the SuperUpdate program version.
 
 ## Methods
 
-## Relaunch
+### Relaunch
 
 This method re-launches the program with the SuperUpdateArguments.
 
