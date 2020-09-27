@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-27T19:05:34.998Z
+date: 2020-09-27T19:29:10.002Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -128,14 +128,11 @@ $SuperUpdate.WindowVisible = $true
 ## Example XML
 
 ```xml
-  
 <?xml version="1.0" encoding="utf-8"?>
-<SuperUpdate
-    UpdaterVersion="0"
-    xmlns="http://belowaverage.org/schemas/superupdate/0.0.0.2"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://belowaverage.org/schemas/superupdate/0.0.0.2 https://raw.githubusercontent.com/belowaverage-org/SuperUpdate/master/SuperUpdate/UpdateSchema.xsd"
->
+<SuperUpdate UpdaterVersion="0"
+  xmlns="http://belowaverage.org/schemas/superupdate/0.0.0.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://belowaverage.org/schemas/superupdate/0.0.0.2 https://raw.githubusercontent.com/belowaverage-org/SuperUpdate/master/SuperUpdate/UpdateSchema.xsd">
   <Settings>
     <Redirect RedirectURL="https://static.belowaverage.org/software/SuperUpdate/SuperUpdate/1.1.1.1/Update.xml" UpdaterVersion="0" />
     <WindowSize Size="100x100"/>
@@ -147,7 +144,13 @@ $SuperUpdate.WindowVisible = $true
     <AutoRun Value="false" />
   </Settings>
   <Updates>
-    <Update Version="1.1.1.1" DateTime="2000-01-01T00:00:00" Channel="Release" ReleaseInfoURL="https://github.com/belowaverage-org/SuperUpdate/releases/tag/1.1.1.1" ScriptURL="https://static.belowaverage.org/software/SuperUpdate/SuperUpdate/1.1.1.1/Update.ps1" UpdateMessage="2019 Update Available!">
+    <Update Version="1.1.1.1"
+    DateTime="2000-01-01T00:00:00"
+    Channel="Release"
+    ReleaseInfoURL="https://github.com/belowaverage-org/SuperUpdate/releases/tag/1.1.1.1"
+    ScriptURL="https://static.belowaverage.org/software/SuperUpdate/SuperUpdate/1.1.1.1/Update.ps1"
+    ScriptArguments=""
+    UpdateMessage="2019 Update Available!">
       <File SHA1="0DDD90457B7FC4F3A429665F1271E31E515E6A75" Path=".\TestPayload.txt" />
     </Update>
   </Updates>
