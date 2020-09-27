@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-27T18:30:48.478Z
+date: 2020-09-27T18:33:31.191Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -38,8 +38,6 @@ Below is the general flow of how Super Update performs an update. This chart doe
 To begin, fist download the latest SuperUpdate executable from https://github.com/belowaverage-org/SuperUpdate/releases
 
 ## Integration methods
-
-> Each one of these strategies should have an example documented.
 
 There are many different ways to utilize Super Update with your project:
 
