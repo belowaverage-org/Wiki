@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-27T17:53:34.771Z
+date: 2020-09-27T17:58:59.299Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -85,8 +85,39 @@ Below are the two methods Super Update supports for referencing your PowerShell 
 
 ### Individual Scripts: Example
 
+In this example, the XML should be referencing seperate PowerShell scripts, each written in a simple manner to download and then install a file. Or something...
+
+```PowerShell
+Write-Information "Downloading Super Grate v1.0.0.0..."
+Write-Verbose "Download Location: https://static.belowaverage.org/software/SuperGrate/Updates/Versions/1.0.0.0/SuperGrate.exe"
+Invoke-WebRequest -Uri "https://static.belowaverage.org/software/SuperGrate/Updates/Versions/1.0.0.0/SuperGrate.exe" -OutFile ".\SuperGrate.exe"
+```
+
 ### A Single Script: Example
 
+In this very basic example, a single script is responsible for copying a file from the web to the local disk. And then prompts the user if they would like to execute the downloaded file.
+
+```PowerShell
+try {
+    if (-not ($SuperUpdate.SelectedVersion -eq $SuperUpdate.CurrentVersion)) {
+        Write-Information "Downloading Super Grate..."
+        Write-Verbose "Download Location: https://static.belowaverage.org/software/SuperGrate/Updates/Versions/$($SuperUpdate.SelectedVersion.Version)/SuperGrate.exe"
+        Invoke-WebRequest -Uri "https://static.belowaverage.org/software/SuperGrate/Updates/Versions/$($SuperUpdate.SelectedVersion.Version)/SuperGrate.exe" -OutFile ".\SuperGrate.exe"
+    }
+    Write-Information "Version: $($SuperUpdate.SelectedVersion.Version) is now installed!"
+} catch {
+    Write-Error -Exception $_.Exception
+    Write-Information "An error occurred during installation."
+}
+$SuperUpdate.WindowVisible = $false
+$result = [System.Windows.Forms.MessageBox]::Show("Would you like to start Super Grate?", "All Done!", [System.Windows.Forms.MessageBoxButtons]::YesNo)
+if ($result -eq [System.Windows.Forms.DialogResult]::Yes) {
+    $SuperUpdate.CloseWindowWhenDone = $true
+    Start-Process ".\SuperGrate.exe"
+    return
+}
+$SuperUpdate.WindowVisible = $true
+```
 
 # Creating the XML
 
