@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-27T18:53:25.586Z
+date: 2020-09-27T18:54:38.716Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -285,4 +285,14 @@ Inside this variable are a few methods and properties listed below:
 ### CurrentVersion
 
 * ` {get;} `
-* **Returns**: String[]
+* **Returns**: [System.Xml.XmlNode](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlnode)
+
+### LatestVersion
+
+* ` {get;} `
+* **Returns**: [System.Xml.XmlNode](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlnode)
+
+### SelectedVersion
+
+* ` {get;} `
+* **Returns**: [System.Xml.XmlNode](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlnode)
