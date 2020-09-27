@@ -2,7 +2,7 @@
 title: Super Update
 description: A customizable installer / update system for any software project.
 published: true
-date: 2020-09-27T18:54:38.716Z
+date: 2020-09-27T18:56:56.280Z
 tags: 
 editor: markdown
 dateCreated: 2020-08-30T19:40:53.398Z
@@ -296,3 +296,8 @@ Inside this variable are a few methods and properties listed below:
 
 * ` {get;} `
 * **Returns**: [System.Xml.XmlNode](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlnode)
+
+### LogItems
+
+* ` {get;} `
+* **Returns**: [Logger.LogItems](https://github.com/belowaverage-org/SuperUpdate/blob/b3e7e64a8a67eeb4cb10b2b4a5b232d109124a46/SuperUpdate/Classes/Logger.cs#L218-L247)
