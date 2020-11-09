@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2020-11-09T02:01:03.140Z
+date: 2020-11-09T02:04:52.994Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -88,6 +88,23 @@ A **Full Migration** is a Super Grate sequence where both the "Source Computer" 
 When the backup / migration is started, Super Grate will back up the user profiles selected from the "Source Computer" to the store, then connect to the "Destination Computer" and apply the user profiles selected from the "Source Computer".
 
 There are options in the [SuperGrate.xml](#supergratexml) and settings menu that can change the behavior presented above.
+
+## Deleting a profile on a source computer
+
+To **delete a profile on a source compuer** you must:
+1. Enter a PC name in the "Source Computer" field.
+2. Press "List Source".
+3. Select the user profile(s) to delete.
+4. Press the "Delete" button.
+5. In the message that appears, select "Accept".
+
+## Deleting a profile from the store
+
+To **delete a profile from the store** you must:
+1. Press "List Store".
+2. Select the profile(s) to delete.
+3. Press "Delete".
+4. In the message that appears, select "Accept".
 
 ## Command Line Switches
 
