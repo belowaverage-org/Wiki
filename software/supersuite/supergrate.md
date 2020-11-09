@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2020-11-09T02:04:52.994Z
+date: 2020-11-09T02:22:14.570Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -105,6 +105,16 @@ To **delete a profile from the store** you must:
 2. Select the profile(s) to delete.
 3. Press "Delete".
 4. In the message that appears, select "Accept".
+
+## Customize Columns
+
+To **customize the shown columns**, first either click on "List Source" or "List Store", then select "View" and then "Add/Remove Columns...". In the dialog that appears, add, remove, move up, or move down any column as required. Once done, select "OK".
+
+If you want to save your customizations for when Super Grate is launched again, go to "File", "Settings...", then press "Save to Disk". This will save your modifications made to the columns to the SuperGrate.xml config file.
+
+## Check for updates
+
+To **check for updates** in Super Grate, first go to "Help", then select "Check for updates...". In the dialog that appears, if there is an update available, the message on your screen will say so. If there is an update, select "Install".
 
 ## Command Line Switches
 
