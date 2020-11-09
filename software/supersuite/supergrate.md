@@ -2,12 +2,13 @@
 title: Super Grate
 description: 
 published: true
-date: 2020-04-15T05:01:48.220Z
+date: 2020-11-09T01:34:00.661Z
 tags: 
+editor: markdown
+dateCreated: 2020-04-15T02:24:34.379Z
 ---
 
-# Introduction
-**Super Grate** is a tool part of the Super Suite that can perform remote execution of Microsoft's USMT (User State Migration Tool) on any domain joined PC, or local execution on any non-joined PC.
+![promo.png](/assets/software/supersuite/supergrate/promo.png)
 
 ## Features
 * Simple GUI
