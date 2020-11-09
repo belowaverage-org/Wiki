@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2020-11-09T01:34:49.389Z
+date: 2020-11-09T01:41:05.530Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -17,14 +17,13 @@ dateCreated: 2020-04-15T02:24:34.379Z
 * Unified Backup Store
 * Works remotely over a network
 
-# Installation / Upgrade
+# Download
 
 ## Quick Start
 
 1. Simply download from one of the following sources:
     * [below average](https://belowaverage.org/software/supergrate/download/)
     * [GitHub](https://github.com/belowaverage-org/SuperGrate/releases)
-2. Run the installer, or run the [portable version](#portable-version).
 3. Done!
 
 ## Unified Store Setup
@@ -175,16 +174,6 @@ An example of the above may look like this below:
         * **sid** (File | "S-1-5-21-3623811015-3361044348-30300820-1013")
         * **source** (File | "DOMAIN\BA-PC01")
 
-## Portable Version
-
-Super Grate supports being **"Portable"** meaning that Super Grate can be run in a stand-alone environment, like off of a USB thumb drive, or external HDD drive.
-
-All you need to do is download the Super Grate installer, and de-select all components in the installer except "Super Grate", then in the next slide select the location where SuperGrate.exe will be copied. From there, you can move SuperGrate.exe to wherever you want and run it normally.
-
-Super Grate will download any necessary dependencies when they are needed.
-
-A portable version of Super Grate allows the operator to back up profiles to a USB thumb drive or USB external HDD easier, and quicker. It also helps in scenarios where the computer you are trying to back up has no disk space available for scratch space.
-
 ## SuperGrate.xml
 
 The **SuperGrate.xml** is a file that is automatically generated if it doesn't exist in the "current working directory". This file contains the preferences from the "Settings" menu.
@@ -217,6 +206,10 @@ Below is an example of the SuperGrate.xml file:
   <!--List of columns to display for the Source or Store users.-->
   <ULSourceColumns>0,3,9</ULSourceColumns>
   <ULStoreColumns>0,1,5,6,4</ULStoreColumns>
+  <!--User List View Mode: Large (0) / Small Icon (2), List (3), Details (1) and Tile (4).-->
+  <ULViewMode>1</ULViewMode>
+  <!--Security Protocol Version (Restart Required): SystemDefault, Ssl3, Tls, Tls11, Tls12, Tls13.-->
+  <SecurityProtocol>Tls12</SecurityProtocol>
 </SuperGrate>
 ```
 
@@ -230,9 +223,7 @@ Below is an example of the SuperGrate.xml file:
     * Super Grate may fail if the remote PC or executing PC falls asleep.
 * WMI
     * Super Grate may fail if WMI is corrupt or disabled on the remote PC.
-    * To fix: `winmgmt /resetrepository`
-* Remote Registry
-    * Super Grate may fail if the Remote Registry service is stopped or disabled on the remote PC.
+    * To fix: `winmgmt /resetrepository
     
 
 
