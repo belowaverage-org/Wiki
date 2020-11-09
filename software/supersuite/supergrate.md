@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2020-11-09T02:23:42.457Z
+date: 2020-11-09T02:25:26.934Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -171,7 +171,7 @@ Below are some notes about logging:
 
 ## Backup Store
 
-The backup **store** *or just "store" when using Super Grate* is a directory on a share drive or local drive that "stores" the user profiles after they have been backed-up. Weather you performed a [full migration](#full-migration) or just a simple [profile backup](#backing-up-a-user-profile), the data transferred is stored here.
+The backup **store** *or just "store" when using Super Grate* is a directory on a share drive or local drive that "stores" the user profiles after they have been backed-up. Whether you performed a [full migration](#full-migration) or just a simple [profile backup](#backing-up-a-user-profile), the data transferred is stored here.
 
 The file structure of the store is as follows:
 
