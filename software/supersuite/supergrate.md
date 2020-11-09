@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2020-11-09T02:00:53.361Z
+date: 2020-11-09T02:01:03.140Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -65,9 +65,9 @@ After running the steps above, Super Grate should run without a hitch.
 
 1. Enter the computer's host-name in the "Source Computer" text box.
 1.1. (Optional) Enter a destination computer in the "Destination Computer" text box to perform a Full Migration.
-3. Press "List Source" to generate a list of User Profiles available on the Source Computer.
-4. Select the User(s) you would like to back up.
-5. Press "Start".
+2. Press "List Source" to generate a list of User Profiles available on the Source Computer.
+3. Select the User(s) you would like to back up.
+4. Press "Start".
 
 ![backing-up-a-user-profile.png](/assets/software/supersuite/supergrate/backing-up-a-user-profile.png)
 
