@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2020-11-09T02:25:26.934Z
+date: 2020-11-09T15:01:35.436Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -140,18 +140,11 @@ For a list of settings, see: [SuperGrate.xml](#supergratexml)
 
 ## Compiling Super Grate
 
-**Compiling Super Grate** is easy to do; firstly, you need to download and install a copy of [Microsoft's Visual Studio (VS)](https://visualstudio.microsoft.com/vs/). -- *The community edition will do* -- Once done, clone this repository using VS' "Get Started" page. Lastly, open the solution and press the green "Start / Play" button. This will compile and start Super Grate.
-
-To make a release build of Super Grate & create a NSIS installer, do the following:
+**Compiling Super Grate** is easy to do; first, you need to download and install a copy of [Microsoft's Visual Studio (VS)](https://visualstudio.microsoft.com/vs/). -- *The community edition will do* -- Once done, clone this repository using VS' "Get Started" page. Lastly, open the solution and press the green "Start / Play" button. This will compile and start Super Grate.
 
 1. Select "Batch Build" from the "Build" tab in the top menu bar.
 2. Check "Release" & "Release_64" then press "Rebuild".
-3. Right Click the Solution in the Solution Explorer, and select "Open in Explorer".
-4. In explorer, navigate to the "SuperGrateInstaller" folder.
-5. Run the "precompile.ps1" file in Power Shell (You may need to [set the ExecutionPolicy to Bypass mode](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6))
-6. Download and install [NSIS](https://nsis.sourceforge.io).
-7. Right click and select "Compile" on the "installer.nsi" file.
-8. A file labled "SuperGrateInstaller.exe" should now exist in the "bin" folder.
+3. SuperGrate.exe should be available in the bin folder of the project.
 
 ## Debugging Super Grate
 
