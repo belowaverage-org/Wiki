@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2020-11-09T01:41:05.530Z
+date: 2020-11-09T01:41:31.839Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -24,7 +24,7 @@ dateCreated: 2020-04-15T02:24:34.379Z
 1. Simply download from one of the following sources:
     * [below average](https://belowaverage.org/software/supergrate/download/)
     * [GitHub](https://github.com/belowaverage-org/SuperGrate/releases)
-3. Done!
+3. Run and done!
 
 ## Unified Store Setup
 
