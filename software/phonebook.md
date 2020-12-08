@@ -2,7 +2,7 @@
 title: Phone Book
 description: 🔎 A fast, tag based, flat file, PHP Phone Book.
 published: true
-date: 2020-12-08T14:40:12.277Z
+date: 2020-12-08T14:50:33.998Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-08T14:25:44.088Z
@@ -25,14 +25,15 @@ https://github.com/belowaverage-org/phonebook/releases
 
 ### Windows Install
 
-* Download PHP for Windows.
-  * https://windows.php.net/download/
-    * *Download x64 non thread safe.*
-* Download and install the correct VC Runtime according to PHP's website.
-* Install Microsoft IIS (Internet Information Services)
-	* 
+* Follow the directions at: https://php.iis.net/ to get PHP set-up on IIS.
+* Extract the ZIP from the download above in `C:\inetpub\wwwroot\phonebook`
+* Ensure the following PHP modules are enabled:
+  * SQLITE_PDO
+  * OPCACHE
+* Visit http://localhost/phonebook
 
-### Docker Install
+
+### Linux / Docker Install
 
 **Pulling the image:**
 
@@ -50,3 +51,7 @@ docker run -p 8081:80 -l PhoneBook -d belowaverageorg/phonebook
 
 * /var/www/html/data
 * /var/www/html/api/schema.cfg.json (Optional)
+
+**Try it out:**
+
+Visit: http://[DOCKER_HOST]:8081/
