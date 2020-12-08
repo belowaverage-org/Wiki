@@ -2,7 +2,7 @@
 title: Phone Book
 description: 🔎 A fast, tag based, flat file, PHP Phone Book.
 published: true
-date: 2020-12-08T14:34:20.688Z
+date: 2020-12-08T14:34:30.207Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-08T14:25:44.088Z
@@ -34,13 +34,13 @@ https://github.com/belowaverage-org/phonebook/releases
 
 **Pulling the image:**
 
-```
+```bash
 docker pull belowaverageorg/phonebook
 ```
 
 **Running the image:**
 
-```
+```bash
 docker run -p 8081:80 -l PhoneBook -d belowaverageorg/phonebook
 ```
 
