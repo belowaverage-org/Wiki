@@ -2,7 +2,7 @@
 title: Phone Book
 description: 🔎 A fast, tag based, flat file, PHP Phone Book.
 published: true
-date: 2020-12-08T14:39:51.678Z
+date: 2020-12-08T14:40:12.277Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-08T14:25:44.088Z
@@ -28,9 +28,7 @@ https://github.com/belowaverage-org/phonebook/releases
 * Download PHP for Windows.
   * https://windows.php.net/download/
     * *Download x64 non thread safe.*
-* Download the correct VC Runtime according to PHP's website.
-
-
+* Download and install the correct VC Runtime according to PHP's website.
 * Install Microsoft IIS (Internet Information Services)
 	* 
 
