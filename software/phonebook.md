@@ -2,7 +2,7 @@
 title: Phone Book
 description: 🔎 A fast, tag based, flat file, PHP Phone Book.
 published: true
-date: 2021-02-17T16:54:09.439Z
+date: 2021-02-17T17:03:21.855Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-08T14:25:44.088Z
@@ -70,6 +70,8 @@ https://github.com/belowaverage-org/phonebook/blob/master/scripts/Enter-PhoneBoo
 
 ##### Menu
 
+![pb_admin.png](/assets/software/phonebook/pb_admin.png)
+
 ###### Phone Numbers
 
 These options are for managing Phone Book entries.
@@ -109,8 +111,22 @@ These options will show analytic data.
 	* Use this option to purge and the re-generate the index / database. This will re-build all tags with new translations.
 11. View all tags.
 	* View all indexed tags.
+  
+## What is a Tag?
 
+**Tags** are how the Phone Book creates its index points. When a user searches the Phone Book, they will be forced to use existing tags in the database ensuring that the user is always guided to a result.
 
+https://github.com/belowaverage-org/phonebook/blob/master/api/schema.cfg.json
+
+The above file shows what entries' attributes are tagged when added or modified.
+
+## What is a Translation?
+
+A **translation** is a `from` and `to` key value pair in the database that is applied to every Phone Book entry on creation. This ensures that abreviations are translated into meaningful words when entries are being indexed / tagged.
+
+![pb_trans_examples.png](/assets/software/phonebook/pb_trans_examples.png)
+
+> **Tip:** Translate a tag to multiple tags by using a space to delimite in the `to` field.
 
 ## Development
 
