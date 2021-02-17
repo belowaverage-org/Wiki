@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-17T15:44:50.703Z
+date: 2021-02-17T15:48:59.285Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -87,6 +87,14 @@ dateCreated: 2020-04-17T16:29:12.544Z
 4. Exit Super Launcher and re-open to test.
 
 ## Auto start as another user with administrator rights
+
+Selecting "Auto Run As Admin?" and entering a username / domain into the Super Launcher settings will not give you the desired effect. Follow the steps below to get Super Launcher to start as another user with administrator rights.
+
+1. Follow the [Auto start as another user](#auto-start-as-another-user) step above.
+2. Follow the [Auto start with administrator rights](#auto-start-with-administrator-rights) step above.
+3. Exit one last time and re-open to test.
+
+> It is important you follow these steps in this order exactly.
 
 ## Enable hidden folders and file extensions.
 
