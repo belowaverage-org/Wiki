@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-17T15:35:07.012Z
+date: 2021-02-17T15:37:26.291Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -66,9 +66,7 @@ dateCreated: 2020-04-17T16:29:12.544Z
 
 ## File management as another user
 
-A quirky tip to managing / accessing shared or local folders via an admin account can be accomplished by right clicking the Super Launcher tray icon, and selecting "Add shortcut...". Instead of adding a shortcut, you can do all your file management from this dialog as whatever user is currently running Super Launcher.
-There are plans to add a real file browser to Super Launcher for this exact reason, so stay tuned for that.
+1. Right click on the Super Launcher tray icon.
+2. Select "Open Explorer".
 
-## Known limitations
-
-* Super Launcher saves the shortcuts in the user's AppData folder. This means when running Super Launcher in a portable environment (for example: from a USB thumb drive), Super Launcher will not save the shortcuts in that environment. *See: [backing up shortcuts](#backing-up-shortcuts), for a guide on backing up the shortcuts.*
+![superlauncherexplorer.png](/assets/software/supersuite/superlauncher/superlauncherexplorer.png)
