@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-17T15:39:10.352Z
+date: 2021-02-17T15:40:19.124Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -76,4 +76,6 @@ dateCreated: 2020-04-17T16:29:12.544Z
 ## Auto start as another user
 
 ## Auto start as another user with administrator rights
+
+## Enable hidden folders and file extensions.
 
