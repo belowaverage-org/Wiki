@@ -2,7 +2,7 @@
 title: Phone Book
 description: 🔎 A fast, tag based, flat file, PHP Phone Book.
 published: true
-date: 2020-12-08T14:50:33.998Z
+date: 2021-02-17T16:44:32.635Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-08T14:25:44.088Z
@@ -55,3 +55,30 @@ docker run -p 8081:80 -l PhoneBook -d belowaverageorg/phonebook
 **Try it out:**
 
 Visit: http://[DOCKER_HOST]:8081/
+
+## Administration
+
+Administrating the database can be accomplished by visiting:
+
+http://instance-url/phonebook-path/api/?db
+
+All other administrative tasks can be accomplished by running this PowerShell script:
+
+https://github.com/belowaverage-org/phonebook/blob/master/scripts/Enter-PhoneBookAdmin.ps1
+
+### Enter-PhoneBookAdmin Guide
+
+
+
+## Development
+
+### Script Examples
+
+https://github.com/belowaverage-org/phonebook/tree/master/scripts
+
+### API Documentation
+
+You can find a copy of this documentation hosted at https://phonebook-demo.belowaverage.org/api/
+Or by browsing to your own instance at http://instance-url/phonebook-path/api/
+
+There you will find all the nessesary information to create imports that hook into the Phone Book database.
