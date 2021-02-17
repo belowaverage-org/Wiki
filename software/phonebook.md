@@ -2,7 +2,7 @@
 title: Phone Book
 description: 🔎 A fast, tag based, flat file, PHP Phone Book.
 published: true
-date: 2021-02-17T16:51:24.865Z
+date: 2021-02-17T16:53:47.172Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-08T14:25:44.088Z
@@ -88,20 +88,27 @@ These options are for managing Phone Book entries.
 These options are for managing Phone Book translations.
 
 5. View all translations.
+	* Use this option to view all translations in the database.
 6. Add / set a translation.
+	* Use this option to add or set a translation entry.
 7. Remove a translation.
+	* Use this option to remove a translation entry.
 
 ###### Statistics
 
 These options will show analytic data.
 
 8. View all query logs.
+	* Use this option to view all logs from the last hour.
 9. View statistics.
+	* Use this option to view all statistics from the last hour.
 
 ###### Other
 
 10. Rebuild database.
+	* Use this option to purge and the re-generate the index / database. This will re-build all tags with new translations.
 11. View all tags.
+	* View all indexed tags.
 
 
 
