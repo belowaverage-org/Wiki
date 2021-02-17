@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-17T15:40:19.124Z
+date: 2021-02-17T15:44:50.703Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -73,7 +73,18 @@ dateCreated: 2020-04-17T16:29:12.544Z
 
 ## Auto start with administrator rights
 
+1. Right click the Super Launcher tray icon and select "Settings..."
+2. Check the "Auto run as admin?" check box.
+3. Press "Save"
+4. Exit Super Launcher and re-open to test.
+
 ## Auto start as another user
+
+1. Right click the Super Launcher tray icon and select "Settings..."
+2. Enter the "User Name" and "Domain" you would like Super Launcher to attempt to start with.
+	* If you do not know what your "Domain" is, simply enter a period: "."
+3. Press "Save"
+4. Exit Super Launcher and re-open to test.
 
 ## Auto start as another user with administrator rights
 
