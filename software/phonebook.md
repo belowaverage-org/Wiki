@@ -2,7 +2,7 @@
 title: Phone Book
 description: 🔎 A fast, tag based, flat file, PHP Phone Book.
 published: true
-date: 2021-02-17T16:44:32.635Z
+date: 2021-02-17T16:49:41.756Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-08T14:25:44.088Z
@@ -67,6 +67,37 @@ All other administrative tasks can be accomplished by running this PowerShell sc
 https://github.com/belowaverage-org/phonebook/blob/master/scripts/Enter-PhoneBookAdmin.ps1
 
 ### Enter-PhoneBookAdmin Guide
+
+##### Menu
+
+###### Phone Numbers
+
+These options are for managing Phone Book entries.
+
+0. Search the Phone Book.
+1. Edit a Phone Number.
+2. Add a Phone Number.
+3. Remove a Phone Number.
+
+###### Translations
+
+These options are for managing Phone Book translations.
+
+5. View all translations.
+6. Add / set a translation.
+7. Remove a translation.
+
+###### Statistics
+
+These options will show analytic data.
+
+8. View all query logs.
+9. View statistics.
+
+###### Other
+
+10. Rebuild database.
+11. View all tags.
 
 
 
