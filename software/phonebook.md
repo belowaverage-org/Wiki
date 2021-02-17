@@ -2,7 +2,7 @@
 title: Phone Book
 description: 🔎 A fast, tag based, flat file, PHP Phone Book.
 published: true
-date: 2021-02-17T16:50:38.668Z
+date: 2021-02-17T16:51:24.865Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-08T14:25:44.088Z
@@ -77,9 +77,11 @@ These options are for managing Phone Book entries.
 0. Search the Phone Book.
 	* Use this option to search the Phone Book for entries.
 1. Edit a Phone Number.
-	* Use this option to search for a Phone Book entry and then modify it.
+	* Use this option to modify a Phone Book entry.
 2. Add a Phone Number.
+	* Use this option to create a new Phone Book entry.
 3. Remove a Phone Number.
+	* Use this option to remove a Phone Book entry.
 
 ###### Translations
 
