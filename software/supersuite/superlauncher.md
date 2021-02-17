@@ -2,9 +2,10 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2020-07-01T03:17:18.197Z
+date: 2021-02-17T15:35:07.012Z
 tags: 
 editor: markdown
+dateCreated: 2020-04-17T16:29:12.544Z
 ---
 
 <p align="center">
@@ -40,11 +41,6 @@ editor: markdown
 
 ## Launch at startup
 
->Below are to examples on running SuperLauncher at startup.
->If you are unsure what the difference between "As your current user" and "As another user" in the context of running Super Launcher at startup, then only follow the "As your current user" portion of this guide.
-
-### As your current user
-
 1\. Find the Super Launcher shortcut or program.
 2\. Right-click the shortcut / program and select Copy.
 
@@ -60,62 +56,13 @@ editor: markdown
 
 5\. Log off your computer then log in to test.
 
-### As another user
-
-Below is an example exported Scheduled Task. Import this into Scheduled Tasks and modify to your desire. This is where the magic happens: `runas /savecred /user:domain\username "cmd /c start C:\SuperLauncher"`
-
-```xml
-<?xml version="1.0" encoding="UTF-16"?>
-<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
-  <RegistrationInfo>
-    <Date>2019-01-03T22:05:47.1965864</Date>
-    <Author>Dylan Bickerstaff</Author>
-    <URI>\SuperLauncher</URI>
-  </RegistrationInfo>
-  <Triggers>
-    <LogonTrigger>
-      <Enabled>true</Enabled>
-    </LogonTrigger>
-  </Triggers>
-  <Settings>
-    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
-    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
-    <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
-    <AllowHardTerminate>true</AllowHardTerminate>
-    <StartWhenAvailable>false</StartWhenAvailable>
-    <RunOnlyIfNetworkAvailable>false</RunOnlyIfNetworkAvailable>
-    <IdleSettings>
-      <StopOnIdleEnd>true</StopOnIdleEnd>
-      <RestartOnIdle>false</RestartOnIdle>
-    </IdleSettings>
-    <AllowStartOnDemand>true</AllowStartOnDemand>
-    <Enabled>true</Enabled>
-    <Hidden>false</Hidden>
-    <RunOnlyIfIdle>false</RunOnlyIfIdle>
-    <DisallowStartOnRemoteAppSession>false</DisallowStartOnRemoteAppSession>
-    <UseUnifiedSchedulingEngine>true</UseUnifiedSchedulingEngine>
-    <WakeToRun>false</WakeToRun>
-    <ExecutionTimeLimit>PT0S</ExecutionTimeLimit>
-    <Priority>7</Priority>
-  </Settings>
-  <Actions Context="Author">
-    <Exec>
-      <Command>runas</Command>
-      <Arguments>/savecred /user:domain\username "cmd /c start C:\SuperLauncher"</Arguments>
-    </Exec>
-  </Actions>
-</Task>
-```
-
 ## Backing up shortcuts
 
-1. Open Run dialog by pressing `Windows Key + R`.
-2. In the dialog box, input `%appdata%\..\Local\Dylan_Bickerstaff` and then press `Enter`.
-3. Browse to `.\SuperLauncher.exe_Url_[Random Letters and Numbers]`.
-4. Browse to `#.#.#.#`.
-5. Copy the `user.config` to a safe place.
+1. Right click on the Super Launcher tray icon.
+2. Select "View Config..."
+3. In whatever default XML editor, click "file" and then "save as..."
 
-> To restore the shorcuts, instead of doing step 5, paste a previously backed up `user.config` here by over-writing the current file.
+> To restore, simply overwrite the current config with your saved config from steps 1-3.
 
 ## File management as another user
 
