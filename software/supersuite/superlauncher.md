@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-17T15:37:26.291Z
+date: 2021-02-17T15:39:10.352Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -70,3 +70,10 @@ dateCreated: 2020-04-17T16:29:12.544Z
 2. Select "Open Explorer".
 
 ![superlauncherexplorer.png](/assets/software/supersuite/superlauncher/superlauncherexplorer.png)
+
+## Auto start with administrator rights
+
+## Auto start as another user
+
+## Auto start as another user with administrator rights
+
