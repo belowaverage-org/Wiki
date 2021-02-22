@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-17T15:54:55.549Z
+date: 2021-02-22T13:18:40.065Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -22,22 +22,42 @@ dateCreated: 2020-04-17T16:29:12.544Z
 # Setup
 
 1. Download Super Launcher from [here](https://github.com/belowaverage-org/SuperLauncher/releases).
-2. Run the installer, or run the portable executable.
+2. Run the installer.
 3. Start adding shortcuts.
 
 *Optional:*
 
 * Setup [Launch at startup](#launch-at-startup).
 
+# Adding Shortcuts
+
+
+
+1. Right click the Super Launcher icon located at the [Windows Notification Area](https://en.wikipedia.org/wiki/Taskbar#Taskbar_elements)
+
+![sl_tray.png](/assets/software/supersuite/superlauncher/sl_tray.png)
+
+2. Select "Add shortcut..."
+
+![sl_menu.png](/assets/software/supersuite/superlauncher/sl_menu.png)
+
+3. Browse to a shortcut or application you would like to pin to Super Launcher.
+
+
 # Tips
 
 ## Launching as another user
 
-![runasanotheruser.png](/assets/software/supersuite/superlauncher/runasanotheruser.png)
+1. Right click the Super Launcher icon.
+2. Select "Run as..."
+
+![sl_menu.png](/assets/software/supersuite/superlauncher/sl_menu.png)
+
+3. Enter the credentials of the account you would like Super Launcher to "run as".
 
 ## Launching with administrator rights
 
-![runasadmin.png](/assets/software/supersuite/superlauncher/runasadmin.png)
+
 
 ## Launch at startup
 
