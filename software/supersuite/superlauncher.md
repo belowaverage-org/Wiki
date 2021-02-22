@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-22T13:18:40.065Z
+date: 2021-02-22T13:20:00.578Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -31,8 +31,6 @@ dateCreated: 2020-04-17T16:29:12.544Z
 
 # Adding Shortcuts
 
-
-
 1. Right click the Super Launcher icon located at the [Windows Notification Area](https://en.wikipedia.org/wiki/Taskbar#Taskbar_elements)
 
 ![sl_tray.png](/assets/software/supersuite/superlauncher/sl_tray.png)
@@ -42,7 +40,6 @@ dateCreated: 2020-04-17T16:29:12.544Z
 ![sl_menu.png](/assets/software/supersuite/superlauncher/sl_menu.png)
 
 3. Browse to a shortcut or application you would like to pin to Super Launcher.
-
 
 # Tips
 
@@ -57,7 +54,10 @@ dateCreated: 2020-04-17T16:29:12.544Z
 
 ## Launching with administrator rights
 
+1. Right click the Super Launcher icon.
+2. Select "Elevate..."
 
+![sl_menu.png](/assets/software/supersuite/superlauncher/sl_menu.png)
 
 ## Launch at startup
 
