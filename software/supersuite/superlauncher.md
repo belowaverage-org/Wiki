@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-25T14:18:08.391Z
+date: 2021-02-25T14:25:47.309Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -137,6 +137,12 @@ Super Launcher is designed to run applications is separate user-contexts, either
 To read more about how the Windows security system works, see: https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/access-control
 
 ## Why does Super Launcher have to be installed, why can't it be portable?
+
+Super Launcher is designed with I.T. Administrators and Technicians in mind. Since Super Launcher can run in multiple security contexts, it is important that the Super Launcher files are installed in a directory that can be accessed by multiple security contexts and users.
+
+Another reason why Super Launcher cannot be portable is because the configuration files need to be accessible by all user / security contexts on the PC. Super Launcher will save all configuration files to `C:\Users\Public\Documents\Below Average\Super Launcher\%DOMAIN%\%USERNAME%\SuperLauncherConfig.xml`.
+
+If you really want to run Super Launcher in a portable mode, install the program to a PC you have administrator rights on, and browse to `C:\Program Files\Below Average\Super Launcher\` and copy the files to wherever you like. Super Launcher should be able to run, but you might encounter some un-expected errors, especially if you try to use the "Elevate" or "Run-as" feature.
 
 ## Why can't Super Launcher support a drag-and-drop interface for adding shortcuts?
 
