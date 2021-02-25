@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-25T14:25:47.309Z
+date: 2021-02-25T14:32:25.146Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -146,3 +146,6 @@ If you really want to run Super Launcher in a portable mode, install the program
 
 ## Why can't Super Launcher support a drag-and-drop interface for adding shortcuts?
 
+Super Launcher is designed to run in different security contexts and Windows does not allow applications running in different contexts to interact. Since the Windows Desktop (explorer.exe) runs under your logged in security context, Super Launcher is not able to read the clipboard or drag-and-drop data from the desktop or file explorer.
+
+This means that the only option to add shortcuts in Super Launcher is by opening a new file explorer window under the same security context that Super Launcher is running as.
