@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-25T14:32:25.146Z
+date: 2021-02-25T14:32:44.075Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
