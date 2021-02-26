@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-25T14:32:44.075Z
+date: 2021-02-26T13:36:02.852Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -132,7 +132,7 @@ This is a very common question we get. *"...just make a folder on the desktop wi
 
 If you are asking these questions, then Super Launcher is not meant for you.
 
-Super Launcher is designed to run applications is separate user-contexts, either in an elevated context, a different users account's context, or both. To do this task natively in Windows, the user is required to hold **Shift** and **Right-click** the program they want to start to force an option to appear in the context menu called "Run as another user..." This can be very time consuming, especially for people who need to run programs as different users like System Administrators and I.T. Technicians.
+Super Launcher is designed to run applications in a separate user-context, either in an elevated context, a different user-account's context, or both. To do this task natively in Windows, the user is required to hold **Shift** and **Right-click** the program they want to start to force an option to appear in the context menu called "Run as another user..." This can be very time consuming, especially for people who need to run programs as different users like System Administrators and I.T. Technicians.
 
 To read more about how the Windows security system works, see: https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/access-control
 
