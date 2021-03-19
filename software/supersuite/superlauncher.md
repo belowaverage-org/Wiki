@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-02-26T13:36:02.852Z
+date: 2021-03-19T13:56:29.501Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -118,11 +118,13 @@ Selecting "Auto Run As Admin?" and entering a username / domain into the Super L
 
 ## Enable hidden folders and file extensions.
 
-1. Open regedit.exe through Super Launcher under the desired account.
-2. Navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced`
-3. Create / set the `Hidden` value too `REG_DWORD: 1`
-4. Create / set the `HideFileExt` value too `REG_DWORD: 0`
-5. Exit Super Launcher and re-open to test.
+1. Right click the Super Launcher tray icon.
+2. Select "Open Explorer"
+3. In the new window, open the "Options..." dropdown as shown below and select the desired options.
+
+![show_file_ext_and_hidden.png](/assets/software/supersuite/superlauncher/show_file_ext_and_hidden.png)
+
+4. Press the `F5` key on your keyboard to refresh the window with the new options. 
 
 # Frequently Asked Questions
 
