@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2020-11-09T15:01:35.436Z
+date: 2021-03-25T19:02:58.046Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -244,7 +244,22 @@ Below is an example of the SuperGrate.xml file:
 * WMI
     * Super Grate may fail if WMI is corrupt or disabled on the remote PC.
     * To fix: `winmgmt /resetrepository
-    
+* Remote Registry Dependence
+    * You may experience the following error if the `Remote Registry` service is disabled on the remote target computer:
+```
+    [VERBOSE]<17.17.33> Waiting for scanstate to finish...
+    [ERROR]<17.17.33> Couldn't connect to remote machine.
+    [VERBOSE]<17.17.34> ERROR
+       at System.Diagnostics.NtProcessManager.GetProcessInfos(String machineName, Boolean isRemoteMachine)
+       at System.Diagnostics.Process.GetProcesses(String machineName)
+       at System.Diagnostics.Process.GetProcessesByName(String processName, String machineName)
+       at SuperGrate.Remote.<>c__DisplayClass2_0.<<WaitForProcessExit>b__0>d.MoveNext()
+    [ERROR]<17.17.34> Couldn't get process information from performance counter.
+    [VERBOSE]<17.17.34> ERROR
+       at System.Diagnostics.NtProcessManager.GetProcessInfos(PerformanceCounterLib library)
+       at System.Diagnostics.NtProcessManager.GetProcessInfos(String machineName, Boolean isRemoteMachine)
+    [ERROR]<17.17.34> Failed to check if scanstate is still running.
+```
 
 
 
