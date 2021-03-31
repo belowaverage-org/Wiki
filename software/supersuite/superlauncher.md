@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-03-19T13:56:40.553Z
+date: 2021-03-31T12:31:12.997Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -130,7 +130,7 @@ Selecting "Auto Run As Admin?" and entering a username / domain into the Super L
 
 ## Why is Super Launcher a better solution than a folder on the desktop?
 
-This is a very common question we get. *"...just make a folder on the desktop with your shortcuts..."* or *"...just pin the shortcuts to the start-menu or the task-bar..."*
+This issue is commonly asked into question: *"...just make a folder on the desktop with your shortcuts..."* or *"...just pin the shortcuts to the start-menu or the task-bar..."*
 
 If you are asking these questions, then Super Launcher is not meant for you.
 
