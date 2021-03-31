@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-03-31T12:35:11.792Z
+date: 2021-03-31T12:45:17.716Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -132,7 +132,7 @@ Selecting "Auto Run As Admin?" and entering a username / domain into the Super L
 
 This issue is commonly asked into question: *"...just make a folder on the desktop with your shortcuts..."* or *"...just pin the shortcuts to the start-menu or the task-bar..."*
 
-If you are asking these questions, then this application is probbably not meant for you.
+If you are asking these questions, then this application is probably not meant for you.
 
 Super Launcher is designed to run applications in a separate user-context, either in an elevated context, a different user-account's context, or both. To do this task natively in Windows, the user is required to hold **Shift** and **Right-click** the program they want to start to force an option to appear in the context menu called "Run as another user..." This can be very time consuming, especially for people who need to run programs as different users like System Administrators and I.T. Technicians.
 
