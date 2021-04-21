@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2021-03-25T19:03:44.519Z
+date: 2021-04-21T13:42:30.315Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -243,7 +243,7 @@ Below is an example of the SuperGrate.xml file:
     * Super Grate may fail if the remote PC or executing PC falls asleep.
 * WMI
     * Super Grate may fail if WMI is corrupt or disabled on the remote PC.
-    * To fix: `winmgmt /resetrepository`
+    * To fix, run this command on the remote PC as an administrator: `winmgmt /resetrepository`
 * Remote Registry Dependence
     * You may experience the following error if the `Remote Registry` service is disabled on the remote / target computer:
 ```
