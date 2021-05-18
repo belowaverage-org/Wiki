@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2021-04-21T13:42:30.315Z
+date: 2021-05-18T17:48:16.660Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -81,6 +81,20 @@ After running the steps above, Super Grate should run without a hitch.
 4. Press "Start".
 
 ![restoring-a-user-profile.png](/assets/software/supersuite/supergrate/restoring-a-user-profile.png)
+
+### Optional:
+
+If you want to restore a user profile onto another domain or as a different user name, follow the steps below.
+
+1. After performing a backup like normal, click "List Store".
+2. Right click the user you want to rename.
+3. Select "Set destination user name..."
+4. In the dialog, enter the new username or domain and username e.g:
+
+`%DOMAIN%\%USERNAME%` or `%USERNAME%` ➡ `BELOWAVERAGE\dylan` or `dylan`
+
+![rename_user.png](/assets/software/supersuite/supergrate/rename_user.png)
+![rename_user_dialog.png](/assets/software/supersuite/supergrate/rename_user_dialog.png)
 
 ## Full Migration
 
