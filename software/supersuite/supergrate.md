@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2021-05-18T17:50:15.616Z
+date: 2021-05-18T17:50:22.164Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -205,8 +205,8 @@ An example of the above may look like this below:
         * **exportedon** (File | "132312220838407695")
         * **importedby** (File | "DOMAIN\Dylan.Bickerstaff")
         * **importedon** (File | "132312220838407695")
-        * **ntaccount** (File | "DOMAIN1\Administrator")
-        * **targetntaccount** (File | "DOMAIN2\Administrator")
+        * **ntaccount** (File | "DOMAIN1\Administrator1")
+        * **targetntaccount** (File | "DOMAIN2\Administrator2")
         * **sid** (File | "S-1-5-21-3623811015-3361044348-30300820-1013")
         * **source** (File | "DOMAIN\BA-PC01")
 
