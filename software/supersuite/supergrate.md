@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2021-05-18T17:48:16.660Z
+date: 2021-05-18T17:50:15.616Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -191,6 +191,7 @@ The file structure of the store is as follows:
         * **importedby**: A file containing the name of the user who imported the user profile.
         * **importedon**: A file containing the date of when the profile was imported in windows file time.
         * **ntaccount**: A file containing the name of the user profile that was imported.
+        * **targetntaccount**: A file containing the target user name and domain to use when restoring the profile.
         * **sid**: A file containing the [SID](https://en.wikipedia.org/wiki/Security_Identifier) of the user profile that was imported.
         * **source**: A file containing the name of the source computer the profile originated from.
 
@@ -204,7 +205,8 @@ An example of the above may look like this below:
         * **exportedon** (File | "132312220838407695")
         * **importedby** (File | "DOMAIN\Dylan.Bickerstaff")
         * **importedon** (File | "132312220838407695")
-        * **ntaccount** (File | "DOMAIN\Administrator")
+        * **ntaccount** (File | "DOMAIN1\Administrator")
+        * **targetntaccount** (File | "DOMAIN2\Administrator")
         * **sid** (File | "S-1-5-21-3623811015-3361044348-30300820-1013")
         * **source** (File | "DOMAIN\BA-PC01")
 
