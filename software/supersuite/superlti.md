@@ -2,8 +2,10 @@
 title: Super LTI
 description: 
 published: true
-date: 2020-06-03T00:01:28.975Z
+date: 2021-07-02T16:18:03.436Z
 tags: 
+editor: markdown
+dateCreated: 2020-04-16T18:18:16.095Z
 ---
 
 # About
@@ -50,7 +52,7 @@ Because MDT (Microsoft Deployment Toolkit) sucks when working with powershell. A
 
 *Demonstration:*
 
-![superlti.gif](/assets/software/supersuite/superlti/superlti.gif)
+![superlti.gif](https://raw.githubusercontent.com/krisdb2009/documentation/master/images/superlti.gif)
 
 # Command Line Parameters
 
