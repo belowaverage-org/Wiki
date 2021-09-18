@@ -2,8 +2,10 @@
 title: Super ADD
 description: 
 published: true
-date: 2020-04-17T01:46:22.304Z
+date: 2021-09-18T13:44:05.612Z
 tags: 
+editor: markdown
+dateCreated: 2020-04-16T17:23:47.795Z
 ---
 
 ![superadd.ico](/assets/software/supersuite/superadd/superadd.ico)
@@ -55,7 +57,7 @@ JoinWorkgroup=WORKGROUP
 
 `%DeploymentShare%\SuperADD\Start-Join.ps1`
 
-3\. Paste the following XML into the ts.xml of your choosing after the SuperADD sequnce group.
+3\. Paste the following XML into the ts.xml of your choosing after the SuperADD sequence group.
 
 ```xml
 <group expand="true" name="SuperADD - Delay Domain Join" description="This group will decide weather or not to delay a domain join based on SuperADD's outcome." disable="false" continueOnError="false">
