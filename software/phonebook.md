@@ -2,7 +2,7 @@
 title: Phone Book
 description: 🔎 A fast, tag based, flat file, PHP Phone Book.
 published: true
-date: 2021-02-17T17:05:13.948Z
+date: 2022-06-27T22:15:39.755Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-08T14:25:44.088Z
@@ -127,6 +127,141 @@ A **translation** is a `from` and `to` key value pair in the database that is ap
 ![pb_trans_examples.png](/assets/software/phonebook/pb_trans_examples.png)
 
 > **Tip:** Translate a tag to multiple tags by using a space to delimite in the `to` field.
+
+## Modifying the schema
+Below is the default schema file. It can be modified to add / remove columns and change the behavior of the front-end and back-end.
+
+`./api/schema.cfg.json`
+
+```json
+
+{
+    "created": {                   //Column Name
+        "export": false,           //Should this column appear in the front-end CSV export?
+        "name": "Created",         //The name of the column that appears in the front-end.
+        "print": false,            //Should this column appear in the front-end print dialog?
+        "tagged": false,           //Should this column be tagged / indexed on import?
+        "visible": false,          //Should this column be visible on the front end?
+        "type": "timestamp",       //The type of this column. Choices are: timestamp, choice, and number.
+        "sortable": true           //Should this column be sortable via the API?
+    },
+    "modified": {
+        "export": false,
+        "length": 10,              //The max length allowed as a value in this column.
+        "name": "Modified",
+        "print": false,
+        "tagged": false,
+        "visible": false,
+        "type": "timestamp",
+        "sortable": true
+    },
+    "description": {
+        "export": true,
+        "length": 1000,
+        "name": "Description",
+        "print": true,
+        "tagged": true,
+        "visible": true,
+        "sortable": true
+    },
+    "callerid": {
+        "export": true,
+        "length": 1000,
+        "name": "Caller ID",
+        "print": true,
+        "tagged": true,
+        "visible": true,
+        "sortable": true
+    },
+    "type": {
+        "choices": [               //A list of choices when the column type is set to "choice".
+            "Business",
+            "Fax",
+            "Location",
+            "Person",
+            "Shared"
+        ],
+        "export": true,
+        "length": 10,
+        "name": "Type",
+        "print": false,
+        "tagged": true,
+        "type": "choice",
+        "visible": true,
+        "sortable": true
+    },
+    "number": {
+        "export": true,
+        "indexed": true,
+        "length": 50,
+        "name": "Phone Number",
+        "print": true,
+        "tagged": true,
+        "type": "number",
+        "unique": true,            //Should this column only contain unique entries?
+        "visible": true,
+        "sortable": true,
+        "orderby": "ASC"           //The order in which the results are displayed on the front-end. (only one column can have this attribute set).
+    },
+    "email": {
+        "export": true,
+        "length": 100,
+        "name": "Email",
+        "print": true,
+        "tagged": true,
+        "visible": true
+    },
+    "employeeid": {
+        "export": true,
+        "indexed": true,
+        "length": 10,
+        "name": "Employee ID",
+        "print": false,
+        "tagged": true,
+        "type": "number",
+        "unique": false,
+        "visible": true
+    },
+    "firstname": {
+        "export": true,
+        "length": 100,
+        "name": "First Name",
+        "print": false,
+        "tagged": true,
+        "visible": true,
+        "sortable": true
+    },
+    "lastname": {
+        "export": true,
+        "length": 100,
+        "name": "Last Name",
+        "print": false,
+        "tagged": true,
+        "visible": true,
+        "sortable": true
+    },
+    "location": {
+        "export": true,
+        "length": 100,
+        "name": "Location",
+        "print": false,
+        "tagged": true,
+        "visible": true,
+        "sortable": true
+    },
+    "username": {
+        "export": true,
+        "length": 50,
+        "tagged": true,
+        "visible": false
+    },
+    "importsource": {
+        "export": true,
+        "print": false,
+        "length": 50
+    }
+}
+```
 
 ## Development
 
