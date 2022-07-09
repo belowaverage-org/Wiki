@@ -2,7 +2,7 @@
 title: Super Grate
 description: A free & open source Windows Profile Migration & Backup Utility
 published: true
-date: 2021-05-18T17:50:22.164Z
+date: 2022-07-09T14:43:43.279Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-15T02:24:34.379Z
@@ -138,15 +138,15 @@ Note: *CLI Switches override [SuperGrate.xml](#supergratexml) settings.*
 
 To use a CLI switch, do the following:
 
-`C:\>SuperGrate.exe -NameOfSetting:Value`
+`C:\>SuperGrate.exe /NameOfSetting:Value`
 
 or:
 
-`C:\>SuperGrate.exe -NameOfSetting:"Value"`
+`C:\>SuperGrate.exe /NameOfSetting:"Value"`
 
 for example:
 
-`C:\>SuperGrate.exe -HideBuiltInAccounts:"false"`
+`C:\>SuperGrate.exe /HideBuiltInAccounts:"false"`
 
 For a list of settings, see: [SuperGrate.xml](#supergratexml)
 
@@ -238,12 +238,18 @@ Below is an example of the SuperGrate.xml file:
   <!--Prevent unknown accounts from being listed?-->
   <HideUnknownSIDs>false</HideUnknownSIDs>
   <!--Write log to disk on exit. (Leave blank to disable) (E.g: \\ba-share\s$\Logs or .\Logs)-->
-  <DumpLogHereOnExit></DumpLogHereOnExit>
+  <DumpLogHereOnExit>.\LOGS</DumpLogHereOnExit>
   <!--List of columns to display for the Source or Store users.-->
   <ULSourceColumns>0,3,9</ULSourceColumns>
   <ULStoreColumns>0,1,5,6,4</ULStoreColumns>
   <!--User List View Mode: Large (0) / Small Icon (2), List (3), Details (1) and Tile (4).-->
   <ULViewMode>1</ULViewMode>
+  <!--Default source computer at startup.-->
+  <SourceComputer></SourceComputer>
+  <!--Default destination computer at startup.-->
+  <DestinationComputer></DestinationComputer>
+  <!--Default tab view at startup: Source, Store, None.-->
+  <TabView>None</TabView>
   <!--Security Protocol Version (Restart Required): SystemDefault, Ssl3, Tls, Tls11, Tls12, Tls13.-->
   <SecurityProtocol>Tls12</SecurityProtocol>
 </SuperGrate>
