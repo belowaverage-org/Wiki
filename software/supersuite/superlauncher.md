@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2021-03-31T12:45:17.716Z
+date: 2022-12-29T08:48:12.829Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -14,7 +14,7 @@ dateCreated: 2020-04-17T16:29:12.544Z
 <h2 align="center">Super Launcher</h2>
 
 <p align="center">
-	<img src="/assets/software/supersuite/superlauncher/superlaunchermain.png">
+	<img src="/assets/software/supersuite/superlauncher/newlauncher.png">
 </p>
 
 > Super Launcher is an admin launcher that persists in the system tray that can launch programs quickly; optionally, with administrator rights, as another user, or both.
@@ -33,13 +33,15 @@ dateCreated: 2020-04-17T16:29:12.544Z
 
 1. Right click the Super Launcher icon located at the [Windows Notification Area](https://en.wikipedia.org/wiki/Taskbar#Taskbar_elements)
 
-![sl_tray.png](/assets/software/supersuite/superlauncher/sl_tray.png)
+![sl_tray.png](/assets/software/supersuite/superlauncher/newtaskbar.png)
 
-2. Select "Add shortcut..."
+2. Select the plus symbol.
 
-![sl_menu.png](/assets/software/supersuite/superlauncher/sl_menu.png)
+![sl_menu.png](/assets/software/supersuite/superlauncher/newaddicon.png)
 
 3. Browse to a shortcut or application you would like to pin to Super Launcher.
+
+![addshortcutwindow.png](/assets/software/supersuite/superlauncher/addshortcutwindow.png)
 
 # Tips
 
