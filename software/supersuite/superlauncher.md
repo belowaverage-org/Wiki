@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2022-12-29T08:55:21.588Z
+date: 2022-12-29T09:01:46.252Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -21,7 +21,7 @@ dateCreated: 2020-04-17T16:29:12.544Z
 
 # Setup
 
-1. Install Super Launcher by clicking here: <a href="ms-windows-store://pdp/?ProductId=9N269JD69VCX&mode=mini&referrer=storeforweb">Open in Windows Store.</a>
+1. Install Super Launcher by clicking here: <a href="https://cutt.ly/n2qJrss">Open in Windows Store.</a>
 3. Open Super Launcher in the Windows Start Menu.
 
 *Optional:*
