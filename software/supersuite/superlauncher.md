@@ -2,7 +2,7 @@
 title: Super Launcher
 description: An admin launcher that minimizes to the system tray.
 published: true
-date: 2022-12-29T08:48:12.829Z
+date: 2022-12-29T08:55:21.588Z
 tags: 
 editor: markdown
 dateCreated: 2020-04-17T16:29:12.544Z
@@ -21,9 +21,8 @@ dateCreated: 2020-04-17T16:29:12.544Z
 
 # Setup
 
-1. Download Super Launcher from [here](https://github.com/belowaverage-org/SuperLauncher/releases).
-2. Run the installer.
-3. Start adding shortcuts.
+1. Install Super Launcher by clicking here: <a href="ms-windows-store://pdp/?ProductId=9N269JD69VCX&mode=mini&referrer=storeforweb">Open in Windows Store.</a>
+3. Open Super Launcher in the Windows Start Menu.
 
 *Optional:*
 
