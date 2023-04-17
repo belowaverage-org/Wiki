@@ -1,375 +1,129 @@
-About
-
-![](media/image1.png){width="6.5in" height="3.408333333333333in"}
-
-*Super ADD is a MDT (Microsoft Deployment Toolkit) extension that
-displays a GUI (Graphical User Interface) to a user running a LTI (Lite
-Touch Installation) that allows them to select / generate a computer
-name and description for Active Directory.*
-
-*Super ADD also creates the computer accounts as soon as the user
-selects "Save" to prevent computer objects from being over-written from
-parallel instances of LTI.*
-
-Installation
-
-Standard Installation
-
-1\. Include .NET Framework in WinPE image.
-
-![](media/image2.jpeg){width="6.5in" height="5.402777777777778in"}
-
-2\. Add the following rules to CustomSettings.ini
-
-SkipDomainMembership=YES
-
+<div id="content" class="site-content"><div class="ast-container"><div id="primary" class="content-area primary"><main id="main" class="site-main"><article class="post-7206 page type-page status-publish has-post-thumbnail ast-article-single" id="post-7206" itemtype="https://schema.org/CreativeWork" itemscope="itemscope"><div class="entry-content clear" itemprop="text"><h1 class="wp-block-heading">About</h1><figure class="wp-block-image size-full fbx-instance"><a href="https://belowaverage.org/wp-content/uploads/2023/04/superaddimage.png" target="_blank" rel="noreferrer noopener" class="fbx-link"><img decoding="async" width="1007" height="528" src="https://belowaverage.org/wp-content/uploads/2023/04/superaddimage.png" alt="" class="wp-image-7219" srcset="https://belowaverage.org/wp-content/uploads/2023/04/superaddimage.png 1007w, https://belowaverage.org/wp-content/uploads/2023/04/superaddimage-300x157.png 300w, https://belowaverage.org/wp-content/uploads/2023/04/superaddimage-768x403.png 768w" sizes="(max-width: 1007px) 100vw, 1007px"></a></figure><blockquote class="wp-block-quote"><p>Super ADD is a MDT (Microsoft Deployment Toolkit) extension that displays a GUI (Graphical User Interface) to a user running a LTI (Lite Touch Installation) that allows them to select / generate a computer name and description for Active Directory.</p><p>Super ADD also creates the computer accounts as soon as the user selects “Save” to prevent computer objects from being over-written from parallel instances of LTI.</p></blockquote><h1 class="wp-block-heading"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/superadd.md#installation"></a>Installation</h1><h2 class="wp-block-heading"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/superadd.md#standard-installation"></a>Standard Installation</h2><p>1. Include .NET Framework in WinPE image.</p><figure class="wp-block-image size-full"><a href="https://belowaverage.org/wp-content/uploads/2023/04/net.jpg" target="_blank" rel="noreferrer noopener" class="fbx-link"><img decoding="async" loading="lazy" width="711" height="591" src="https://belowaverage.org/wp-content/uploads/2023/04/net.jpg" alt="" class="wp-image-7220" srcset="https://belowaverage.org/wp-content/uploads/2023/04/net.jpg 711w, https://belowaverage.org/wp-content/uploads/2023/04/net-300x249.jpg 300w" sizes="(max-width: 711px) 100vw, 711px"></a></figure><p>2. Add the following rules to CustomSettings.ini</p><pre class="wp-block-preformatted">SkipDomainMembership=YES
 SkipComputerName=YES
-
 JoinDomain=ad.contoso.com
-
-JoinWorkgroup=WORKGROUP
-
-![](media/image3.jpeg){width="6.5in" height="5.4in"}
-
-3\. "Update" the deployment share / rebuild the WinPE image. 4. Insert
-the [[ts.xml from
-below]{.underline}](https://belowaverage.org/documentation/superadd/#tsxml) to
-your desired task sequnce's ts.xml file. 5. Copy SuperADD.exe to you
-deployment share in a folder at the root named "SuperADD". For example:
-
-%DeploymentShare%\\SuperADD\\SuperADD.exe
-
-6\. Configure the SuperADD.xml to your liking. If the SuperADD.xml does
-not exist, run SuperADD.exe once to generate it.
-
-***Optional:***
-
-*7. Proceed to "Join domain at very end of LTI" if you wish to have LTI
-join the PC to the domain after LTI finishes.*
-
-Join domain at very end of LTI
-
-1\. Download
-this [[file]{.underline}](https://github.com/belowaverage-org/SuperADD/blob/master/Scripts/Start-Join.ps1).
-2. Place this file (**Start-Join.ps1**) in the SuperADD directory
-located on your deployment share.
-
-%DeploymentShare%\\SuperADD\\Start-Join.ps1
-
-3\. Paste the following XML into the ts.xml of your choosing after the
-SuperADD sequence group.
-
-\<group expand=\"true\" name=\"SuperADD - Delay Domain Join\"
-description=\"This group will decide weather or not to delay a domain
-join based on SuperADD\'s outcome.\" disable=\"false\"
-continueOnError=\"false\"\>
-
-\<action /\>
-
-\<condition\>\</condition\>
-
-\<step type=\"SMS_TaskSequence_SetVariableAction\" name=\"Set
-DelayJoinDomain\" description=\"\" disable=\"false\"
-continueOnError=\"false\" successCodeList=\"0 3010\"\>
-
-\<defaultVarList\>
-
-\<variable name=\"VariableName\"
-property=\"VariableName\"\>DelayJoinDomain\</variable\>
-
-\<variable name=\"VariableValue\"
-property=\"VariableValue\"\>%JoinDomain%\</variable\>
-
-\</defaultVarList\>
-
-\<action\>cscript.exe \"%SCRIPTROOT%\\ZTISetVariable.wsf\"\</action\>
-
-\</step\>
-
-\<step type=\"SMS_TaskSequence_SetVariableAction\" name=\"Clear
-JoinDomain\" description=\"\" disable=\"false\"
-continueOnError=\"false\" successCodeList=\"0 3010\"\>
-
-\<defaultVarList\>
-
-\<variable name=\"VariableName\"
-property=\"VariableName\"\>JoinDomain\</variable\>
-
-\<variable name=\"VariableValue\"
-property=\"VariableValue\"\>\</variable\>
-
-\</defaultVarList\>
-
-\<action\>cscript.exe \"%SCRIPTROOT%\\ZTISetVariable.wsf\"\</action\>
-
-\</step\>
-
-\</group\>
-
-4\. Paste the following XML into the ts.xml of your choosing as the last
-step in the task sequence.
-
-\<step type=\"BDD_RunPowerShellAction\" name=\"SuperADD - Start Join
-&amp; Reboot\" description=\"This item will wait for MDT to exit, start
-another process that clears all NET connections, joins the PC to the
-domain and re-boots the PC.\" disable=\"false\"
-continueOnError=\"false\" successCodeList=\"0 3010\"\>
-
-\<defaultVarList\>
-
-\<variable name=\"ScriptName\"
-property=\"ScriptName\"\>%DeployDrive%\\SuperADD\\Start-Join.ps1\</variable\>
-
-\<variable name=\"Parameters\" property=\"Parameters\"\>-DomainName
-\"%DelayJoinDomain%\" -ComputerName \"%OSDComputerName%\" -UserName
-\"%DomainAdmin%\" -Password \"%DomainAdminPassword%\"\</variable\>
-
-\<variable name=\"PackageID\" property=\"PackageID\"\>\</variable\>
-
-\</defaultVarList\>
-
-\<action\>cscript.exe \"%SCRIPTROOT%\\ZTIPowerShell.wsf\</action\>
-
-\<condition\>\</condition\>
-
-\</step\>
-
-Command Line
-
-![](media/image4.png){width="5.583333333333333in" height="3.25in"}
-
-Resources
-
-SuperADD.xml
-
-\<?xml version=\"1.0\" encoding=\"utf-8\"?\>
-
-\<SuperADD\>
-
-\<!\--The hostname of the domain for authentication.\--\>
-
-\<DomainName\>ad.contoso.com\</DomainName\>
-
-\<!\--The hostname of the domain controller to connect to.\--\>
-
-\<DomainController\>condc1.ad.contoso.com\</DomainController\>
-
-\<!\--The search base for name generation / unique verification.\--\>
-
-\<BaseDN\>DC=ad,DC=contoso,DC=com\</BaseDN\>
-
-\<OrganizationalUnits\>
-
-\<OrganizationalUnit\>
-
-\<!\--The description of this OU that will appear in the UI.\--\>
-
-\<Name\>Computers\</Name\>
-
-\<!\--The OU DN where computer objects will be placed.\--\>
-
-\<DistinguishedName\>CN=Computers,DC=ad,DC=contoso,DC=com\</DistinguishedName\>
-
-\<!\--Auto Name Generating Patterns:\--\>
-
-\<!\--#: Increment with a lefthand padding (Append Mode). E.g: \#### =
-0001\--\>
-
-\<!\--+: Increment with a lefthand padding (Fill Mode). E.g: ++++ =
-0001\--\>
-
-\<!\--\*: Random Alpha Numeric Lowercase. E.g: \*\*\*\* = j3g2\--\>
-
-\<!\--\$: Random Alpha Numeric Uppercase. E.g: \$\$\$\$ = J3G2\--\>
-
-\<!\--@: Random Alpha Numeric Both Case. E.g: @@@@ = J3g2\--\>
-
-\<!\--%: Random Numeric. E.g: %%%% = 5473\--\>
-
-\<!\--!: Random Alpha Lowecase. E.g: !!!! = jwkx\--\>
-
-\<!\--?: Random Alpha Uppercase. E.g: ???? = JWKX\--\>
-
-\<!\--\~: Random Alpha Both Case. E.g: \~\~\~\~ = JwKx\--\>
-
-\<AutoName\>CONTOSOPC####\</AutoName\>
-
-\<!\--The security groups that will be auto applied. (the DNs must exist
-below in \'SecurityGroups\')\--\>
-
-\<SecurityGroupsDNs\>
-
-\<SecurityGroupDN\>CN=COMP_Wifi,OU=Groups,OU=Computers,DC=ad,DC=contoso,DC=com\</SecurityGroupDN\>
-
-\</SecurityGroupsDNs\>
-
-\</OrganizationalUnit\>
-
-\</OrganizationalUnits\>
-
-\<SecurityGroups\>
-
-\<SecurityGroup\>
-
-\<!\--The description of this Security Group that will appear in the
-UI.\--\>
-
-\<Name\>Computer Wifi Access\</Name\>
-
-\<!\--The distinguished name of the security group.\--\>
-
-\<DistinguishedName\>CN=COMP_Wifi,OU=Groups,OU=Computers,DC=ad,DC=contoso,DC=com\</DistinguishedName\>
-
-\</SecurityGroup\>
-
-\</SecurityGroups\>
-
-\<DescriptionItems\>
-
-\<DescriptionItem\>
-
-\<Name\>Department\</Name\>
-
-\<Type\>List\</Type\>
-
-\<ListItems\>
-
-\<ListItem\>Accounting\</ListItem\>
-
-\<ListItem\>Finance\</ListItem\>
-
-\<ListItem\>Human Resources\</ListItem\>
-
-\</ListItems\>
-
-\</DescriptionItem\>
-
-\<DescriptionItem\>
-
-\<Name\>Person / Location\</Name\>
-
-\<Type\>Text\</Type\>
-
-\</DescriptionItem\>
-
-\</DescriptionItems\>
-
-\</SuperADD\>
-
-ts.xml
-
-\<group expand=\"true\" name=\"SuperADD\" description=\"A Customizable
-UI for joining computers to a domain / workgroup.\" disable=\"false\"
-continueOnError=\"false\"\>
-
-\<step type=\"SMS_TaskSequence_RunCommandLineAction\" name=\"Copy
-SuperADD.xml\" description=\"Copies the SuperADD.xml from the deployment
-share to the tools folder where SuperADD will start in.\"
-disable=\"false\" continueOnError=\"false\" startIn=\"\"
-successCodeList=\"0 3010\" runIn=\"WinPEandFullOS\"\>
-
-\<defaultVarList\>
-
-\<variable name=\"PackageID\" property=\"PackageID\" /\>
-
-\<variable name=\"RunAsUser\" property=\"RunAsUser\"\>false\</variable\>
-
-\<variable name=\"SMSTSRunCommandLineUserName\"
-property=\"SMSTSRunCommandLineUserName\"\>\</variable\>
-
-\<variable name=\"SMSTSRunCommandLineUserPassword\"
-property=\"SMSTSRunCommandLineUserPassword\"\>\</variable\>
-
-\<variable name=\"LoadProfile\"
-property=\"LoadProfile\"\>false\</variable\>
-
-\</defaultVarList\>
-
-\<action\>cmd.exe /c copy %DeployDrive%\\SuperADD\\SuperADD.xml
-SuperADD.xml\</action\>
-
-\</step\>
-
-\<action /\>
-
-\<step type=\"SMS_TaskSequence_RunCommandLineAction\" name=\"SuperADD -
-WinPE\" description=\"Launches SuperADD using BDDRun in Windows PE.\"
-disable=\"false\" continueOnError=\"false\" startIn=\"\"
-successCodeList=\"0 3010\" runIn=\"WinPEandFullOS\"\>
-
-\<defaultVarList\>
-
-\<variable name=\"PackageID\" property=\"PackageID\"\>\</variable\>
-
-\<variable name=\"RunAsUser\" property=\"RunAsUser\"\>false\</variable\>
-
-\<variable name=\"SMSTSRunCommandLineUserName\"
-property=\"SMSTSRunCommandLineUserName\"\>\</variable\>
-
-\<variable name=\"SMSTSRunCommandLineUserPassword\"
-property=\"SMSTSRunCommandLineUserPassword\"\>\</variable\>
-
-\<variable name=\"LoadProfile\"
-property=\"LoadProfile\"\>false\</variable\>
-
-\</defaultVarList\>
-
-\<action\>bddrun.exe %DeployDrive%\\SuperADD\\SuperADD.exe\</action\>
-
-\<condition\>
-
-\<expression type=\"SMS_TaskSequence_VariableConditionExpression\"\>
-
-\<variable name=\"Variable\"\>DeploymentType\</variable\>
-
-\<variable name=\"Operator\"\>equals\</variable\>
-
-\<variable name=\"Value\"\>NEWCOMPUTER\</variable\>
-
-\</expression\>
-
-\</condition\>
-
-\</step\>
-
-\<step type=\"SMS_TaskSequence_RunCommandLineAction\" name=\"SuperADD -
-Windows\" description=\"Launches SuperADD in normal Windows where BDDRun
-is not required.\" disable=\"false\" continueOnError=\"false\"
-startIn=\"\" successCodeList=\"0 3010\" runIn=\"WinPEandFullOS\"\>
-
-\<defaultVarList\>
-
-\<variable name=\"PackageID\" property=\"PackageID\" /\>
-
-\<variable name=\"RunAsUser\" property=\"RunAsUser\"\>false\</variable\>
-
-\<variable name=\"SMSTSRunCommandLineUserName\"
-property=\"SMSTSRunCommandLineUserName\"\>\</variable\>
-
-\<variable name=\"SMSTSRunCommandLineUserPassword\"
-property=\"SMSTSRunCommandLineUserPassword\"\>\</variable\>
-
-\<variable name=\"LoadProfile\"
-property=\"LoadProfile\"\>false\</variable\>
-
-\</defaultVarList\>
-
-\<action\>%DeployDrive%\\SuperADD\\SuperADD.exe\</action\>
-
-\<condition\>
-
-\<expression type=\"SMS_TaskSequence_VariableConditionExpression\"\>
-
-\<variable name=\"Variable\"\>DeploymentType\</variable\>
-
-\<variable name=\"Operator\"\>notEquals\</variable\>
-
-\<variable name=\"Value\"\>NEWCOMPUTER\</variable\>
-
-\</expression\>
-
-\</condition\>
-
-\</step\>
-
-\</group\>
+JoinWorkgroup=WORKGROUP</pre><figure class="wp-block-image size-full"><a href="https://belowaverage.org/wp-content/uploads/2023/04/ini.jpg" target="_blank" rel="noreferrer noopener" class="fbx-link"><img decoding="async" loading="lazy" width="715" height="594" src="https://belowaverage.org/wp-content/uploads/2023/04/ini.jpg" alt="" class="wp-image-7221" srcset="https://belowaverage.org/wp-content/uploads/2023/04/ini.jpg 715w, https://belowaverage.org/wp-content/uploads/2023/04/ini-300x249.jpg 300w" sizes="(max-width: 715px) 100vw, 715px"></a></figure><p>3. “Update” the deployment share / rebuild the WinPE image. 4. Insert the&nbsp;<a href="#tsxml">ts.xml from below</a>&nbsp;to your desired task sequnce’s ts.xml file. 5. Copy SuperADD.exe to you deployment share in a folder at the root named “SuperADD”. For example:</p><p><code>%DeploymentShare%\SuperADD\SuperADD.exe</code></p><p>6. Configure the SuperADD.xml to your liking. If the SuperADD.xml does not exist, run SuperADD.exe once to generate it.</p><p><em><strong>Optional:</strong></em></p><p><em>7. Proceed to “Join domain at very end of LTI” if you wish to have LTI join the PC to the domain after LTI finishes.</em></p><h2 class="wp-block-heading"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/superadd.md#join-domain-at-very-end-of-lti"></a>Join domain at very end of LTI</h2><p>1. Download this&nbsp;<a href="https://github.com/belowaverage-org/SuperADD/blob/master/Scripts/Start-Join.ps1">file</a>. 2. Place this file (<strong>Start-Join.ps1</strong>) in the SuperADD directory located on your deployment share.</p><p><code>%DeploymentShare%\SuperADD\Start-Join.ps1</code></p><p>3. Paste the following XML into the ts.xml of your choosing after the SuperADD sequence group.</p><pre class="wp-block-preformatted">&lt;group expand="true" name="SuperADD - Delay Domain Join" description="This group will decide weather or not to delay a domain join based on SuperADD's outcome." disable="false" continueOnError="false"&gt;
+  &lt;action /&gt;
+  &lt;condition&gt;&lt;/condition&gt;
+  &lt;step type="SMS_TaskSequence_SetVariableAction" name="Set DelayJoinDomain" description="" disable="false" continueOnError="false" successCodeList="0 3010"&gt;
+    &lt;defaultVarList&gt;
+      &lt;variable name="VariableName" property="VariableName"&gt;DelayJoinDomain&lt;/variable&gt;
+      &lt;variable name="VariableValue" property="VariableValue"&gt;%JoinDomain%&lt;/variable&gt;
+    &lt;/defaultVarList&gt;
+    &lt;action&gt;cscript.exe "%SCRIPTROOT%\ZTISetVariable.wsf"&lt;/action&gt;
+  &lt;/step&gt;
+  &lt;step type="SMS_TaskSequence_SetVariableAction" name="Clear JoinDomain" description="" disable="false" continueOnError="false" successCodeList="0 3010"&gt;
+    &lt;defaultVarList&gt;
+      &lt;variable name="VariableName" property="VariableName"&gt;JoinDomain&lt;/variable&gt;
+      &lt;variable name="VariableValue" property="VariableValue"&gt;&lt;/variable&gt;
+    &lt;/defaultVarList&gt;
+    &lt;action&gt;cscript.exe "%SCRIPTROOT%\ZTISetVariable.wsf"&lt;/action&gt;
+  &lt;/step&gt;
+&lt;/group&gt;</pre><p>4. Paste the following XML into the ts.xml of your choosing as the last step in the task sequence.</p><pre class="wp-block-preformatted">&lt;step type="BDD_RunPowerShellAction" name="SuperADD - Start Join &amp;amp; Reboot" description="This item will wait for MDT to exit, start another process that clears all NET connections, joins the PC to the domain and re-boots the PC." disable="false" continueOnError="false" successCodeList="0 3010"&gt;
+  &lt;defaultVarList&gt;
+    &lt;variable name="ScriptName" property="ScriptName"&gt;%DeployDrive%\SuperADD\Start-Join.ps1&lt;/variable&gt;
+    &lt;variable name="Parameters" property="Parameters"&gt;-DomainName "%DelayJoinDomain%" -ComputerName "%OSDComputerName%" -UserName "%DomainAdmin%" -Password "%DomainAdminPassword%"&lt;/variable&gt;
+    &lt;variable name="PackageID" property="PackageID"&gt;&lt;/variable&gt;
+  &lt;/defaultVarList&gt;
+  &lt;action&gt;cscript.exe "%SCRIPTROOT%\ZTIPowerShell.wsf&lt;/action&gt;
+  &lt;condition&gt;&lt;/condition&gt;
+&lt;/step&gt;</pre><h1 class="wp-block-heading"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/superadd.md#command-line"></a>Command Line</h1><figure class="wp-block-image size-full"><a href="https://belowaverage.org/wp-content/uploads/2023/04/help.png" target="_blank" rel="noreferrer noopener" class="fbx-link"><img decoding="async" loading="lazy" width="536" height="312" src="https://belowaverage.org/wp-content/uploads/2023/04/help.png" alt="" class="wp-image-7223" srcset="https://belowaverage.org/wp-content/uploads/2023/04/help.png 536w, https://belowaverage.org/wp-content/uploads/2023/04/help-300x175.png 300w" sizes="(max-width: 536px) 100vw, 536px"></a></figure><h1 class="wp-block-heading"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/superadd.md#resources"></a>Resources</h1><h2 class="wp-block-heading"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/superadd.md#superaddxml"></a>SuperADD.xml</h2><pre class="wp-block-preformatted">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;SuperADD&gt;
+  &lt;!--The hostname of the domain for authentication.--&gt;
+  &lt;DomainName&gt;ad.contoso.com&lt;/DomainName&gt;
+  &lt;!--The hostname of the domain controller to connect to.--&gt;
+  &lt;DomainController&gt;condc1.ad.contoso.com&lt;/DomainController&gt;
+  &lt;!--The search base for name generation / unique verification.--&gt;
+  &lt;BaseDN&gt;DC=ad,DC=contoso,DC=com&lt;/BaseDN&gt;
+  &lt;OrganizationalUnits&gt;
+    &lt;OrganizationalUnit&gt;
+      &lt;!--The description of this OU that will appear in the UI.--&gt;
+      &lt;Name&gt;Computers&lt;/Name&gt;
+      &lt;!--The OU DN where computer objects will be placed.--&gt;
+      &lt;DistinguishedName&gt;CN=Computers,DC=ad,DC=contoso,DC=com&lt;/DistinguishedName&gt;
+      &lt;!--Auto Name Generating Patterns:--&gt;
+      &lt;!--#: Increment with a lefthand padding (Append Mode). E.g: #### = 0001--&gt;
+      &lt;!--+: Increment with a lefthand padding (Fill Mode). E.g: ++++ = 0001--&gt;
+      &lt;!--*: Random Alpha Numeric Lowercase. E.g: **** = j3g2--&gt;
+      &lt;!--$: Random Alpha Numeric Uppercase. E.g: $$$$ = J3G2--&gt;
+      &lt;!--@: Random Alpha Numeric Both Case. E.g: @@@@ = J3g2--&gt;
+      &lt;!--%: Random Numeric. E.g: %%%% = 5473--&gt;
+      &lt;!--!: Random Alpha Lowecase. E.g: !!!! = jwkx--&gt;
+      &lt;!--?: Random Alpha Uppercase. E.g: ???? = JWKX--&gt;
+      &lt;!--~: Random Alpha Both Case. E.g: ~~~~ = JwKx--&gt;
+      &lt;AutoName&gt;CONTOSOPC####&lt;/AutoName&gt;
+      &lt;!--The security groups that will be auto applied. (the DNs must exist below in 'SecurityGroups')--&gt;
+      &lt;SecurityGroupsDNs&gt;
+        &lt;SecurityGroupDN&gt;CN=COMP_Wifi,OU=Groups,OU=Computers,DC=ad,DC=contoso,DC=com&lt;/SecurityGroupDN&gt;
+      &lt;/SecurityGroupsDNs&gt;
+    &lt;/OrganizationalUnit&gt;
+  &lt;/OrganizationalUnits&gt;
+  &lt;SecurityGroups&gt;
+    &lt;SecurityGroup&gt;
+      &lt;!--The description of this Security Group that will appear in the UI.--&gt;
+      &lt;Name&gt;Computer Wifi Access&lt;/Name&gt;
+      &lt;!--The distinguished name of the security group.--&gt;
+      &lt;DistinguishedName&gt;CN=COMP_Wifi,OU=Groups,OU=Computers,DC=ad,DC=contoso,DC=com&lt;/DistinguishedName&gt;
+    &lt;/SecurityGroup&gt;
+  &lt;/SecurityGroups&gt;
+  &lt;DescriptionItems&gt;
+    &lt;DescriptionItem&gt;
+      &lt;Name&gt;Department&lt;/Name&gt;
+      &lt;Type&gt;List&lt;/Type&gt;
+      &lt;ListItems&gt;
+        &lt;ListItem&gt;Accounting&lt;/ListItem&gt;
+        &lt;ListItem&gt;Finance&lt;/ListItem&gt;
+        &lt;ListItem&gt;Human Resources&lt;/ListItem&gt;
+      &lt;/ListItems&gt;
+    &lt;/DescriptionItem&gt;
+    &lt;DescriptionItem&gt;
+      &lt;Name&gt;Person / Location&lt;/Name&gt;
+      &lt;Type&gt;Text&lt;/Type&gt;
+    &lt;/DescriptionItem&gt;
+  &lt;/DescriptionItems&gt;
+&lt;/SuperADD&gt;</pre><h2 class="wp-block-heading" id="tsxml"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/superadd.md#tsxml"></a>ts.xml</h2><pre class="wp-block-preformatted">&lt;group expand="true" name="SuperADD" description="A Customizable UI for joining computers to a domain / workgroup." disable="false" continueOnError="false"&gt;
+  &lt;step type="SMS_TaskSequence_RunCommandLineAction" name="Copy SuperADD.xml" description="Copies the SuperADD.xml from the deployment share to the tools folder where SuperADD will start in." disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS"&gt;
+    &lt;defaultVarList&gt;
+      &lt;variable name="PackageID" property="PackageID" /&gt;
+      &lt;variable name="RunAsUser" property="RunAsUser"&gt;false&lt;/variable&gt;
+      &lt;variable name="SMSTSRunCommandLineUserName" property="SMSTSRunCommandLineUserName"&gt;&lt;/variable&gt;
+      &lt;variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"&gt;&lt;/variable&gt;
+      &lt;variable name="LoadProfile" property="LoadProfile"&gt;false&lt;/variable&gt;
+    &lt;/defaultVarList&gt;
+    &lt;action&gt;cmd.exe /c copy %DeployDrive%\SuperADD\SuperADD.xml SuperADD.xml&lt;/action&gt;
+  &lt;/step&gt;
+  &lt;action /&gt;
+  &lt;step type="SMS_TaskSequence_RunCommandLineAction" name="SuperADD - WinPE" description="Launches SuperADD using BDDRun in Windows PE." disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS"&gt;
+    &lt;defaultVarList&gt;
+      &lt;variable name="PackageID" property="PackageID"&gt;&lt;/variable&gt;
+      &lt;variable name="RunAsUser" property="RunAsUser"&gt;false&lt;/variable&gt;
+      &lt;variable name="SMSTSRunCommandLineUserName" property="SMSTSRunCommandLineUserName"&gt;&lt;/variable&gt;
+      &lt;variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"&gt;&lt;/variable&gt;
+      &lt;variable name="LoadProfile" property="LoadProfile"&gt;false&lt;/variable&gt;
+    &lt;/defaultVarList&gt;
+    &lt;action&gt;bddrun.exe %DeployDrive%\SuperADD\SuperADD.exe&lt;/action&gt;
+    &lt;condition&gt;
+      &lt;expression type="SMS_TaskSequence_VariableConditionExpression"&gt;
+        &lt;variable name="Variable"&gt;DeploymentType&lt;/variable&gt;
+        &lt;variable name="Operator"&gt;equals&lt;/variable&gt;
+        &lt;variable name="Value"&gt;NEWCOMPUTER&lt;/variable&gt;
+      &lt;/expression&gt;
+    &lt;/condition&gt;
+  &lt;/step&gt;
+  &lt;step type="SMS_TaskSequence_RunCommandLineAction" name="SuperADD - Windows" description="Launches SuperADD in normal Windows where BDDRun is not required." disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS"&gt;
+    &lt;defaultVarList&gt;
+      &lt;variable name="PackageID" property="PackageID" /&gt;
+      &lt;variable name="RunAsUser" property="RunAsUser"&gt;false&lt;/variable&gt;
+      &lt;variable name="SMSTSRunCommandLineUserName" property="SMSTSRunCommandLineUserName"&gt;&lt;/variable&gt;
+      &lt;variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"&gt;&lt;/variable&gt;
+      &lt;variable name="LoadProfile" property="LoadProfile"&gt;false&lt;/variable&gt;
+    &lt;/defaultVarList&gt;
+    &lt;action&gt;%DeployDrive%\SuperADD\SuperADD.exe&lt;/action&gt;
+    &lt;condition&gt;
+      &lt;expression type="SMS_TaskSequence_VariableConditionExpression"&gt;
+        &lt;variable name="Variable"&gt;DeploymentType&lt;/variable&gt;
+        &lt;variable name="Operator"&gt;notEquals&lt;/variable&gt;
+        &lt;variable name="Value"&gt;NEWCOMPUTER&lt;/variable&gt;
+      &lt;/expression&gt;
+    &lt;/condition&gt;
+  &lt;/step&gt;
+&lt;/group&gt;</pre></div></article></main></div></div></div>
