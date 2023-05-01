@@ -1,301 +1,62 @@
----
-title: Super Grate
-description: A free & open source Windows Profile Migration & Backup Utility
-published: true
-date: 2022-07-09T14:43:43.279Z
-tags: 
-editor: markdown
-dateCreated: 2020-04-15T02:24:34.379Z
----
-
-![promo.png](/assets/software/supersuite/supergrate/promo.png)
-
-## Features
-* Simple GUI
-* Configurable
-* Works on Domain Joined and Non-Joined PCs
-* Unified Backup Store
-* Works remotely over a network
-
-# Download
-
-## Quick Start
-
-1. Simply download from one of the following sources:
-    * [below average](https://belowaverage.org/software/supergrate/download/)
-    * [GitHub](https://github.com/belowaverage-org/SuperGrate/releases)
-3. Run and done!
-
-## Unified Store Setup
-
-Super Grate fully supports **unification** of its various components, for example:
-
-* Unified Backup Store
-* Unified Configuration
-* Unified USMT Configuration
-* Unified Logging
-
-Super Grate supports all of this by simply supporting [UNC](https://en.wikipedia.org/wiki/Path_(computing)#Universal_Naming_Convention) paths.
-
-Try placing SuperGrate.exe on a shared folder and configuring its settings and paths to also point at a shared folder.
-You can also set permissions on the folders to lock down what Super Grate users can do. (for instance: write protecting the [SuperGrate.xml](#supergratexml))
-
-## 1.2.0.0 to 1.3.0.0 Upgrade Guide
-
-#### Upgrading [SuperGrate.xml](#supergratexml).
-
-1. Open the new Super Grate after replacing the old executable.
-2. Navigate to "File", then "Settings..." or press the "F12" on your keyboard.
-3. Press "Save to Disk" to add the new settings to your [SuperGrate.xml](#supergratexml)
-
-#### Upgrading the [Backup Store](#backup-store).
-
-1. Download the following PowerShell script from here: [store_upgrade_1.2.0.0_1.3.0.0.ps1](https://github.com/belowaverage-org/SuperGrate/blob/master/SuperGrateTools/store_upgrade_1.2.0.0_1.3.0.0.ps1).
-2. Copy the script to your SuperGrate directory where the STORE folder is located. (Do not copy into the STORE folder).
-3. Execute the .ps1 script, there should be no errors.
-
-#### Conclusion
-
-After running the steps above, Super Grate should run without a hitch.
-
-# Using Super Grate
-
-## Backing up a User Profile
-**Backing up a user profile** using Super Grate is "Super Easy".
-
-1. Enter the computer's host-name in the "Source Computer" text box.
-1.1. (Optional) Enter a destination computer in the "Destination Computer" text box to perform a Full Migration.
-2. Press "List Source" to generate a list of User Profiles available on the Source Computer.
-3. Select the User(s) you would like to back up.
-4. Press "Start".
-
-![backing-up-a-user-profile.png](/assets/software/supersuite/supergrate/backing-up-a-user-profile.png)
-
-## Restoring a User Profile
-
-**Restoring a User Profile** is just as easy as Backing up a User Profile.
-
-1. Enter a Computer's Host-name in the "Destination Computer" text box.
-2. Press "List Store" to display a list of Profiles available in the Backup Store.
-3. Select the Users you would like to restore to the "Destination Computer".
-4. Press "Start".
-
-![restoring-a-user-profile.png](/assets/software/supersuite/supergrate/restoring-a-user-profile.png)
-
-### Optional:
-
-If you want to restore a user profile onto another domain or as a different user name, follow the steps below.
-
-1. After performing a backup like normal, click "List Store".
-2. Right click the user you want to rename.
-3. Select "Set destination user name..."
-4. In the dialog, enter the new username or domain and username e.g:
-
-`%DOMAIN%\%USERNAME%` or `%USERNAME%` ➡ `BELOWAVERAGE\dylan` or `dylan`
-
-![rename_user.png](/assets/software/supersuite/supergrate/rename_user.png)
-![rename_user_dialog.png](/assets/software/supersuite/supergrate/rename_user_dialog.png)
-
-## Full Migration
-
-A **Full Migration** is a Super Grate sequence where both the "Source Computer" and "Destination Computer" are occupied.
-When the backup / migration is started, Super Grate will back up the user profiles selected from the "Source Computer" to the store, then connect to the "Destination Computer" and apply the user profiles selected from the "Source Computer".
-
-There are options in the [SuperGrate.xml](#supergratexml) and settings menu that can change the behavior presented above.
-
-## Deleting a profile on a source computer
-
-To **delete a profile on a source compuer** you must:
-1. Enter a PC name in the "Source Computer" field.
-2. Press "List Source".
-3. Select the user profile(s) to delete.
-4. Press the "Delete" button.
-5. In the message that appears, select "Accept".
-
-## Deleting a profile from the store
-
-To **delete a profile from the store** you must:
-1. Press "List Store".
-2. Select the profile(s) to delete.
-3. Press "Delete".
-4. In the message that appears, select "Accept".
-
-## Customize Columns
-
-To **customize the shown columns**, first either click on "List Source" or "List Store", then select "View" and then "Add/Remove Columns...". In the dialog that appears, add, remove, move up, or move down any column as required. Once done, select "OK".
-
-If you want to save your customizations for when Super Grate is launched again, go to "File", "Settings...", then press "Save to Disk". This will save your modifications made to the columns to the SuperGrate.xml config file.
-
-## Check for updates
-
-To **check for updates** in Super Grate, first go to "Help", then select "Check for updates...". In the dialog that appears, if there is an update available, the message on your screen will say so. If there is an update, select "Install".
-
-## Command Line Switches
-
-Super Grate supports configuration over **CLI** (Command Line Interface) *switches*. This means you can create custom shortcuts and launch Super Grate with specific settings.
-
-Note: *CLI Switches override [SuperGrate.xml](#supergratexml) settings.*
-
-To use a CLI switch, do the following:
-
-`C:\>SuperGrate.exe /NameOfSetting:Value`
-
-or:
-
-`C:\>SuperGrate.exe /NameOfSetting:"Value"`
-
-for example:
-
-`C:\>SuperGrate.exe /HideBuiltInAccounts:"false"`
-
-For a list of settings, see: [SuperGrate.xml](#supergratexml)
-
-# Development
-
-## Compiling Super Grate
-
-**Compiling Super Grate** is easy to do; first, you need to download and install a copy of [Microsoft's Visual Studio (VS)](https://visualstudio.microsoft.com/vs/). -- *The community edition will do* -- Once done, clone this repository using VS' "Get Started" page. Lastly, open the solution and press the green "Start / Play" button. This will compile and start Super Grate.
-
-1. Select "Batch Build" from the "Build" tab in the top menu bar.
-2. Check "Release" & "Release_64" then press "Rebuild".
-3. SuperGrate.exe should be available in the bin folder of the project.
-
-## Debugging Super Grate
-
-While using Super Grate, you might encounter errors. You may post any errors you get to [here](https://github.com/belowaverage-org/SuperGrate/issues).
-
-Below are some notes about logging:
-
-* To display Verbose logs in the output console, double press anywhere in the "black" log area.
-* To save all logs including Verbose logs to a file, press "CTRL + S" at the main screen.
-* To automatically save log files to disk whenever Super Grate is used:
-    1. Select "Settings".
-    2. Double click "DumpLogHereOnExit".
-    3. Enter ".\Logs" & Press "Apply"
-    4. Press "Save to Disk" then press "Close"
-
-# Further Reading
-
-## Backup Store
-
-The backup **store** *or just "store" when using Super Grate* is a directory on a share drive or local drive that "stores" the user profiles after they have been backed-up. Whether you performed a [full migration](#full-migration) or just a simple [profile backup](#backing-up-a-user-profile), the data transferred is stored here.
-
-The file structure of the store is as follows:
-
-* **Base Folder** (Specified in the [SuperGrate.xml](#supergratexml) or Settings Menu)
-    * **User Profile Folder** (Named a generic GUID, Can be any name)
-        * **data**: A single file containing the backed-up profile.
-        * **destination**: A file containing the name of the destination computer where the profile last was exported too.
-        * **exportedby**: A file containing the name of the user who last exported the stored user profile.
-        * **exportedon**: A file containing the date of when the profile was last exported in [windows file time](https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tofiletime?view=netframework-4.8)
-        * **importedby**: A file containing the name of the user who imported the user profile.
-        * **importedon**: A file containing the date of when the profile was imported in windows file time.
-        * **ntaccount**: A file containing the name of the user profile that was imported.
-        * **targetntaccount**: A file containing the target user name and domain to use when restoring the profile.
-        * **sid**: A file containing the [SID](https://en.wikipedia.org/wiki/Security_Identifier) of the user profile that was imported.
-        * **source**: A file containing the name of the source computer the profile originated from.
-
-An example of the above may look like this below:
-
-* **C:\Program Files\Super Suite\Super Grate\STORE** (Folder)
-    * **bf31d643-27a7-4e5d-a4e5-277a4c5cc9d0** (Folder)
-        * **data** (File | RAW Data)
-        * **destination** (File | "DOMAIN\BA-PC02")
-        * **exportedby** (File | "DOMAIN\Dylan.Bickerstaff")
-        * **exportedon** (File | "132312220838407695")
-        * **importedby** (File | "DOMAIN\Dylan.Bickerstaff")
-        * **importedon** (File | "132312220838407695")
-        * **ntaccount** (File | "DOMAIN1\Administrator1")
-        * **targetntaccount** (File | "DOMAIN2\Administrator2")
-        * **sid** (File | "S-1-5-21-3623811015-3361044348-30300820-1013")
-        * **source** (File | "DOMAIN\BA-PC01")
-
-## SuperGrate.xml
-
-The **SuperGrate.xml** is a file that is automatically generated if it doesn't exist in the "current working directory". This file contains the preferences from the "Settings" menu.
-
-Below is an example of the SuperGrate.xml file:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<SuperGrate>
-  <!--The UNC or Direct path to the USMT directory. (E.g: .\USMT\X64)-->
-  <USMTPathX64>.\USMT\X64</USMTPathX64>
-  <USMTPathX86>.\USMT\X86</USMTPathX86>
-  <!--Local path on source computer where Super Grate will run USMT from. (E.g: C:\SuperGrate)-->
-  <SuperGratePayloadPath>C:\SuperGrate</SuperGratePayloadPath>
-  <!--The UNC or Direct path to the USMT Migration Store (E.g: \\ba-share\s$ or .\STORE)-->
-  <MigrationStorePath>.\STORE</MigrationStorePath>
-  <!--ScanState.exe & LoadState.exe CLI Parameters. See: https://docs.microsoft.com/en-us/windows/deployment/usmt/usmt-command-line-syntax -->
-  <ScanStateParameters>/config:Config_SettingsOnly.xml /i:MigUser.xml /c /r:3 /o</ScanStateParameters>
-  <LoadStateParameters>/config:Config_SettingsOnly.xml /i:MigUser.xml /c /r:3 /lac /lae</LoadStateParameters>
-  <!--Delete the user from the migration store after a restore? (store to destination)-->
-  <AutoDeleteFromStore>false</AutoDeleteFromStore>
-  <!--Delete the user from the source computer after a backup? (source to store)-->
-  <AutoDeleteFromSource>false</AutoDeleteFromSource>
-  <!--Prevent NT AUTHORITY & NT SERVICE accounts from being listed?-->
-  <HideBuiltInAccounts>true</HideBuiltInAccounts>
-  <!--Prevent unknown accounts from being listed?-->
-  <HideUnknownSIDs>false</HideUnknownSIDs>
-  <!--Write log to disk on exit. (Leave blank to disable) (E.g: \\ba-share\s$\Logs or .\Logs)-->
-  <DumpLogHereOnExit>.\LOGS</DumpLogHereOnExit>
-  <!--List of columns to display for the Source or Store users.-->
-  <ULSourceColumns>0,3,9</ULSourceColumns>
-  <ULStoreColumns>0,1,5,6,4</ULStoreColumns>
-  <!--User List View Mode: Large (0) / Small Icon (2), List (3), Details (1) and Tile (4).-->
-  <ULViewMode>1</ULViewMode>
-  <!--Default source computer at startup.-->
-  <SourceComputer></SourceComputer>
-  <!--Default destination computer at startup.-->
-  <DestinationComputer></DestinationComputer>
-  <!--Default tab view at startup: Source, Store, None.-->
-  <TabView>None</TabView>
-  <!--Security Protocol Version (Restart Required): SystemDefault, Ssl3, Tls, Tls11, Tls12, Tls13.-->
-  <SecurityProtocol>Tls12</SecurityProtocol>
-</SuperGrate>
-```
-
-## How Super Grate performs a Migration
-
-![migration-flowchart.svg](/assets/software/supersuite/supergrate/migration-flowchart.svg)
-
-# Known Issues
-
-* Sleep Mode
-    * Super Grate may fail if the remote PC or executing PC falls asleep.
-* WMI
-    * Super Grate may fail if WMI is corrupt or disabled on the remote PC.
-    * To fix, run this command on the remote PC as an administrator: `winmgmt /resetrepository`
-* Remote Registry Dependence
-    * You may experience the following error if the `Remote Registry` service is disabled on the remote / target computer:
-```
-    [VERBOSE]<17.17.33> Waiting for scanstate to finish...
-    [ERROR]<17.17.33> Couldn't connect to remote machine.
-    [VERBOSE]<17.17.34> ERROR
-       at System.Diagnostics.NtProcessManager.GetProcessInfos(String machineName, Boolean isRemoteMachine)
-       at System.Diagnostics.Process.GetProcesses(String machineName)
-       at System.Diagnostics.Process.GetProcessesByName(String processName, String machineName)
-       at SuperGrate.Remote.<>c__DisplayClass2_0.<<WaitForProcessExit>b__0>d.MoveNext()
-    [ERROR]<17.17.34> Couldn't get process information from performance counter.
-    [VERBOSE]<17.17.34> ERROR
-       at System.Diagnostics.NtProcessManager.GetProcessInfos(PerformanceCounterLib library)
-       at System.Diagnostics.NtProcessManager.GetProcessInfos(String machineName, Boolean isRemoteMachine)
-    [ERROR]<17.17.34> Failed to check if scanstate is still running.
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="entry-content clear" itemprop="text"><h1 class="wp-block-heading">Index</h1><ul> <li><a href="#Setup">Setup</a><ul> <li><a href="#Quick-start">Quick start</a></li><li><a href="#Unified store setup">Unified store </a><a href="#Unified-store-setup">s</a><a href="#Unified store setup">etup</a></li><li><a href="#1.2.0.0-to-1.3.0.0-upgrade-guide">1.2.0.0 to 1.3.0.0 upgrade guide</a><ul> <li><a href="#Upgrading-SuperGrate.xml">Upgrading&nbsp;SuperGrate.xml</a></li><li><a href="#Upgrading-the-backup-store">Upgrading the&nbsp;backup store</a></li><li><a href="#Conclusion">Conclusion</a></li></ul> </li></ul> </li><li><a href="#User-guide">User Guide</a><ul> <li><a href="#Backing-up-a-user-profile">Backing up a user profile</a></li><li><a href="#Restoring-a-user-profile">Restoring a user profile</a><ul> <li><a href="#Optional">Optional</a></li></ul> </li><li><a href="#Performing-a-full-migration">Performing a full migration</a></li><li><a href="#Deleting-a-profile-on-a-source-computer">Deleting a profile on a source computer</a></li><li><a href="#Deleting-a-profile-from-the-store">Deleting a profile from the store</a></li><li><a href="#Customize-columns">Customize columns</a></li><li><a href="#Check-for-updates">Check for updates</a></li><li><a href="#Command-line-switches">Command line switches</a></li></ul> </li><li><a href="#Developer-guide">Developer Guide</a><ul> <li><a href="#Compiling-Super-Grate">Compiling Super Grate</a></li><li><a href="#Debugging-Super-Grate">Debugging Super Grate</a></li></ul> </li><li><a href="#Inner-workings">Inner workings</a><ul> <li><a href="#Backup-store">Backup store</a></li><li><a href="#SuperGrate.xml">SuperGrate.xml</a></li><li><a href="#Flow-chart">Flow chart</a></li></ul> </li><li><a href="#Common-issues">Common issues</a><ul> <li><a href="#WMI-(Windows-Management-Instrumentation)">WMI (Windows Management Instrumentation)</a></li><li><a href="#Could-not-find-file-USMT.MIG">Could not find file USMT.MIG</a></li></ul> </li><li><a href="#Other-issues">Other issues</a></li></ul><h1 class="wp-block-heading" id="Setup"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#download"></a>Setup</h1><h2 class="wp-block-heading" id="Quick-start"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#quick-start"></a>Quick start</h2><ol> <li>Simply download from one of the following sources:<ul> <li><a href="https://belowaverage.org/software/supersuite/supergrate/" target="_blank" rel="noreferrer noopener">below average</a></li><li><a href="https://github.com/belowaverage-org/SuperGrate/releases" target="_blank" rel="noreferrer noopener">Gi</a><a href="https://github.com/belowaverage-org/SuperGrate/releases">tHub</a></li></ul> </li><li>Run and done!</li></ol><h2 class="wp-block-heading" id="Unified-store-setup"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#unified-store-setup"></a>Unified store setup</h2><p>Super Grate fully supports&nbsp;<strong>unification</strong>&nbsp;of its various components, for example:</p><ul> <li>Unified Backup Store</li><li>Unified Configuration</li><li>Unified USMT Configuration</li><li>Unified Logging</li></ul><p>Super Grate supports all of this by simply supporting&nbsp;<a href="https://en.wikipedia.org/wiki/Path_(computing)#Universal_Naming_Convention" target="_blank" rel="noreferrer noopener">UNC</a>&nbsp;paths.</p><p>Try placing SuperGrate.exe on a shared folder and configuring its settings and paths to also point at a shared folder. You can also set permissions on the folders to lock down what Super Grate users can do. (for instance: write protecting the&nbsp;<a href="#SuperGrate.xml">SuperGrate.xml</a>)</p><h2 class="wp-block-heading" id="1.2.0.0-to-1.3.0.0-upgrade-guide"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#1200-to-1300-upgrade-guide"></a>1.2.0.0 to 1.3.0.0 upgrade guide</h2><h3 class="wp-block-heading" id="Upgrading-SuperGrate.xml"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#upgrading-supergratexml"></a>Upgrading&nbsp;SuperGrate.xml</h3><ol> <li>Open the new Super Grate after replacing the old executable.</li><li>Navigate to “File”, then “Settings…” or press the “F12” on your keyboard.</li><li>Press “Save to Disk” to add the new settings to your&nbsp;<a href="#SuperGrate.xml">SuperGrate.xml</a></li></ol><h3 class="wp-block-heading" id="Upgrading-the-backup-store"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#upgrading-the-backup-store"></a>Upgrading the&nbsp;backup store</h3><ol> <li>Download the following PowerShell script from here:&nbsp;<a href="https://github.com/belowaverage-org/SuperGrate/blob/master/SuperGrateTools/store_upgrade_1.2.0.0_1.3.0.0.ps1" target="_blank" rel="noreferrer noopener">store_upgrade_1.2.0.0_1.3.0.0.ps1</a>.</li><li>Copy the script to your SuperGrate directory where the STORE folder is located. (Do not copy into the STORE folder).</li><li>Execute the .ps1 script, there should be no errors.</li></ol><h3 class="wp-block-heading" id="Conclusion"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#conclusion"></a>Conclusion</h3><p>After running the steps above, Super Grate should run without a hitch.</p><h1 class="wp-block-heading" id="User-guide"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#using-super-grate"></a>User guide</h1><h2 class="wp-block-heading" id="Backing-up-a-user-profile"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#backing-up-a-user-profile"></a>Backing up a user profile</h2><p><strong>Backing up a user profile</strong>&nbsp;using Super Grate is “Super Easy”.</p><ol> <li>Enter the computer’s hostname in the “Source Computer” text box.<ul> <li>(Optional) Enter a destination computer in the “Destination Computer” text box to perform a Full Migration.</li></ul> </li><li>Press “List Source” to generate a list of User Profiles available on the Source Computer.</li><li>Select the User(s) you would like to back up.</li><li>Press “Start”.</li></ol><figure class="wp-block-image size-full fbx-instance"><a href="https://belowaverage.org/wp-content/uploads/2023/04/backing-up-a-user-profile.png" target="_blank" rel="noreferrer noopener" class="fbx-link"><img decoding="async" width="947" height="523" src="https://belowaverage.org/wp-content/uploads/2023/04/backing-up-a-user-profile.png" alt="" class="wp-image-7280" srcset="https://belowaverage.org/wp-content/uploads/2023/04/backing-up-a-user-profile.png 947w, https://belowaverage.org/wp-content/uploads/2023/04/backing-up-a-user-profile-300x166.png 300w, https://belowaverage.org/wp-content/uploads/2023/04/backing-up-a-user-profile-768x424.png 768w" sizes="(max-width: 947px) 100vw, 947px"></a></figure><h2 class="wp-block-heading" id="Restoring-a-user-profile"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#restoring-a-user-profile"></a>Restoring a user profile</h2><p><strong>Restoring a user profile</strong>&nbsp;is just as easy as Backing up a User Profile.</p><ol> <li>Enter a Computer’s Host-name in the “Destination Computer” text box.</li><li>Press “List Store” to display a list of Profiles available in the Backup Store.</li><li>Select the Users you would like to restore to the “Destination Computer”.</li><li>Press “Start”.</li></ol><figure class="wp-block-image size-full"><a href="https://belowaverage.org/wp-content/uploads/2023/04/restoring-a-user-profile.png" target="_blank" rel="noreferrer noopener" class="fbx-link"><img decoding="async" loading="lazy" width="967" height="524" src="https://belowaverage.org/wp-content/uploads/2023/04/restoring-a-user-profile.png" alt="" class="wp-image-7281" srcset="https://belowaverage.org/wp-content/uploads/2023/04/restoring-a-user-profile.png 967w, https://belowaverage.org/wp-content/uploads/2023/04/restoring-a-user-profile-300x163.png 300w, https://belowaverage.org/wp-content/uploads/2023/04/restoring-a-user-profile-768x416.png 768w" sizes="(max-width: 967px) 100vw, 967px"></a></figure><h3 class="wp-block-heading" id="Optional"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#optional"></a>Optional</h3><p><strong>Optionally </strong>you want to restore a user profile onto another domain or as a different user name, follow the steps below.</p><ol> <li>After performing a backup like normal, click “List Store”.</li><li>Right click the user you want to rename.</li><li>Select “Set destination user name…”</li><li>In the dialog, enter the new username or domain and username e.g:</li></ol><p><code>%DOMAIN%\%USERNAME%</code>&nbsp;or&nbsp;<code>%USERNAME%</code>&nbsp;➡&nbsp;<code>BELOWAVERAGE\dylan</code>&nbsp;or&nbsp;<code>dylan</code></p><figure class="wp-block-image size-full"><a href="https://belowaverage.org/wp-content/uploads/2023/04/rename_user.png" target="_blank" rel="noreferrer noopener" class="fbx-link"><img decoding="async" loading="lazy" width="548" height="188" src="https://belowaverage.org/wp-content/uploads/2023/04/rename_user.png" alt="" class="wp-image-7282" srcset="https://belowaverage.org/wp-content/uploads/2023/04/rename_user.png 548w, https://belowaverage.org/wp-content/uploads/2023/04/rename_user-300x103.png 300w" sizes="(max-width: 548px) 100vw, 548px"></a></figure><figure class="wp-block-image size-full"><a href="https://belowaverage.org/wp-content/uploads/2023/04/rename_user_dialog.png" target="_blank" rel="noreferrer noopener" class="fbx-link"><img decoding="async" loading="lazy" width="459" height="302" src="https://belowaverage.org/wp-content/uploads/2023/04/rename_user_dialog.png" alt="" class="wp-image-7283" srcset="https://belowaverage.org/wp-content/uploads/2023/04/rename_user_dialog.png 459w, https://belowaverage.org/wp-content/uploads/2023/04/rename_user_dialog-300x197.png 300w" sizes="(max-width: 459px) 100vw, 459px"></a></figure><h2 class="wp-block-heading" id="Performing-a-full-migration"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#full-migration"></a>Performing a full migration</h2><p>A&nbsp;<strong>full migration</strong>&nbsp;is a Super Grate sequence where both the “Source Computer” and “Destination Computer” are occupied. When the backup / migration is started, Super Grate will back up the user profiles selected from the “Source Computer” to the store, then connect to the “Destination Computer” and apply the user profiles selected from the “Source Computer”.</p><p>There are options in the&nbsp;<a href="#SuperGrate.xml">SuperGrate.xml</a>&nbsp;and settings menu that can change the behavior presented above.</p><h2 class="wp-block-heading" id="Deleting-a-profile-on-a-source-computer"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#deleting-a-profile-on-a-source-computer"></a>Deleting a profile on a source computer</h2><p>To&nbsp;<strong>delete a profile on a source compuer</strong>&nbsp;you must:</p><ol> <li>Enter a PC name in the “Source Computer” field.</li><li>Press “List Source”.</li><li>Select the user profile(s) to delete.</li><li>Press the “Delete” button.</li><li>In the message that appears, select “Accept”.</li></ol><h2 class="wp-block-heading" id="Deleting-a-profile-from-the-store"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#deleting-a-profile-from-the-store"></a>Deleting a profile from the store</h2><p>To&nbsp;<strong>delete a profile from the store</strong>&nbsp;you must:</p><ol> <li>Press “List Store”.</li><li>Select the profile(s) to delete.</li><li>Press “Delete”.</li><li>In the message that appears, select “Accept”.</li></ol><h2 class="wp-block-heading" id="Customize-columns"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#customize-columns"></a>Customize columns</h2><p>To&nbsp;<strong>customize the shown columns</strong>, first either click on “List Source” or “List Store”, then select “View” and then “Add/Remove Columns…”. In the dialog that appears, add, remove, move up, or move down any column as required. Once done, select “OK”.</p><p>If you want to save your customizations for when Super Grate is launched again, go to “File”, “Settings…”, then press “Save to Disk”. This will save your modifications made to the columns to the SuperGrate.xml config file.</p><h2 class="wp-block-heading" id="Check-for-updates"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#check-for-updates"></a>Check for updates</h2><p>To&nbsp;<strong>check for updates</strong>&nbsp;in Super Grate, first go to “Help”, then select “Check for updates…”. You should be re-directed to the GitHub downloads page where a new update  may be able to be downloaded.</p><h2 class="wp-block-heading" id="Command-line-switches"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#command-line-switches"></a>Command line switches</h2><p>Super Grate supports configuration over&nbsp;<strong>CLI</strong>&nbsp;(Command Line Interface)&nbsp;<em>switches</em>. This means you can create custom shortcuts and launch Super Grate with specific settings.</p><p>Note:&nbsp;<em>CLI Switches override&nbsp;<a href="#SuperGrate.xml">SuperGrate.xml</a>&nbsp;settings.</em></p><p>To use a CLI switch, do the following:</p><p><code>C:\&gt;SuperGrate.exe /NameOfSetting:Value</code></p><p>or:</p><p><code>C:\&gt;SuperGrate.exe /NameOfSetting:"Value"</code></p><p>for example:</p><p><code>C:\&gt;SuperGrate.exe /HideBuiltInAccounts:"false"</code></p><p>For a list of settings, see:&nbsp;<a href="#SuperGrate.xml">SuperGrate.xml</a></p><h1 class="wp-block-heading" id="Developer-guide"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#development"></a>Developer guide</h1><h2 class="wp-block-heading" id="Compiling-Super-Grate"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#compiling-super-grate"></a>Compiling Super Grate</h2><p><strong>Compiling Super Grate</strong>&nbsp;is easy to do; first, you need to download and install a copy of&nbsp;<a href="https://visualstudio.microsoft.com/vs/" target="_blank" rel="noreferrer noopener">Microsoft’s Visual Studio (VS)</a>. —&nbsp;<em>The community edition will do</em>&nbsp;— Once done, clone this repository using VS’ “Get Started” page. Lastly, open the solution and press the green “Start / Play” button. This will compile and start Super Grate.</p><ol> <li>Select “Batch Build” from the “Build” tab in the top menu bar.</li><li>Check “Release” &amp; “Release_64” then press “Rebuild”.</li><li>SuperGrate.exe should be available in the bin folder of the project.</li></ol><h2 class="wp-block-heading" id="Debugging-Super-Grate"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#debugging-super-grate"></a>Debugging Super Grate</h2><p>While using Super Grate, you might encounter errors. You may post any errors you get to&nbsp;<a href="https://github.com/belowaverage-org/SuperGrate/issues">here</a>.</p><p>Below are some notes about logging:</p><ul> <li>To display Verbose logs in the output console, double press anywhere in the “black” log area.</li><li>To save all logs including Verbose logs to a file, press “CTRL + S” at the main screen.</li><li>To automatically save log files to disk whenever Super Grate is used:<ol> <li>Select “Settings”.</li><li>Double click “DumpLogHereOnExit”.</li><li>Enter “.\Logs” &amp; Press “Apply”</li><li>Press “Save to Disk” then press “Close”</li></ol> </li></ul><h1 class="wp-block-heading" id="Inner-workings">Inner workings</h1><h2 class="wp-block-heading" id="Backup-store"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#backup-store"></a>Backup store</h2><p>The <strong>backup&nbsp;store</strong>&nbsp;<em>or just “store” when using Super Grate</em>&nbsp;is a directory on a share drive or local drive that “stores” the user profiles after they have been backed-up. Whether you performed a&nbsp;<a href="#Performing-a-full-migration">full migration</a>&nbsp;or just a simple&nbsp;<a href="#Backing-up-a-user-profile">profile backup</a>, the data transferred is stored here.</p><p>The file structure of the store is as follows:</p><ul> <li><strong>Base Folder</strong>&nbsp;(Specified in the&nbsp;<a href="#SuperGrate.xml">SuperGrate.xml</a>&nbsp;or Settings Menu)<ul> <li><strong>User Profile Folder</strong>&nbsp;(Named a generic GUID, Can be any name)<ul> <li><strong>data</strong>: A single file containing the backed-up profile.</li><li><strong>destination</strong>: A file containing the name of the destination computer where the profile last was exported too.</li><li><strong>exportedby</strong>: A file containing the name of the user who last exported the stored user profile.</li><li><strong>exportedon</strong>: A file containing the date of when the profile was last exported in&nbsp;<a href="https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tofiletime?view=netframework-4.8" target="_blank" rel="noreferrer noopener">windows file time</a></li><li><strong>importedby</strong>: A file containing the name of the user who imported the user profile.</li><li><strong>importedon</strong>: A file containing the date of when the profile was imported in windows file time.</li><li><strong>ntaccount</strong>: A file containing the name of the user profile that was imported.</li><li><strong>targetntaccount</strong>: A file containing the target user name and domain to use when restoring the profile.</li><li><strong>sid</strong>: A file containing the&nbsp;<a href="https://en.wikipedia.org/wiki/Security_Identifier" target="_blank" rel="noreferrer noopener">SID</a>&nbsp;of the user profile that was imported.</li><li><strong>source</strong>: A file containing the name of the source computer the profile originated from.</li></ul> </li></ul> </li></ul><p>An example of the above may look like this below:</p><ul> <li><strong>C:\Program Files\Super Suite\Super Grate\STORE</strong>&nbsp;(Folder)<ul> <li><strong>bf31d643-27a7-4e5d-a4e5-277a4c5cc9d0</strong>&nbsp;(Folder)<ul> <li><strong>data</strong>&nbsp;(File | RAW Data)</li><li><strong>destination</strong>&nbsp;(File | “DOMAIN\BA-PC02”)</li><li><strong>exportedby</strong>&nbsp;(File | “DOMAIN\Dylan.Bickerstaff”)</li><li><strong>exportedon</strong>&nbsp;(File | “132312220838407695”)</li><li><strong>importedby</strong>&nbsp;(File | “DOMAIN\Dylan.Bickerstaff”)</li><li><strong>importedon</strong>&nbsp;(File | “132312220838407695”)</li><li><strong>ntaccount</strong>&nbsp;(File | “DOMAIN1\Administrator1”)</li><li><strong>targetntaccount</strong>&nbsp;(File | “DOMAIN2\Administrator2”)</li><li><strong>sid</strong>&nbsp;(File | “S-1-5-21-3623811015-3361044348-30300820-1013”)</li><li><strong>source</strong>&nbsp;(File | “DOMAIN\BA-PC01”)</li></ul> </li></ul> </li></ul><h2 class="wp-block-heading" id="SuperGrate.xml"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#supergratexml"></a>SuperGrate.xml</h2><p>The&nbsp;<strong>SuperGrate.xml</strong>&nbsp;is a file that is automatically generated if it doesn’t exist in the “current working directory”. This file contains the preferences from the “Settings” menu.</p><p>Below is an example of the SuperGrate.xml file:</p><pre class="wp-block-preformatted">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;SuperGrate&gt;
+  &lt;!--The UNC or Direct path to the USMT directory. (E.g: .\USMT\X64)--&gt;
+  &lt;USMTPathX64&gt;.\USMT\X64&lt;/USMTPathX64&gt;
+  &lt;USMTPathX86&gt;.\USMT\X86&lt;/USMTPathX86&gt;
+  &lt;!--Local path on source computer where Super Grate will run USMT from. (E.g: C:\SuperGrate)--&gt;
+  &lt;SuperGratePayloadPath&gt;C:\SuperGrate&lt;/SuperGratePayloadPath&gt;
+  &lt;!--The UNC or Direct path to the USMT Migration Store (E.g: \\ba-share\s$ or .\STORE)--&gt;
+  &lt;MigrationStorePath&gt;.\STORE&lt;/MigrationStorePath&gt;
+  &lt;!--ScanState.exe &amp; LoadState.exe CLI Parameters. See: https://docs.microsoft.com/en-us/windows/deployment/usmt/usmt-command-line-syntax --&gt;
+  &lt;ScanStateParameters&gt;/config:Config_SettingsOnly.xml /i:MigUser.xml /c /r:3 /o&lt;/ScanStateParameters&gt;
+  &lt;LoadStateParameters&gt;/config:Config_SettingsOnly.xml /i:MigUser.xml /c /r:3 /lac /lae&lt;/LoadStateParameters&gt;
+  &lt;!--Delete the user from the migration store after a restore? (store to destination)--&gt;
+  &lt;AutoDeleteFromStore&gt;false&lt;/AutoDeleteFromStore&gt;
+  &lt;!--Delete the user from the source computer after a backup? (source to store)--&gt;
+  &lt;AutoDeleteFromSource&gt;false&lt;/AutoDeleteFromSource&gt;
+  &lt;!--Prevent NT AUTHORITY &amp; NT SERVICE accounts from being listed?--&gt;
+  &lt;HideBuiltInAccounts&gt;true&lt;/HideBuiltInAccounts&gt;
+  &lt;!--Prevent unknown accounts from being listed?--&gt;
+  &lt;HideUnknownSIDs&gt;false&lt;/HideUnknownSIDs&gt;
+  &lt;!--Write log to disk on exit. (Leave blank to disable) (E.g: \\ba-share\s$\Logs or .\Logs)--&gt;
+  &lt;DumpLogHereOnExit&gt;.\LOGS&lt;/DumpLogHereOnExit&gt;
+  &lt;!--List of columns to display for the Source or Store users.--&gt;
+  &lt;ULSourceColumns&gt;0,3,9&lt;/ULSourceColumns&gt;
+  &lt;ULStoreColumns&gt;0,1,5,6,4&lt;/ULStoreColumns&gt;
+  &lt;!--User List View Mode: Large (0) / Small Icon (2), List (3), Details (1) and Tile (4).--&gt;
+  &lt;ULViewMode&gt;1&lt;/ULViewMode&gt;
+  &lt;!--Default source computer at startup.--&gt;
+  &lt;SourceComputer&gt;&lt;/SourceComputer&gt;
+  &lt;!--Default destination computer at startup.--&gt;
+  &lt;DestinationComputer&gt;&lt;/DestinationComputer&gt;
+  &lt;!--Default tab view at startup: Source, Store, None.--&gt;
+  &lt;TabView&gt;None&lt;/TabView&gt;
+  &lt;!--Security Protocol Version (Restart Required): SystemDefault, Ssl3, Tls, Tls11, Tls12, Tls13.--&gt;
+  &lt;SecurityProtocol&gt;Tls12&lt;/SecurityProtocol&gt;
+&lt;/SuperGrate&gt;</pre><h2 class="wp-block-heading" id="Flow-chart">Flow chart</h2><figure class="wp-block-image size-large"><a href="https://belowaverage.org/wp-content/uploads/2023/04/migration-flowchart.svg" target="_blank" rel="noreferrer noopener" class="fbx-link"><img decoding="async" loading="lazy" width="528" height="1881" src="https://belowaverage.org/wp-content/uploads/2023/04/migration-flowchart.svg" alt="" class="wp-image-7284"></a></figure><h1 class="wp-block-heading" id="Common-issues"><a href="https://github.com/belowaverage-org/Wiki/blob/master/software/supersuite/supergrate.md#known-issues"></a>Common issues</h1><h2 class="wp-block-heading" id="WMI-(Windows-Management-Instrumentation)">WMI (Windows Management Instrumentation)</h2><p>Super Grate uses <a href="https://learn.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page" target="_blank" rel="noreferrer noopener">WMI</a> to function, if WMI is corrupt or disabled on the remote PC you may experience issues, for example:</p><pre class="wp-block-code"><code>[INFO]&lt;12:11:28 AM&gt; Getting list of users on: BA-DYLANPC...
+[ERROR]&lt;12:11:28 AM&gt; The service cannot be started, either because it is disabled or because it has no enabled devices associated with it.
+
+[VERBOSE]&lt;12:11:28 AM&gt; ERROR
+   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at SuperGrate.WMI.&lt;&gt;c__DisplayClass0_0.&lt;Query&gt;b__0()
+[ERROR]&lt;12:11:28 AM&gt; Failed to query via WMI.
+[ERROR]&lt;12:11:28 AM&gt; Object reference not set to an instance of an object.
+[VERBOSE]&lt;12:11:28 AM&gt; ERROR
+   at SuperGrate.Misc.&lt;&gt;c__DisplayClass6_0.&lt;&lt;GetUsersFromHost&gt;b__0&gt;d.MoveNext()
+[ERROR]&lt;12:11:28 AM&gt; Failed to get a list of users. Please make sure that the specified host is valid and online and that you are an administrator of: BA-DYLANPC</code></pre><p>To fix, enable WMI and run this command on the remote PC as an administrator:&nbsp;<code>winmgmt /resetrepository</code></p><p><a href="https://learn.microsoft.com/en-us/windows/win32/wmisdk/winmgmt" target="_blank" rel="noreferrer noopener">https://learn.microsoft.com/en-us/windows/win32/wmisdk/winmgmt</a></p><h2 class="wp-block-heading" id="Could-not-find-file-USMT.MIG">Could not find file USMT.MIG</h2><p>The <strong>“could not find file USMT.MIG”</strong> issue can be very misleading. Super Grate is attempting to copy the migration file after USMT finished, but if you look closely at the log, you can see that USMT never actually ran. In between the lines “<code>Waiting for scanstate to finish...</code>” and “<code>USMT Finished.</code>” should be output from logs from USMT. The error “<code>Could not find file 'C:\SuperGrate\USMT\USMT.MIG'.</code>” in this case is misleading because it is a symptom and not a cause to the issue at hand; which is, USMT not starting.</p><pre class="wp-block-code"><code>[SUCCESS]&lt;12:19:26 AM&gt; USMT uploaded successfully.
+[INFO]&lt;12:19:26 AM&gt; Capturing user state: 'BELOWAVERAGE\dylan' on 'BA-DYLANPC'...
+[VERBOSE]&lt;12:19:26 AM&gt; Waiting for scanstate to finish...
+[SUCCESS]&lt;12:19:27 AM&gt; USMT Finished.
+[INFO]&lt;12:19:30 AM&gt; Uploading user state to the Store...
+[ERROR]&lt;12:19:30 AM&gt; Could not find file 'C:\SuperGrate\USMT\USMT.MIG'.
+[VERBOSE]&lt;12:19:30 AM&gt; ERROR
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileInfo.get_Length()
+   at SuperGrate.IO.FileOperations.CopyFile(String Source, String Destination)
+   at SuperGrate.USMT.&lt;&gt;c__DisplayClass17_0.&lt;&lt;UploadToStore&gt;b__0&gt;d.MoveNext()
+[ERROR]&lt;12:19:30 AM&gt; Failed to upload user state to the Store.
+[INFO]&lt;12:19:30 AM&gt; Removing USMT from: BA-DYLANPC...
+[SUCCESS]&lt;12:19:30 AM&gt; USMT removed successfully.
+[INFO]&lt;12:19:30 AM&gt; Done.</code></pre><p>When encountering this issue, you may want to review the values of <code>ScanStateParameters</code>, <code>LoadStateParameters</code>, and <code>SuperGratePayloadPath</code> in the <a href="#SuperGrate.xml">SuperGrate.xml</a> file.</p><ul> <li>ScanStateParameters &amp; LoadStateParameters<ul> <li>Make sure that the XML files listed in the parameters actually exist in your USMT folder.</li></ul> </li><li>SuperGratePayloadPath<ul> <li>Make sure that this path exists on your remote / target PC and that it is not a UNC path.</li></ul> </li></ul><p>As a last resort, try deleting the USMT folder and SuperGrate.xml file and re-launch Super Grate. When Super Grate starts a new migration it will automatically generate a new <a href="#SuperGrate.xml">SuperGrate.xml</a> and USMT folder with a copy of USMT from the <a href="https://github.com/belowaverage-org/SuperGrate/tree/master/USMT" target="_blank" rel="noreferrer noopener">Super Grate GitHub repository</a>.</p><h1 class="wp-block-heading" id="Other-issues">Other issues</h1><p><a href="https://github.com/belowaverage-org/SuperGrate/issues">https://github.com/belowaverage-org/SuperGrate/issues</a></p></div>
